@@ -1,0 +1,35 @@
+C:\Users\minec\OneDrive\Documents\Vitis_HLS\project1\prac\prac\hls\.autopilot\db\bubble_sort.pp.0.cpp:1315:7: warning: Added loop label VITIS_LOOP_1223_1:   [xilinx-label-all-loops]
+      for (i = 0; i < __N - 1; ++i) {
+      ^~~
+      VITIS_LOOP_1223_1: 
+C:\Users\minec\OneDrive\Documents\Vitis_HLS\project1\prac\prac\hls\.autopilot\db\bubble_sort.pp.0.cpp:1315:7: note: FIX-IT applied suggested code changes
+C:\Users\minec\OneDrive\Documents\Vitis_HLS\project1\prac\prac\hls\.autopilot\db\bubble_sort.pp.0.cpp:2289:5: warning: Added loop label VITIS_LOOP_676_1:   [xilinx-label-all-loops]
+    for (unsigned i = low; i != high; ++i) {
+    ^~~
+    VITIS_LOOP_676_1: 
+C:\Users\minec\OneDrive\Documents\Vitis_HLS\project1\prac\prac\hls\.autopilot\db\bubble_sort.pp.0.cpp:2289:5: note: FIX-IT applied suggested code changes
+C:\Users\minec\OneDrive\Documents\Vitis_HLS\project1\prac\prac\hls\.autopilot\db\bubble_sort.pp.0.cpp:2303:5: warning: Added loop label VITIS_LOOP_690_1:   [xilinx-label-all-loops]
+    for (unsigned i = low; i != high; ++i) {
+    ^~~
+    VITIS_LOOP_690_1: 
+C:\Users\minec\OneDrive\Documents\Vitis_HLS\project1\prac\prac\hls\.autopilot\db\bubble_sort.pp.0.cpp:2303:5: note: FIX-IT applied suggested code changes
+C:\Users\minec\OneDrive\Documents\Vitis_HLS\project1\prac\prac\hls\.autopilot\db\bubble_sort.pp.0.cpp:2317:5: warning: Added loop label VITIS_LOOP_704_1:   [xilinx-label-all-loops]
+    for (unsigned i = low; i != high; ++i) {
+    ^~~
+    VITIS_LOOP_704_1: 
+C:\Users\minec\OneDrive\Documents\Vitis_HLS\project1\prac\prac\hls\.autopilot\db\bubble_sort.pp.0.cpp:2317:5: note: FIX-IT applied suggested code changes
+C:\Users\minec\OneDrive\Documents\Vitis_HLS\project1\prac\prac\hls\.autopilot\db\bubble_sort.pp.0.cpp:3946:7: warning: Added loop label VITIS_LOOP_1247_1:   [xilinx-label-all-loops]
+      for (i = 0; i < __N - 1; ++i) {
+      ^~~
+      VITIS_LOOP_1247_1: 
+C:\Users\minec\OneDrive\Documents\Vitis_HLS\project1\prac\prac\hls\.autopilot\db\bubble_sort.pp.0.cpp:3946:7: note: FIX-IT applied suggested code changes
+C:\Users\minec\OneDrive\Documents\Vitis_HLS\project1\prac\prac\hls\.autopilot\db\bubble_sort.pp.0.cpp:5733:5: warning: Added loop label VITIS_LOOP_4_1:   [xilinx-label-all-loops]
+    for (int i = 0; i < size - 1; i++) {
+    ^~~
+    VITIS_LOOP_4_1: 
+C:\Users\minec\OneDrive\Documents\Vitis_HLS\project1\prac\prac\hls\.autopilot\db\bubble_sort.pp.0.cpp:5733:5: note: FIX-IT applied suggested code changes
+C:\Users\minec\OneDrive\Documents\Vitis_HLS\project1\prac\prac\hls\.autopilot\db\bubble_sort.pp.0.cpp:5735:9: warning: Added loop label VITIS_LOOP_6_2:   [xilinx-label-all-loops]
+        for (int j = i + 1; j < size; j++) {
+        ^~~
+        VITIS_LOOP_6_2: 
+C:\Users\minec\OneDrive\Documents\Vitis_HLS\project1\prac\prac\hls\.autopilot\db\bubble_sort.pp.0.cpp:5735:9: note: FIX-IT applied suggested code changes

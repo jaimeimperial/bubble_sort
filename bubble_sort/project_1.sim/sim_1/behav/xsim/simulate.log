@@ -1,0 +1,41 @@
+Time resolution is 1 ps
+UVM_INFO C:/Xilinx/Vivado/2024.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18601) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO C:/FPGA_projects/Research/bubble_sort/project_1.srcs/sim_1/new/top_tb.sv(54) @ 0: reporter [TB] Setting virtual interface
+UVM_INFO C:/Xilinx/Vivado/2024.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(7727) @ 0: reporter [UVM/RESOURCE/DUMP] 
+=== resource pool ===
+ vif [] : (uvm_pkg::T) /top_tb/vif   
+UVM_INFO C:/Xilinx/Vivado/2024.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(7734) @ 0: reporter [UVM/RESOURCE/DUMP] === end of resource pool ===
+UVM_INFO @ 0: reporter [RNTST] Running test test...
+UVM_INFO C:/Xilinx/Vivado/2024.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18752) @ 0: reporter [UVMTOP] UVM testbench topology:
+--------------------------------------
+Name          Type         Size  Value
+--------------------------------------
+uvm_test_top  test         -     @345 
+  env         environment  -     @358 
+--------------------------------------
+
+UVM_INFO C:/FPGA_projects/Research/bubble_sort/project_1.srcs/sim_1/new/sorting_agent.sv(27) @ 0: uvm_test_top.env.agent [AGENT] Successfully passed virtual interface to driver
+UVM_INFO C:/FPGA_projects/Research/bubble_sort/project_1.srcs/sim_1/new/sorting_driver.sv(27) @ 0: uvm_test_top.env.agent.driver [DRIVER] Successfully retrieved virtual interface!
+UVM_INFO C:/FPGA_projects/Research/bubble_sort/project_1.srcs/sim_1/new/sorting_driver.sv(37) @ 0: uvm_test_top.env.agent.driver [DRIVER] Successfully retrieved virtual interface!
+UVM_INFO C:/Xilinx/Vivado/2024.1/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(20867) @ 0: reporter [UVM/COMP/NAMECHECK] This implementation of the component name checks requires DPI to be enabled
+UVM_INFO C:/FPGA_projects/Research/bubble_sort/project_1.srcs/sim_1/new/sorting_test.sv(34) @ 0: uvm_test_top [TEST] Starting sequence on sequencer
+UVM_INFO C:/FPGA_projects/Research/bubble_sort/project_1.srcs/sim_1/new/sorting_sequence.sv(21) @ 0: uvm_test_top.env.agent.sequencer@@seq [SEQ] Generating a transaction with array size 20

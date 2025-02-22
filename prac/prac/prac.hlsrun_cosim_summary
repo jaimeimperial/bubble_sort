@@ -1,0 +1,227 @@
+<ENTRY>
+{
+ "thisFile": "C:/Users\\minec\\OneDrive\\Documents\\Vitis_HLS\\project1\\prac\\prac\\prac.hlsrun_cosim_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "02/20/25 13:06:08",
+ "timestampMillis": "613013415",
+ "buildStep": {
+  "cmdId": "49e0ae4e-a789-424d-bcbf-7ed8f8de2629",
+  "name": "vitis-run",
+  "logFile": "C:/Users\\minec\\OneDrive\\Documents\\Vitis_HLS\\project1\\prac\\prac\\logs\\prac.steps.log",
+  "commandLine": "C:/Xilinx/Vitis/2024.1/bin/unwrapped/win64.o/vitis-run.exe  --mode hls --cosim --config C:\\Users\\minec\\OneDrive\\Documents\\Vitis_HLS\\project1\\prac\\hls_config.cfg --work_dir prac ",
+  "args": [
+   "--mode",
+   "hls",
+   "--cosim",
+   "--config",
+   "C:\\Users\\minec\\OneDrive\\Documents\\Vitis_HLS\\project1\\prac\\hls_config.cfg",
+   "--work_dir",
+   "prac"
+  ],
+  "iniFiles": [],
+  "cwd": "C:\\Users\\minec\\OneDrive\\Documents\\Vitis_HLS\\project1\\prac"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "02/20/25 13:06:08",
+ "timestampMillis": "613013415",
+ "status": {
+  "cmdId": "49e0ae4e-a789-424d-bcbf-7ed8f8de2629",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "02/20/25 13:06:14",
+ "timestampMillis": "613019267",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_RUN",
+  "target": "TT_HLS_RTL_COSIM",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "bubble_sort",
+     "file": "",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "C:/Users\\minec\\OneDrive\\Documents\\Vitis_HLS\\project1\\prac\\bubble_sort.cpp",
+     "C:/Users\\minec\\OneDrive\\Documents\\Vitis_HLS\\project1\\prac\\bubble_sort_header.hpp"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2024.1"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "02/20/25 13:06:14",
+ "timestampMillis": "613019268",
+ "buildStep": {
+  "cmdId": "08c38c10-c0d5-40ab-a02e-c20d8896193d",
+  "name": "cosim_design",
+  "logFile": "C:/Users\\minec\\OneDrive\\Documents\\Vitis_HLS\\project1\\prac\\prac\\hls\\hls.log",
+  "commandLine": "cosim_design",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "C:\\Users\\minec\\OneDrive\\Documents\\Vitis_HLS\\project1\\prac"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "02/20/25 13:06:14",
+ "timestampMillis": "613019269",
+ "status": {
+  "cmdId": "08c38c10-c0d5-40ab-a02e-c20d8896193d",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "02/20/25 13:06:14",
+ "timestampMillis": "613019269",
+ "report": {
+  "path": "C:/Users\\minec\\OneDrive\\Documents\\Vitis_HLS\\project1\\prac\\prac\\hls\\sim\\report\\bubble_sort_cosim.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "HLS_COSIMULATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "02/20/25 13:06:14",
+ "timestampMillis": "613019270",
+ "report": {
+  "path": "C:/Users\\minec\\OneDrive\\Documents\\Vitis_HLS\\project1\\prac\\prac\\hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_DATAFLOW",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "02/20/25 13:06:14",
+ "timestampMillis": "613019270",
+ "report": {
+  "path": "C:/Users\\minec\\OneDrive\\Documents\\Vitis_HLS\\project1\\prac\\prac\\hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_FUNCTION_CALL_GRAPH_COSIM",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "02/20/25 13:06:14",
+ "timestampMillis": "613019271",
+ "report": {
+  "path": "C:/Users\\minec\\OneDrive\\Documents\\Vitis_HLS\\project1\\prac\\prac\\hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_TIMELINE_TRACE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "02/20/25 13:06:14",
+ "timestampMillis": "613019272",
+ "report": {
+  "path": "C:/Users\\minec\\OneDrive\\Documents\\Vitis_HLS\\project1\\prac\\prac\\hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_WAVE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "02/20/25 13:06:42",
+ "timestampMillis": "613047248",
+ "status": {
+  "cmdId": "08c38c10-c0d5-40ab-a02e-c20d8896193d",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "02/20/25 13:06:42",
+ "timestampMillis": "613047402",
+ "status": {
+  "cmdId": "49e0ae4e-a789-424d-bcbf-7ed8f8de2629",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "02/20/25 13:06:42",
+ "timestampMillis": "613047403",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "02/20/25 13:06:42",
+ "timestampMillis": "613047403",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

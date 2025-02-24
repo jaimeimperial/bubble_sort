@@ -35,17 +35,16 @@ class Sorting {
         var i: nat := 0;
         for i := 0 to this.M.Length - 1
             invariant 0 <= i <= this.M.Length - 1
-            invariant multiset(this.M[..]) == multiset(old(this.M[..]))
+            //invariant multiset(this.M[..]) == multiset(old(this.M[..]))
         {
             var A := this.M[i];
             var j: nat := i + 1;
             var B := this.M[j];
-            while j < this.M.Length
+            for j:= i + 1 to this.M.Length
                 invariant j <= this.M.Length
                 invariant A == this.M[i]
                 invariant forall x :: i <= x < j ==> this.M[i] <= this.M[x]
-                invariant multiset(this.M[..]) == multiset(old(this.M[..]))
-                decreases this.M.Length - j
+                //invariant multiset(this.M[..]) == multiset(old(this.M[..]))
             {   
                 B := this.M[j];
                 if A > B {
@@ -53,7 +52,6 @@ class Sorting {
                     this.M[j] := A;
                     A := B;
                 } 
-                j := j + 1;
             }
         }
         assert isSorted(0, this.M.Length);

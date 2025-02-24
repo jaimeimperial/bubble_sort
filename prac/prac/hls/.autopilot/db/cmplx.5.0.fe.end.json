@@ -1,8 +1,8 @@
 {
     "1": {
-        "name": "bubble_sort_Pipeline_VITIS_LOOP_6_2",
+        "name": "bubble_sort_Pipeline_VITIS_LOOP_15_2",
         "file": "bubble_sort.cpp",
-        "fileloc": "5",
+        "fileloc": "14",
         "instructions": "32",
         "total_instructions": "32",
         "calls": "",
@@ -23,8 +23,8 @@
         "name": "bubble_sort",
         "file": "bubble_sort.cpp",
         "fileloc": "3",
-        "instructions": "24",
-        "total_instructions": "56",
+        "instructions": "27",
+        "total_instructions": "59",
         "calls": "1",
         "basicblocks": "4",
         "loads": {

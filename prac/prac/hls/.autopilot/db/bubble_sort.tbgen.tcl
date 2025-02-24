@@ -18,14 +18,16 @@ set ap_memory_interface_dict [dict create]
 dict set ap_memory_interface_dict M { MEM_WIDTH 32 MEM_SIZE 80 MASTER_TYPE BRAM_CTRL MEM_ADDRESS_MODE WORD_ADDRESS PACKAGE_IO port READ_LATENCY 1 }
 set C_modelArgList {
 	{ M int 32 regular {array 20 { 2 0 } 1 1 }  }
+	{ errorFlag int 32 regular {pointer 1}  }
 }
 set hasAXIMCache 0
 set hasAXIML2Cache 0
 set AXIMCacheInstDict [dict create]
 set C_modelArgMapList {[ 
-	{ "Name" : "M", "interface" : "memory", "bitwidth" : 32, "direction" : "READWRITE"} ]}
+	{ "Name" : "M", "interface" : "memory", "bitwidth" : 32, "direction" : "READWRITE"} , 
+ 	{ "Name" : "errorFlag", "interface" : "wire", "bitwidth" : 32, "direction" : "WRITEONLY"} ]}
 # RTL Port declarations: 
-set portNum 15
+set portNum 16
 set portList { 
 	{ ap_clk sc_in sc_logic 1 clock -1 } 
 	{ ap_rst sc_in sc_logic 1 reset -1 active_high_sync } 
@@ -42,6 +44,7 @@ set portList {
 	{ M_ce1 sc_out sc_logic 1 signal 0 } 
 	{ M_we1 sc_out sc_logic 1 signal 0 } 
 	{ M_d1 sc_out sc_lv 32 signal 0 } 
+	{ errorFlag sc_out sc_lv 32 signal 1 } 
 }
 set NewPortList {[ 
 	{ "name": "ap_clk", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "clock", "bundle":{"name": "ap_clk", "role": "default" }} , 
@@ -58,7 +61,8 @@ set NewPortList {[
  	{ "name": "M_address1", "direction": "out", "datatype": "sc_lv", "bitwidth":5, "type": "signal", "bundle":{"name": "M", "role": "address1" }} , 
  	{ "name": "M_ce1", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "M", "role": "ce1" }} , 
  	{ "name": "M_we1", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "M", "role": "we1" }} , 
- 	{ "name": "M_d1", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "M", "role": "d1" }}  ]}
+ 	{ "name": "M_d1", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "M", "role": "d1" }} , 
+ 	{ "name": "errorFlag", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "errorFlag", "role": "default" }}  ]}
 
 set RtlHierarchyInfo {[
 	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1"],
@@ -78,12 +82,13 @@ set RtlHierarchyInfo {[
 		"Port" : [
 			{"Name" : "M", "Type" : "Memory", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_bubble_sort_Pipeline_VITIS_LOOP_6_2_fu_59", "Port" : "M", "Inst_start_state" : "4", "Inst_end_state" : "5"}]}],
+					{"ID" : "1", "SubInstance" : "grp_bubble_sort_Pipeline_VITIS_LOOP_15_2_fu_73", "Port" : "M", "Inst_start_state" : "4", "Inst_end_state" : "5"}]},
+			{"Name" : "errorFlag", "Type" : "None", "Direction" : "O"}],
 		"Loop" : [
-			{"Name" : "VITIS_LOOP_4_1", "PipelineType" : "no",
+			{"Name" : "VITIS_LOOP_10_1", "PipelineType" : "no",
 				"LoopDec" : {"FSMBitwidth" : "5", "FirstState" : "ap_ST_fsm_state2", "LastState" : ["ap_ST_fsm_state5"], "QuitState" : ["ap_ST_fsm_state2"], "PreState" : ["ap_ST_fsm_state1"], "PostState" : ["ap_ST_fsm_state1"], "OneDepthLoop" : "0", "OneStateBlock": ""}}]},
-	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_bubble_sort_Pipeline_VITIS_LOOP_6_2_fu_59", "Parent" : "0", "Child" : ["2"],
-		"CDFG" : "bubble_sort_Pipeline_VITIS_LOOP_6_2",
+	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_bubble_sort_Pipeline_VITIS_LOOP_15_2_fu_73", "Parent" : "0", "Child" : ["2"],
+		"CDFG" : "bubble_sort_Pipeline_VITIS_LOOP_15_2",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
@@ -97,24 +102,25 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"IsBlackBox" : "0",
 		"Port" : [
-			{"Name" : "zext_ln4_1", "Type" : "None", "Direction" : "I"},
+			{"Name" : "zext_ln10_1", "Type" : "None", "Direction" : "I"},
 			{"Name" : "A", "Type" : "None", "Direction" : "I"},
 			{"Name" : "M", "Type" : "Memory", "Direction" : "IO"},
-			{"Name" : "zext_ln4", "Type" : "None", "Direction" : "I"}],
+			{"Name" : "zext_ln10", "Type" : "None", "Direction" : "I"}],
 		"Loop" : [
-			{"Name" : "VITIS_LOOP_6_2", "PipelineType" : "UPC",
+			{"Name" : "VITIS_LOOP_15_2", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "2", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter1", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "QuitState" : "ap_ST_fsm_pp0_stage1", "QuitStateIter" : "ap_enable_reg_pp0_iter0", "QuitStateBlock" : "ap_block_pp0_stage1_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
-	{"ID" : "2", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_bubble_sort_Pipeline_VITIS_LOOP_6_2_fu_59.flow_control_loop_pipe_sequential_init_U", "Parent" : "1"}]}
+	{"ID" : "2", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_bubble_sort_Pipeline_VITIS_LOOP_15_2_fu_73.flow_control_loop_pipe_sequential_init_U", "Parent" : "1"}]}
 
 
 set ArgLastReadFirstWriteLatency {
 	bubble_sort {
-		M {Type IO LastRead 1 FirstWrite 2}}
-	bubble_sort_Pipeline_VITIS_LOOP_6_2 {
-		zext_ln4_1 {Type I LastRead 0 FirstWrite -1}
+		M {Type IO LastRead 1 FirstWrite 2}
+		errorFlag {Type O LastRead -1 FirstWrite 1}}
+	bubble_sort_Pipeline_VITIS_LOOP_15_2 {
+		zext_ln10_1 {Type I LastRead 0 FirstWrite -1}
 		A {Type I LastRead 0 FirstWrite -1}
 		M {Type IO LastRead 1 FirstWrite 2}
-		zext_ln4 {Type I LastRead 0 FirstWrite -1}}}
+		zext_ln10 {Type I LastRead 0 FirstWrite -1}}}
 
 set hasDtUnsupportedChannel 0
 
@@ -128,6 +134,7 @@ set PipelineEnableSignalInfo {[
 
 set Spec2ImplPortList { 
 	M { ap_memory {  { M_address0 mem_address 1 5 }  { M_ce0 mem_ce 1 1 }  { M_we0 mem_we 1 1 }  { M_d0 mem_din 1 32 }  { M_q0 mem_dout 0 32 }  { M_address1 MemPortADDR2 1 5 }  { M_ce1 MemPortCE2 1 1 }  { M_we1 MemPortWE2 1 1 }  { M_d1 MemPortDIN2 1 32 } } }
+	errorFlag { ap_none {  { errorFlag out_data 1 32 } } }
 }
 
 set maxi_interface_dict [dict create]

@@ -19,5 +19,21 @@
       <key>WarningOption</key>
       <string>dump-hls-pragmas</string>
     </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>bubble_sort.cpp</string>
+      <key>line</key>
+      <integer>4</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=bubble_sort_XLX_SEP_ PragmaOptions=ap_none port=errorFlag_XLX_SEP_</string>
+      <key>ID</key>
+      <integer>5471</integer>
+      <key>WarningOption</key>
+      <string>dump-hls-pragmas</string>
+    </dict>
   </array>
 </dict>

@@ -1,4 +1,7 @@
 directive:1:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=top_XLX_SEP_ PragmaContext=directive_XLX_SEP_ PragmaFunction=bubble_sort_XLX_SEP_ PragmaOptions=name=bubble_sort_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLSDIRECTIVE TOP name=bubble_sort
         ^
-1 warning generated.
+bubble_sort.cpp:4:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=bubble_sort_XLX_SEP_ PragmaOptions=ap_none port=errorFlag_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE ap_none port=errorFlag
+        ^
+2 warnings generated.

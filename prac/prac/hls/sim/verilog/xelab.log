@@ -11,8 +11,8 @@ INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/minec/OneDrive/Docum
 INFO: [VRFC 10-311] analyzing module apatb_bubble_sort_top
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/sim/verilog/bubble_sort.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module bubble_sort
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/sim/verilog/bubble_sort_bubble_sort_Pipeline_VITIS_LOOP_6_2.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module bubble_sort_bubble_sort_Pipeline_VITIS_LOOP_6_2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/sim/verilog/bubble_sort_bubble_sort_Pipeline_VITIS_LOOP_15_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bubble_sort_bubble_sort_Pipeline_VITIS_LOOP_15_2
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/sim/verilog/bubble_sort_flow_control_loop_pipe_sequential_init.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module bubble_sort_flow_control_loop_pipe_sequential_init
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/sim/verilog/dataflow_monitor.sv" into library xil_defaultlib

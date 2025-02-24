@@ -7,4 +7,5 @@
 // ==============================================================
 
 extern "C" void AESL_WRAP_bubble_sort (
-volatile void* M);
+volatile void* M,
+volatile void* errorFlag);

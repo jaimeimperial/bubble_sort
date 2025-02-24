@@ -30,6 +30,21 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
+    id 6 \
+    name errorFlag \
+    type other \
+    dir O \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_errorFlag \
+    op interface \
+    ports { errorFlag { O 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
     id -1 \
     name ap_ctrl \
     type ap_ctrl \

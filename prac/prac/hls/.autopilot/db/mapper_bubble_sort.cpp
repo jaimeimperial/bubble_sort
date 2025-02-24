@@ -243,8 +243,8 @@ class AESL_RUNTIME_BC {
     string mName;
 };
 using hls::sim::Byte;
-extern "C" void bubble_sort(Byte<4>*);
-extern "C" void apatb_bubble_sort_hw(volatile void * __xlx_apatb_param_M) {
+extern "C" void bubble_sort(Byte<4>*, volatile void *);
+extern "C" void apatb_bubble_sort_hw(volatile void * __xlx_apatb_param_M, volatile void * __xlx_apatb_param_errorFlag) {
 using hls::sim::createStream;
   // Collect __xlx_M__tmp_vec
 std::vector<Byte<4>> __xlx_M__tmp_vec;
@@ -255,7 +255,7 @@ __xlx_M__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_M)[i]);
   int __xlx_offset_param_M = 0;
   int __xlx_offset_byte_param_M = 0*4;
   // DUT call
-  bubble_sort(__xlx_M__tmp_vec.data());
+  bubble_sort(__xlx_M__tmp_vec.data(), __xlx_apatb_param_errorFlag);
 // print __xlx_apatb_param_M
 for (size_t i = 0; i < __xlx_size_param_M; ++i) {
 ((Byte<4>*)__xlx_apatb_param_M)[i] = __xlx_M__tmp_vec[__xlx_offset_param_M+i];

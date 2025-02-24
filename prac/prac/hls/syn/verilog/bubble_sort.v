@@ -23,7 +23,8 @@ module bubble_sort (
         M_address1,
         M_ce1,
         M_we1,
-        M_d1
+        M_d1,
+        errorFlag
 );
 
 parameter    ap_ST_fsm_state1 = 5'd1;
@@ -47,6 +48,7 @@ output  [4:0] M_address1;
 output   M_ce1;
 output   M_we1;
 output  [31:0] M_d1;
+output  [31:0] errorFlag;
 
 reg ap_done;
 reg ap_idle;
@@ -59,32 +61,32 @@ reg M_we1;
 
 (* fsm_encoding = "none" *) reg   [4:0] ap_CS_fsm;
 wire    ap_CS_fsm_state1;
-reg   [4:0] i_1_reg_132;
+reg   [4:0] i_1_reg_146;
 wire    ap_CS_fsm_state2;
-reg   [31:0] A_reg_145;
+reg   [31:0] A_reg_159;
 wire    ap_CS_fsm_state3;
-reg   [4:0] indvars_iv_load_reg_150;
+reg   [4:0] indvars_iv31_load_reg_164;
 wire    ap_CS_fsm_state4;
-wire    grp_bubble_sort_Pipeline_VITIS_LOOP_6_2_fu_59_ap_start;
-wire    grp_bubble_sort_Pipeline_VITIS_LOOP_6_2_fu_59_ap_done;
-wire    grp_bubble_sort_Pipeline_VITIS_LOOP_6_2_fu_59_ap_idle;
-wire    grp_bubble_sort_Pipeline_VITIS_LOOP_6_2_fu_59_ap_ready;
-wire   [4:0] grp_bubble_sort_Pipeline_VITIS_LOOP_6_2_fu_59_M_address0;
-wire    grp_bubble_sort_Pipeline_VITIS_LOOP_6_2_fu_59_M_ce0;
-wire    grp_bubble_sort_Pipeline_VITIS_LOOP_6_2_fu_59_M_we0;
-wire   [31:0] grp_bubble_sort_Pipeline_VITIS_LOOP_6_2_fu_59_M_d0;
-wire   [4:0] grp_bubble_sort_Pipeline_VITIS_LOOP_6_2_fu_59_M_address1;
-wire    grp_bubble_sort_Pipeline_VITIS_LOOP_6_2_fu_59_M_ce1;
-wire    grp_bubble_sort_Pipeline_VITIS_LOOP_6_2_fu_59_M_we1;
-wire   [31:0] grp_bubble_sort_Pipeline_VITIS_LOOP_6_2_fu_59_M_d1;
-reg    grp_bubble_sort_Pipeline_VITIS_LOOP_6_2_fu_59_ap_start_reg;
+wire    grp_bubble_sort_Pipeline_VITIS_LOOP_15_2_fu_73_ap_start;
+wire    grp_bubble_sort_Pipeline_VITIS_LOOP_15_2_fu_73_ap_done;
+wire    grp_bubble_sort_Pipeline_VITIS_LOOP_15_2_fu_73_ap_idle;
+wire    grp_bubble_sort_Pipeline_VITIS_LOOP_15_2_fu_73_ap_ready;
+wire   [4:0] grp_bubble_sort_Pipeline_VITIS_LOOP_15_2_fu_73_M_address0;
+wire    grp_bubble_sort_Pipeline_VITIS_LOOP_15_2_fu_73_M_ce0;
+wire    grp_bubble_sort_Pipeline_VITIS_LOOP_15_2_fu_73_M_we0;
+wire   [31:0] grp_bubble_sort_Pipeline_VITIS_LOOP_15_2_fu_73_M_d0;
+wire   [4:0] grp_bubble_sort_Pipeline_VITIS_LOOP_15_2_fu_73_M_address1;
+wire    grp_bubble_sort_Pipeline_VITIS_LOOP_15_2_fu_73_M_ce1;
+wire    grp_bubble_sort_Pipeline_VITIS_LOOP_15_2_fu_73_M_we1;
+wire   [31:0] grp_bubble_sort_Pipeline_VITIS_LOOP_15_2_fu_73_M_d1;
+reg    grp_bubble_sort_Pipeline_VITIS_LOOP_15_2_fu_73_ap_start_reg;
 wire    ap_CS_fsm_state5;
-wire   [63:0] zext_ln4_fu_93_p1;
-wire   [0:0] icmp_ln4_fu_81_p2;
-reg   [4:0] indvars_iv_fu_38;
-wire   [4:0] add_ln4_fu_107_p2;
-reg   [4:0] i_fu_42;
-wire   [4:0] add_ln6_fu_87_p2;
+wire   [63:0] zext_ln10_fu_107_p1;
+wire   [0:0] icmp_ln10_fu_95_p2;
+reg   [4:0] i_fu_44;
+wire   [4:0] add_ln15_fu_101_p2;
+reg   [4:0] indvars_iv31_fu_48;
+wire   [4:0] add_ln10_fu_121_p2;
 reg    M_ce0_local;
 reg   [4:0] ap_NS_fsm;
 reg    ap_ST_fsm_state1_blk;
@@ -97,30 +99,30 @@ wire    ap_ce_reg;
 // power-on initialization
 initial begin
 #0 ap_CS_fsm = 5'd1;
-#0 grp_bubble_sort_Pipeline_VITIS_LOOP_6_2_fu_59_ap_start_reg = 1'b0;
-#0 indvars_iv_fu_38 = 5'd0;
-#0 i_fu_42 = 5'd0;
+#0 grp_bubble_sort_Pipeline_VITIS_LOOP_15_2_fu_73_ap_start_reg = 1'b0;
+#0 i_fu_44 = 5'd0;
+#0 indvars_iv31_fu_48 = 5'd0;
 end
 
-bubble_sort_bubble_sort_Pipeline_VITIS_LOOP_6_2 grp_bubble_sort_Pipeline_VITIS_LOOP_6_2_fu_59(
+bubble_sort_bubble_sort_Pipeline_VITIS_LOOP_15_2 grp_bubble_sort_Pipeline_VITIS_LOOP_15_2_fu_73(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst),
-    .ap_start(grp_bubble_sort_Pipeline_VITIS_LOOP_6_2_fu_59_ap_start),
-    .ap_done(grp_bubble_sort_Pipeline_VITIS_LOOP_6_2_fu_59_ap_done),
-    .ap_idle(grp_bubble_sort_Pipeline_VITIS_LOOP_6_2_fu_59_ap_idle),
-    .ap_ready(grp_bubble_sort_Pipeline_VITIS_LOOP_6_2_fu_59_ap_ready),
-    .zext_ln4_1(indvars_iv_load_reg_150),
-    .A(A_reg_145),
-    .M_address0(grp_bubble_sort_Pipeline_VITIS_LOOP_6_2_fu_59_M_address0),
-    .M_ce0(grp_bubble_sort_Pipeline_VITIS_LOOP_6_2_fu_59_M_ce0),
-    .M_we0(grp_bubble_sort_Pipeline_VITIS_LOOP_6_2_fu_59_M_we0),
-    .M_d0(grp_bubble_sort_Pipeline_VITIS_LOOP_6_2_fu_59_M_d0),
+    .ap_start(grp_bubble_sort_Pipeline_VITIS_LOOP_15_2_fu_73_ap_start),
+    .ap_done(grp_bubble_sort_Pipeline_VITIS_LOOP_15_2_fu_73_ap_done),
+    .ap_idle(grp_bubble_sort_Pipeline_VITIS_LOOP_15_2_fu_73_ap_idle),
+    .ap_ready(grp_bubble_sort_Pipeline_VITIS_LOOP_15_2_fu_73_ap_ready),
+    .zext_ln10_1(indvars_iv31_load_reg_164),
+    .A(A_reg_159),
+    .M_address0(grp_bubble_sort_Pipeline_VITIS_LOOP_15_2_fu_73_M_address0),
+    .M_ce0(grp_bubble_sort_Pipeline_VITIS_LOOP_15_2_fu_73_M_ce0),
+    .M_we0(grp_bubble_sort_Pipeline_VITIS_LOOP_15_2_fu_73_M_we0),
+    .M_d0(grp_bubble_sort_Pipeline_VITIS_LOOP_15_2_fu_73_M_d0),
     .M_q0(M_q0),
-    .M_address1(grp_bubble_sort_Pipeline_VITIS_LOOP_6_2_fu_59_M_address1),
-    .M_ce1(grp_bubble_sort_Pipeline_VITIS_LOOP_6_2_fu_59_M_ce1),
-    .M_we1(grp_bubble_sort_Pipeline_VITIS_LOOP_6_2_fu_59_M_we1),
-    .M_d1(grp_bubble_sort_Pipeline_VITIS_LOOP_6_2_fu_59_M_d1),
-    .zext_ln4(i_1_reg_132)
+    .M_address1(grp_bubble_sort_Pipeline_VITIS_LOOP_15_2_fu_73_M_address1),
+    .M_ce1(grp_bubble_sort_Pipeline_VITIS_LOOP_15_2_fu_73_M_ce1),
+    .M_we1(grp_bubble_sort_Pipeline_VITIS_LOOP_15_2_fu_73_M_we1),
+    .M_d1(grp_bubble_sort_Pipeline_VITIS_LOOP_15_2_fu_73_M_d1),
+    .zext_ln10(i_1_reg_146)
 );
 
 always @ (posedge ap_clk) begin
@@ -133,61 +135,61 @@ end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        grp_bubble_sort_Pipeline_VITIS_LOOP_6_2_fu_59_ap_start_reg <= 1'b0;
+        grp_bubble_sort_Pipeline_VITIS_LOOP_15_2_fu_73_ap_start_reg <= 1'b0;
     end else begin
         if ((1'b1 == ap_CS_fsm_state4)) begin
-            grp_bubble_sort_Pipeline_VITIS_LOOP_6_2_fu_59_ap_start_reg <= 1'b1;
-        end else if ((grp_bubble_sort_Pipeline_VITIS_LOOP_6_2_fu_59_ap_ready == 1'b1)) begin
-            grp_bubble_sort_Pipeline_VITIS_LOOP_6_2_fu_59_ap_start_reg <= 1'b0;
+            grp_bubble_sort_Pipeline_VITIS_LOOP_15_2_fu_73_ap_start_reg <= 1'b1;
+        end else if ((grp_bubble_sort_Pipeline_VITIS_LOOP_15_2_fu_73_ap_ready == 1'b1)) begin
+            grp_bubble_sort_Pipeline_VITIS_LOOP_15_2_fu_73_ap_start_reg <= 1'b0;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-        i_fu_42 <= 5'd0;
-    end else if (((icmp_ln4_fu_81_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state2))) begin
-        i_fu_42 <= add_ln6_fu_87_p2;
+        i_fu_44 <= 5'd0;
+    end else if (((icmp_ln10_fu_95_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state2))) begin
+        i_fu_44 <= add_ln15_fu_101_p2;
     end
 end
 
 always @ (posedge ap_clk) begin
     if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-        indvars_iv_fu_38 <= 5'd1;
+        indvars_iv31_fu_48 <= 5'd1;
     end else if ((1'b1 == ap_CS_fsm_state4)) begin
-        indvars_iv_fu_38 <= add_ln4_fu_107_p2;
+        indvars_iv31_fu_48 <= add_ln10_fu_121_p2;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state3)) begin
-        A_reg_145 <= M_q0;
+        A_reg_159 <= M_q0;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state2)) begin
-        i_1_reg_132 <= i_fu_42;
+        i_1_reg_146 <= i_fu_44;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state4)) begin
-        indvars_iv_load_reg_150 <= indvars_iv_fu_38;
+        indvars_iv31_load_reg_164 <= indvars_iv31_fu_48;
     end
 end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state5)) begin
-        M_address0 = grp_bubble_sort_Pipeline_VITIS_LOOP_6_2_fu_59_M_address0;
+        M_address0 = grp_bubble_sort_Pipeline_VITIS_LOOP_15_2_fu_73_M_address0;
     end else begin
-        M_address0 = zext_ln4_fu_93_p1;
+        M_address0 = zext_ln10_fu_107_p1;
     end
 end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state5)) begin
-        M_ce0 = grp_bubble_sort_Pipeline_VITIS_LOOP_6_2_fu_59_M_ce0;
+        M_ce0 = grp_bubble_sort_Pipeline_VITIS_LOOP_15_2_fu_73_M_ce0;
     end else begin
         M_ce0 = M_ce0_local;
     end
@@ -203,7 +205,7 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state5)) begin
-        M_ce1 = grp_bubble_sort_Pipeline_VITIS_LOOP_6_2_fu_59_M_ce1;
+        M_ce1 = grp_bubble_sort_Pipeline_VITIS_LOOP_15_2_fu_73_M_ce1;
     end else begin
         M_ce1 = 1'b0;
     end
@@ -211,7 +213,7 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state5)) begin
-        M_we0 = grp_bubble_sort_Pipeline_VITIS_LOOP_6_2_fu_59_M_we0;
+        M_we0 = grp_bubble_sort_Pipeline_VITIS_LOOP_15_2_fu_73_M_we0;
     end else begin
         M_we0 = 1'b0;
     end
@@ -219,7 +221,7 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state5)) begin
-        M_we1 = grp_bubble_sort_Pipeline_VITIS_LOOP_6_2_fu_59_M_we1;
+        M_we1 = grp_bubble_sort_Pipeline_VITIS_LOOP_15_2_fu_73_M_we1;
     end else begin
         M_we1 = 1'b0;
     end
@@ -240,7 +242,7 @@ assign ap_ST_fsm_state3_blk = 1'b0;
 assign ap_ST_fsm_state4_blk = 1'b0;
 
 always @ (*) begin
-    if ((grp_bubble_sort_Pipeline_VITIS_LOOP_6_2_fu_59_ap_done == 1'b0)) begin
+    if ((grp_bubble_sort_Pipeline_VITIS_LOOP_15_2_fu_73_ap_done == 1'b0)) begin
         ap_ST_fsm_state5_blk = 1'b1;
     end else begin
         ap_ST_fsm_state5_blk = 1'b0;
@@ -248,7 +250,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((icmp_ln4_fu_81_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state2))) begin
+    if (((icmp_ln10_fu_95_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state2))) begin
         ap_done = 1'b1;
     end else begin
         ap_done = 1'b0;
@@ -264,7 +266,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((icmp_ln4_fu_81_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state2))) begin
+    if (((icmp_ln10_fu_95_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state2))) begin
         ap_ready = 1'b1;
     end else begin
         ap_ready = 1'b0;
@@ -281,7 +283,7 @@ always @ (*) begin
             end
         end
         ap_ST_fsm_state2 : begin
-            if (((icmp_ln4_fu_81_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state2))) begin
+            if (((icmp_ln10_fu_95_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state2))) begin
                 ap_NS_fsm = ap_ST_fsm_state1;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state3;
@@ -294,7 +296,7 @@ always @ (*) begin
             ap_NS_fsm = ap_ST_fsm_state5;
         end
         ap_ST_fsm_state5 : begin
-            if (((grp_bubble_sort_Pipeline_VITIS_LOOP_6_2_fu_59_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state5))) begin
+            if (((grp_bubble_sort_Pipeline_VITIS_LOOP_15_2_fu_73_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state5))) begin
                 ap_NS_fsm = ap_ST_fsm_state2;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state5;
@@ -306,15 +308,15 @@ always @ (*) begin
     endcase
 end
 
-assign M_address1 = grp_bubble_sort_Pipeline_VITIS_LOOP_6_2_fu_59_M_address1;
+assign M_address1 = grp_bubble_sort_Pipeline_VITIS_LOOP_15_2_fu_73_M_address1;
 
-assign M_d0 = grp_bubble_sort_Pipeline_VITIS_LOOP_6_2_fu_59_M_d0;
+assign M_d0 = grp_bubble_sort_Pipeline_VITIS_LOOP_15_2_fu_73_M_d0;
 
-assign M_d1 = grp_bubble_sort_Pipeline_VITIS_LOOP_6_2_fu_59_M_d1;
+assign M_d1 = grp_bubble_sort_Pipeline_VITIS_LOOP_15_2_fu_73_M_d1;
 
-assign add_ln4_fu_107_p2 = (indvars_iv_fu_38 + 5'd1);
+assign add_ln10_fu_121_p2 = (indvars_iv31_fu_48 + 5'd1);
 
-assign add_ln6_fu_87_p2 = (i_fu_42 + 5'd1);
+assign add_ln15_fu_101_p2 = (i_fu_44 + 5'd1);
 
 assign ap_CS_fsm_state1 = ap_CS_fsm[32'd0];
 
@@ -326,10 +328,12 @@ assign ap_CS_fsm_state4 = ap_CS_fsm[32'd3];
 
 assign ap_CS_fsm_state5 = ap_CS_fsm[32'd4];
 
-assign grp_bubble_sort_Pipeline_VITIS_LOOP_6_2_fu_59_ap_start = grp_bubble_sort_Pipeline_VITIS_LOOP_6_2_fu_59_ap_start_reg;
+assign errorFlag = 32'd0;
 
-assign icmp_ln4_fu_81_p2 = ((i_fu_42 == 5'd19) ? 1'b1 : 1'b0);
+assign grp_bubble_sort_Pipeline_VITIS_LOOP_15_2_fu_73_ap_start = grp_bubble_sort_Pipeline_VITIS_LOOP_15_2_fu_73_ap_start_reg;
 
-assign zext_ln4_fu_93_p1 = i_fu_42;
+assign icmp_ln10_fu_95_p2 = ((i_fu_44 == 5'd19) ? 1'b1 : 1'b0);
+
+assign zext_ln10_fu_107_p1 = i_fu_44;
 
 endmodule //bubble_sort

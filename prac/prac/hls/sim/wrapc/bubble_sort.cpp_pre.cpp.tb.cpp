@@ -54992,33 +54992,77 @@ inline bool operator!=(
 
 typedef ap_uint<32> data_t;
 const int size = 20;
+const int errorFlag = 0;
 
-void bubble_sort(data_t M[size]);
+void bubble_sort(data_t M[size], int &errorFlag);
+
+bool is_sorted(data_t M[size]);
 # 2 "C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/bubble_sort.cpp" 2
 
-void bubble_sort(data_t M[size]) {
+void bubble_sort(data_t M[size], int &errorFlag) {
+#pragma HLS INTERFACE ap_none port=errorFlag
+
+
+    if (size < 1) { errorFlag = 1; }
+
+
     for (int i = 0; i < size - 1; i++) {
+
+        if ( i < 0 || i > size ) { errorFlag = 1; }
+
         int A = M[i];
         for (int j = i + 1; j < size; j++) {
+
+            if (size > j) { errorFlag = 1; }
+            if (A != M[i]) { errorFlag = 1; }
+            for (int k = i; k < j; k++) {
+                if (M[i] > M[k]) { errorFlag = 1; }
+                if (A != M[i]) { errorFlag = 1; }
+                for (int k = i; k < j; k++){
+                    if (M[i] > M[k]) { errorFlag = 1; }
+                };
+            };
+
             int B = M[j];
             if (A > B) {
                 M[i] = B;
                 M[j] = A;
                 A = B;
-            }
+            };
+
+
+            if (size > j) { errorFlag = 1; }
+            if (A != M[i]) { errorFlag = 1; }
+            for (int k = i; k < j; k++) {
+                if (M[i] > M[k]) { errorFlag = 1; }
+                if (A != M[i]) { errorFlag = 1; }
+                for (int k = i; k < j; k++){
+                    if (M[i] > M[k]) { errorFlag = 1; }
+                };
+            };
         };
+
+
+        if ( i < 0 || i > size ) { errorFlag = 1; }
     };
+
+    if (&is_sorted) {
+        errorFlag = 0;
+    }
+    else {
+        errorFlag = 1;
+    }
 };
 #ifndef HLS_FASTSIM
 #ifdef __cplusplus
 extern "C"
 #endif
-void apatb_bubble_sort_ir(ap_uint<32> *);
+void apatb_bubble_sort_ir(ap_uint<32> *, int &);
 #ifdef __cplusplus
 extern "C"
 #endif
-void bubble_sort_hw_stub(ap_uint<32> *M){
-bubble_sort(M);
+void bubble_sort_hw_stub(ap_uint<32> *M, int &errorFlag){
+bubble_sort(M, errorFlag);
 return ;
 }
 #ifdef __cplusplus
@@ -55028,11 +55072,28 @@ void refine_signal_handler();
 #ifdef __cplusplus
 extern "C"
 #endif
-void apatb_bubble_sort_sw(ap_uint<32> *M){
+void apatb_bubble_sort_sw(ap_uint<32> *M, int &errorFlag){
 refine_signal_handler();
-apatb_bubble_sort_ir(M);
+apatb_bubble_sort_ir(M, errorFlag);
 return ;
 }
 #endif
-# 15 "C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/bubble_sort.cpp"
+# 56 "C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/bubble_sort.cpp"
 
+
+bool is_sorted(data_t M[size], int x, int y, int &errorFlag) {
+
+    if (x < 0 || y < x || size < y) { errorFlag = 1; }
+    if (errorFlag) { return false; }
+
+    if (y <= 1) { return true; }
+    else {
+        for (int i = x; i < y - 1; i++) {
+            if (M[i] > M[i + 1]) {
+                return false;
+            }
+        };
+    };
+
+    return true;
+};

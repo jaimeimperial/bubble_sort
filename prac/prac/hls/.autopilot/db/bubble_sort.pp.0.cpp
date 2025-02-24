@@ -5721,24 +5721,85 @@ inline __attribute__((nodebug)) bool operator!=(
 
 typedef ap_uint<32> data_t;
 const int size = 20;
+const int errorFlag = 0;
 
-__attribute__((sdx_kernel("bubble_sort", 0))) void bubble_sort(data_t M[size]);
+__attribute__((sdx_kernel("bubble_sort", 0))) void bubble_sort(data_t M[size], int &errorFlag);
+
+bool is_sorted(data_t M[size]);
 # 2 "bubble_sort.cpp" 2
 
-__attribute__((sdx_kernel("bubble_sort", 0))) void bubble_sort(data_t M[size]) {
+__attribute__((sdx_kernel("bubble_sort", 0))) void bubble_sort(data_t M[size], int &errorFlag) {
 #line 1 "directive"
 #pragma HLSDIRECTIVE TOP name=bubble_sort
 # 3 "bubble_sort.cpp"
 
-    VITIS_LOOP_4_1: for (int i = 0; i < size - 1; i++) {
+#pragma HLS INTERFACE ap_none port=errorFlag
+
+
+ if (size < 1) { errorFlag = 1; }
+
+
+    VITIS_LOOP_10_1: for (int i = 0; i < size - 1; i++) {
+
+        if ( i < 0 || i > size ) { errorFlag = 1; }
+
         int A = M[i];
-        VITIS_LOOP_6_2: for (int j = i + 1; j < size; j++) {
+        VITIS_LOOP_15_2: for (int j = i + 1; j < size; j++) {
+
+            if (size > j) { errorFlag = 1; }
+            if (A != M[i]) { errorFlag = 1; }
+            VITIS_LOOP_19_3: for (int k = i; k < j; k++) {
+                if (M[i] > M[k]) { errorFlag = 1; }
+                if (A != M[i]) { errorFlag = 1; }
+                VITIS_LOOP_22_4: for (int k = i; k < j; k++){
+                    if (M[i] > M[k]) { errorFlag = 1; }
+                };
+            };
+
             int B = M[j];
             if (A > B) {
                 M[i] = B;
                 M[j] = A;
                 A = B;
+            };
+
+
+            if (size > j) { errorFlag = 1; }
+            if (A != M[i]) { errorFlag = 1; }
+            VITIS_LOOP_37_5: for (int k = i; k < j; k++) {
+                if (M[i] > M[k]) { errorFlag = 1; }
+                if (A != M[i]) { errorFlag = 1; }
+                VITIS_LOOP_40_6: for (int k = i; k < j; k++){
+                    if (M[i] > M[k]) { errorFlag = 1; }
+                };
+            };
+        };
+
+
+        if ( i < 0 || i > size ) { errorFlag = 1; }
+    };
+
+    if (&is_sorted) {
+        errorFlag = 0;
+    }
+    else {
+        errorFlag = 1;
+    }
+};
+
+bool is_sorted(data_t M[size], int x, int y, int &errorFlag) {
+
+    if (x < 0 || y < x || size < y) { errorFlag = 1; }
+    if (errorFlag) { return false; }
+
+    if (y <= 1) { return true; }
+    else {
+        VITIS_LOOP_65_1: for (int i = x; i < y - 1; i++) {
+            if (M[i] > M[i + 1]) {
+                return false;
             }
         };
     };
+
+    return true;
 };

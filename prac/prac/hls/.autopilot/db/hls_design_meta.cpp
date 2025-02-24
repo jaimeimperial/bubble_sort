@@ -15,5 +15,6 @@ const Port_Property HLS_Design_Meta::port_props[]={
 	Port_Property("M_ce1", 1, hls_out, 0, "ap_memory", "MemPortCE2", 1),
 	Port_Property("M_we1", 1, hls_out, 0, "ap_memory", "MemPortWE2", 1),
 	Port_Property("M_d1", 32, hls_out, 0, "ap_memory", "MemPortDIN2", 1),
+	Port_Property("errorFlag", 32, hls_out, 1, "ap_none", "out_data", 1),
 };
 const char* HLS_Design_Meta::dut_name = "bubble_sort";

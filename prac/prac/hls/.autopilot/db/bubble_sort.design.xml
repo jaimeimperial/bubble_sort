@@ -5,10 +5,10 @@
 <ModuleName>bubble_sort</ModuleName>
 <InstancesList>
 <Instance>
-<InstName>grp_bubble_sort_Pipeline_VITIS_LOOP_6_2_fu_59</InstName>
-<ModuleName>bubble_sort_Pipeline_VITIS_LOOP_6_2</ModuleName>
+<InstName>grp_bubble_sort_Pipeline_VITIS_LOOP_15_2_fu_73</InstName>
+<ModuleName>bubble_sort_Pipeline_VITIS_LOOP_15_2</ModuleName>
 <IsCompInst>true</IsCompInst>
-<ID>59</ID>
+<ID>73</ID>
 </Instance>
 </InstancesList>
 </TopModule>
@@ -16,9 +16,9 @@
 
 <ModuleInformation>
 <Module>
-<Name>bubble_sort_Pipeline_VITIS_LOOP_6_2</Name>
+<Name>bubble_sort_Pipeline_VITIS_LOOP_15_2</Name>
 <Loops>
-<VITIS_LOOP_6_2></VITIS_LOOP_6_2>
+<VITIS_LOOP_15_2></VITIS_LOOP_15_2>
 </Loops>
 <PerformanceEstimates>
 <SummaryOfTimingAnalysis>
@@ -37,8 +37,8 @@
 <PipelineType>loop auto-rewind (delay=0 clock cycles(s))</PipelineType>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
-<VITIS_LOOP_6_2>
-<Name>VITIS_LOOP_6_2</Name>
+<VITIS_LOOP_15_2>
+<Name>VITIS_LOOP_15_2</Name>
 <Slack>9.00</Slack>
 <TripCount>
 <range>
@@ -53,20 +53,20 @@
 <PipelineType>yes</PipelineType>
 <InstanceList>
 </InstanceList>
-</VITIS_LOOP_6_2>
+</VITIS_LOOP_15_2>
 </SummaryOfLoopLatency>
 <SummaryOfViolations>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>bubble_sort.cpp:6</SourceLocation>
+<SourceLocation>bubble_sort.cpp:15</SourceLocation>
 <SummaryOfLoopViolations>
-<VITIS_LOOP_6_2>
-<Name>VITIS_LOOP_6_2</Name>
+<VITIS_LOOP_15_2>
+<Name>VITIS_LOOP_15_2</Name>
 <IssueType>II Violation</IssueType>
 <ViolationType>Memory Dependency</ViolationType>
 <IterationDistance>1</IterationDistance>
-<SourceLocation>bubble_sort.cpp:6</SourceLocation>
-</VITIS_LOOP_6_2>
+<SourceLocation>bubble_sort.cpp:15</SourceLocation>
+</VITIS_LOOP_15_2>
 </SummaryOfLoopViolations>
 </SummaryOfViolations>
 </PerformanceEstimates>
@@ -92,7 +92,7 @@
 <InterfaceSummary>
 <RtlPorts>
 <name>ap_clk</name>
-<Object>bubble_sort_Pipeline_VITIS_LOOP_6_2</Object>
+<Object>bubble_sort_Pipeline_VITIS_LOOP_15_2</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -103,7 +103,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_rst</name>
-<Object>bubble_sort_Pipeline_VITIS_LOOP_6_2</Object>
+<Object>bubble_sort_Pipeline_VITIS_LOOP_15_2</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -114,7 +114,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_start</name>
-<Object>bubble_sort_Pipeline_VITIS_LOOP_6_2</Object>
+<Object>bubble_sort_Pipeline_VITIS_LOOP_15_2</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -125,7 +125,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_done</name>
-<Object>bubble_sort_Pipeline_VITIS_LOOP_6_2</Object>
+<Object>bubble_sort_Pipeline_VITIS_LOOP_15_2</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -136,7 +136,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_idle</name>
-<Object>bubble_sort_Pipeline_VITIS_LOOP_6_2</Object>
+<Object>bubble_sort_Pipeline_VITIS_LOOP_15_2</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -147,7 +147,7 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_ready</name>
-<Object>bubble_sort_Pipeline_VITIS_LOOP_6_2</Object>
+<Object>bubble_sort_Pipeline_VITIS_LOOP_15_2</Object>
 <Type>return value</Type>
 <Scope></Scope>
 <IOProtocol>ap_ctrl_hs</IOProtocol>
@@ -157,8 +157,8 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>zext_ln4_1</name>
-<Object>zext_ln4_1</Object>
+<name>zext_ln10_1</name>
+<Object>zext_ln10_1</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>
@@ -278,8 +278,8 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>zext_ln4</name>
-<Object>zext_ln4</Object>
+<name>zext_ln10</name>
+<Object>zext_ln10</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>
@@ -293,7 +293,7 @@
 <Module>
 <Name>bubble_sort</Name>
 <Loops>
-<VITIS_LOOP_4_1></VITIS_LOOP_4_1>
+<VITIS_LOOP_10_1></VITIS_LOOP_10_1>
 </Loops>
 <PerformanceEstimates>
 <SummaryOfTimingAnalysis>
@@ -312,8 +312,8 @@
 <PipelineType>no</PipelineType>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
-<VITIS_LOOP_4_1>
-<Name>VITIS_LOOP_4_1</Name>
+<VITIS_LOOP_10_1>
+<Name>VITIS_LOOP_10_1</Name>
 <Slack>9.00</Slack>
 <TripCount>19</TripCount>
 <Latency>152 ~ 836</Latency>
@@ -327,21 +327,21 @@
 <PipelineDepth>8 ~ 44</PipelineDepth>
 <PipelineType>no</PipelineType>
 <InstanceList>
-<Instance>grp_bubble_sort_Pipeline_VITIS_LOOP_6_2_fu_59</Instance>
+<Instance>grp_bubble_sort_Pipeline_VITIS_LOOP_15_2_fu_73</Instance>
 </InstanceList>
-</VITIS_LOOP_4_1>
+</VITIS_LOOP_10_1>
 </SummaryOfLoopLatency>
 <SummaryOfViolations>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>bubble_sort.cpp:4</SourceLocation>
+<SourceLocation>bubble_sort.cpp:10</SourceLocation>
 <SummaryOfLoopViolations>
-<VITIS_LOOP_4_1>
-<Name>VITIS_LOOP_4_1</Name>
+<VITIS_LOOP_10_1>
+<Name>VITIS_LOOP_10_1</Name>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>bubble_sort.cpp:6</SourceLocation>
-</VITIS_LOOP_4_1>
+<SourceLocation>bubble_sort.cpp:15</SourceLocation>
+</VITIS_LOOP_10_1>
 </SummaryOfLoopViolations>
 </SummaryOfViolations>
 </PerformanceEstimates>
@@ -533,6 +533,18 @@
 <Type>array</Type>
 <Scope></Scope>
 <IOProtocol>ap_memory</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>32</Bits>
+<Attribute>data</Attribute>
+<CType>int</CType>
+</RtlPorts>
+<RtlPorts>
+<name>errorFlag</name>
+<Object>errorFlag</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
 <Bits>32</Bits>

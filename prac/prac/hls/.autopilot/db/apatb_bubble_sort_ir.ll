@@ -7,21 +7,23 @@ target triple = "fpga64-xilinx-none"
 %"struct.ap_int_base<32, false>" = type { %"struct.ssdm_int<32, false>" }
 %"struct.ssdm_int<32, false>" = type { i32 }
 
-; Function Attrs: argmemonly noinline willreturn
-define void @apatb_bubble_sort_ir(%"struct.ap_uint<32>"* noalias nocapture nonnull "fpga.decayed.dim.hint"="20" %M) local_unnamed_addr #0 {
+; Function Attrs: inaccessiblemem_or_argmemonly noinline willreturn
+define void @apatb_bubble_sort_ir(%"struct.ap_uint<32>"* noalias nocapture nonnull "fpga.decayed.dim.hint"="20" %M, i32* noalias nocapture nonnull dereferenceable(4) %errorFlag) local_unnamed_addr #0 {
 entry:
   %M_copy = alloca [20 x i32], align 512
+  %errorFlag_copy = alloca i32, align 512
   %0 = bitcast %"struct.ap_uint<32>"* %M to [20 x %"struct.ap_uint<32>"]*
-  call fastcc void @copy_in([20 x %"struct.ap_uint<32>"]* nonnull %0, [20 x i32]* nonnull align 512 %M_copy)
-  call void @apatb_bubble_sort_hw([20 x i32]* %M_copy)
-  call void @copy_back([20 x %"struct.ap_uint<32>"]* %0, [20 x i32]* %M_copy)
+  call fastcc void @copy_in([20 x %"struct.ap_uint<32>"]* nonnull %0, [20 x i32]* nonnull align 512 %M_copy, i32* nonnull %errorFlag, i32* nonnull align 512 %errorFlag_copy)
+  call void @apatb_bubble_sort_hw([20 x i32]* %M_copy, i32* %errorFlag_copy)
+  call void @copy_back([20 x %"struct.ap_uint<32>"]* %0, [20 x i32]* %M_copy, i32* %errorFlag, i32* %errorFlag_copy)
   ret void
 }
 
 ; Function Attrs: argmemonly noinline norecurse willreturn
-define internal fastcc void @copy_in([20 x %"struct.ap_uint<32>"]* noalias readonly "unpacked"="0", [20 x i32]* noalias nocapture align 512 "unpacked"="1.0") unnamed_addr #1 {
+define internal fastcc void @copy_in([20 x %"struct.ap_uint<32>"]* noalias readonly "unpacked"="0", [20 x i32]* noalias nocapture align 512 "unpacked"="1.0", i32* noalias readonly "unpacked"="2", i32* noalias align 512 "unpacked"="3") unnamed_addr #1 {
 entry:
   call fastcc void @"onebyonecpy_hls.p0a20struct.ap_uint<32>"([20 x i32]* align 512 %1, [20 x %"struct.ap_uint<32>"]* %0)
+  call fastcc void @onebyonecpy_hls.p0i32(i32* align 512 %3, i32* %2)
   ret void
 }
 
@@ -70,9 +72,27 @@ ret:                                              ; preds = %copy.split, %entry
 }
 
 ; Function Attrs: argmemonly noinline norecurse willreturn
-define internal fastcc void @copy_out([20 x %"struct.ap_uint<32>"]* noalias "unpacked"="0", [20 x i32]* noalias nocapture readonly align 512 "unpacked"="1.0") unnamed_addr #4 {
+define internal fastcc void @onebyonecpy_hls.p0i32(i32* noalias align 512 %dst, i32* noalias readonly %src) unnamed_addr #2 {
+entry:
+  %0 = icmp eq i32* %dst, null
+  %1 = icmp eq i32* %src, null
+  %2 = or i1 %0, %1
+  br i1 %2, label %ret, label %copy
+
+copy:                                             ; preds = %entry
+  %3 = load i32, i32* %src, align 4
+  store i32 %3, i32* %dst, align 512
+  br label %ret
+
+ret:                                              ; preds = %copy, %entry
+  ret void
+}
+
+; Function Attrs: argmemonly noinline norecurse willreturn
+define internal fastcc void @copy_out([20 x %"struct.ap_uint<32>"]* noalias "unpacked"="0", [20 x i32]* noalias nocapture readonly align 512 "unpacked"="1.0", i32* noalias "unpacked"="2", i32* noalias readonly align 512 "unpacked"="3") unnamed_addr #4 {
 entry:
   call fastcc void @"onebyonecpy_hls.p0a20struct.ap_uint<32>.5"([20 x %"struct.ap_uint<32>"]* %0, [20 x i32]* align 512 %1)
+  call fastcc void @onebyonecpy_hls.p0i32(i32* %2, i32* align 512 %3)
   ret void
 }
 
@@ -120,28 +140,29 @@ ret:                                              ; preds = %copy.split, %entry
   ret void
 }
 
-declare void @apatb_bubble_sort_hw([20 x i32]*)
+declare void @apatb_bubble_sort_hw([20 x i32]*, i32*)
 
 ; Function Attrs: argmemonly noinline norecurse willreturn
-define internal fastcc void @copy_back([20 x %"struct.ap_uint<32>"]* noalias "unpacked"="0", [20 x i32]* noalias nocapture readonly align 512 "unpacked"="1.0") unnamed_addr #4 {
+define internal fastcc void @copy_back([20 x %"struct.ap_uint<32>"]* noalias "unpacked"="0", [20 x i32]* noalias nocapture readonly align 512 "unpacked"="1.0", i32* noalias "unpacked"="2", i32* noalias readonly align 512 "unpacked"="3") unnamed_addr #4 {
 entry:
   call fastcc void @"onebyonecpy_hls.p0a20struct.ap_uint<32>.5"([20 x %"struct.ap_uint<32>"]* %0, [20 x i32]* align 512 %1)
+  call fastcc void @onebyonecpy_hls.p0i32(i32* %2, i32* align 512 %3)
   ret void
 }
 
-define void @bubble_sort_hw_stub_wrapper([20 x i32]*) #5 {
+define void @bubble_sort_hw_stub_wrapper([20 x i32]*, i32*) #5 {
 entry:
-  %1 = alloca [20 x %"struct.ap_uint<32>"]
-  call void @copy_out([20 x %"struct.ap_uint<32>"]* %1, [20 x i32]* %0)
-  %2 = bitcast [20 x %"struct.ap_uint<32>"]* %1 to %"struct.ap_uint<32>"*
-  call void @bubble_sort_hw_stub(%"struct.ap_uint<32>"* %2)
-  call void @copy_in([20 x %"struct.ap_uint<32>"]* %1, [20 x i32]* %0)
+  %2 = alloca [20 x %"struct.ap_uint<32>"]
+  call void @copy_out([20 x %"struct.ap_uint<32>"]* %2, [20 x i32]* %0, i32* null, i32* %1)
+  %3 = bitcast [20 x %"struct.ap_uint<32>"]* %2 to %"struct.ap_uint<32>"*
+  call void @bubble_sort_hw_stub(%"struct.ap_uint<32>"* %3, i32* %1)
+  call void @copy_in([20 x %"struct.ap_uint<32>"]* %2, [20 x i32]* %0, i32* null, i32* %1)
   ret void
 }
 
-declare void @bubble_sort_hw_stub(%"struct.ap_uint<32>"* noalias nocapture nonnull)
+declare void @bubble_sort_hw_stub(%"struct.ap_uint<32>"* noalias nocapture nonnull, i32* noalias nocapture nonnull)
 
-attributes #0 = { argmemonly noinline willreturn "fpga.wrapper.func"="wrapper" }
+attributes #0 = { inaccessiblemem_or_argmemonly noinline willreturn "fpga.wrapper.func"="wrapper" }
 attributes #1 = { argmemonly noinline norecurse willreturn "fpga.wrapper.func"="copyin" }
 attributes #2 = { argmemonly noinline norecurse willreturn "fpga.wrapper.func"="onebyonecpy_hls" }
 attributes #3 = { argmemonly noinline norecurse willreturn "fpga.wrapper.func"="arraycpy_hls" }

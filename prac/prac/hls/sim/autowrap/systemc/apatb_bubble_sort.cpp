@@ -21,10 +21,13 @@ using namespace std;
 // wrapc file define:
 #define AUTOTB_TVIN_M "../tv/cdatafile/c.bubble_sort.autotvin_M.dat"
 #define AUTOTB_TVOUT_M "../tv/cdatafile/c.bubble_sort.autotvout_M.dat"
+#define AUTOTB_TVIN_errorFlag "../tv/cdatafile/c.bubble_sort.autotvin_errorFlag.dat"
+#define AUTOTB_TVOUT_errorFlag "../tv/cdatafile/c.bubble_sort.autotvout_errorFlag.dat"
 
 
 // tvout file define:
 #define AUTOTB_TVOUT_PC_M "../tv/rtldatafile/rtl.bubble_sort.autotvout_M.dat"
+#define AUTOTB_TVOUT_PC_errorFlag "../tv/rtldatafile/rtl.bubble_sort.autotvout_errorFlag.dat"
 
 
 namespace hls::sim
@@ -1155,15 +1158,27 @@ namespace hls::sim
 
 
 extern "C"
-void bubble_sort_hw_stub_wrapper(void*);
+void bubble_sort_hw_stub_wrapper(void*, void*);
 
 extern "C"
-void apatb_bubble_sort_hw(void* __xlx_apatb_param_M)
+void apatb_bubble_sort_hw(void* __xlx_apatb_param_M, void* __xlx_apatb_param_errorFlag)
 {
-#ifdef USE_BINARY_TV_FILE
-  static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port0 {
+  static hls::sim::Register port0 {
+    .name = "errorFlag",
+    .width = 32,
+#ifdef POST_CHECK
+    .reader = new hls::sim::Reader(AUTOTB_TVOUT_PC_errorFlag),
 #else
-  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port0 {
+    .owriter = new hls::sim::Writer(AUTOTB_TVOUT_errorFlag),
+    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_errorFlag),
+#endif
+  };
+  port0.param = __xlx_apatb_param_errorFlag;
+
+#ifdef USE_BINARY_TV_FILE
+  static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port1 {
+#else
+  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port1 {
 #endif
     .width = 32,
     .asize = 4,
@@ -1188,24 +1203,28 @@ void apatb_bubble_sort_hw(void* __xlx_apatb_param_M)
 #endif
 #endif
   };
-  port0.param = { __xlx_apatb_param_M };
-  port0.nbytes = { 80 };
-  port0.offset = {  };
-  port0.hasWrite = { true };
+  port1.param = { __xlx_apatb_param_M };
+  port1.nbytes = { 80 };
+  port1.offset = {  };
+  port1.hasWrite = { true };
 
   try {
 #ifdef POST_CHECK
     CodeState = ENTER_WRAPC_PC;
     check(port0);
+    check(port1);
 #else
     static hls::sim::RefTCL tcl("../tv/cdatafile/ref.tcl");
     CodeState = DUMP_INPUTS;
     dump(port0, port0.iwriter, tcl.AESL_transaction);
+    dump(port1, port1.iwriter, tcl.AESL_transaction);
     port0.doTCL(tcl);
+    port1.doTCL(tcl);
     CodeState = CALL_C_DUT;
-    bubble_sort_hw_stub_wrapper(__xlx_apatb_param_M);
+    bubble_sort_hw_stub_wrapper(__xlx_apatb_param_M, __xlx_apatb_param_errorFlag);
     CodeState = DUMP_OUTPUTS;
     dump(port0, port0.owriter, tcl.AESL_transaction);
+    dump(port1, port1.owriter, tcl.AESL_transaction);
     tcl.AESL_transaction++;
 #endif
   } catch (const hls::sim::SimException &e) {

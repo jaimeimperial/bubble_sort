@@ -3,8 +3,8 @@
 # SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Thu Feb 20 13:06:37 2025
-# Process ID: 3928
+# Start of session at: Mon Feb 24 14:13:26 2025
+# Process ID: 14036
 # Current directory: C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/sim/verilog
 # Command line: xsim.exe -mode tcl -source {xsim.dir/bubble_sort/xsim_script.tcl}
 # Log file: C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/sim/verilog/xsim.log
@@ -17,9 +17,9 @@
 # CPU Physical cores:6
 # CPU Logical cores :12
 # Host memory       :17084 MB
-# Swap memory       :10200 MB
-# Total Virtual     :27285 MB
-# Available Virtual :8978 MB
+# Swap memory       :11274 MB
+# Total Virtual     :28359 MB
+# Available Virtual :12507 MB
 #-----------------------------------------------------------
 source xsim.dir/bubble_sort/xsim_script.tcl
 # xsim {bubble_sort} -autoloadwcfg -tclbatch {bubble_sort.tcl}
@@ -35,6 +35,6 @@ source bubble_sort.tcl
 // RTL Simulation : 0 / 1 [0.00%] @ "125000"
 // RTL Simulation : 1 / 1 [100.00%] @ "4905000"
 ////////////////////////////////////////////////////////////////////////////////////
-$finish called at time : 4965 ns : File "C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/sim/verilog/bubble_sort.autotb.v" Line 235
+$finish called at time : 4965 ns : File "C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/sim/verilog/bubble_sort.autotb.v" Line 288
 ## quit
-INFO: [Common 17-206] Exiting xsim at Thu Feb 20 13:06:41 2025...
+INFO: [Common 17-206] Exiting xsim at Mon Feb 24 14:13:30 2025...

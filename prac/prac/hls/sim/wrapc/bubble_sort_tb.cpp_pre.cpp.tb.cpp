@@ -54988,8 +54988,11 @@ inline bool operator!=(
 
 typedef ap_uint<32> data_t;
 const int size = 20;
+const int errorFlag = 0;
 
-void bubble_sort(data_t M[size]);
+void bubble_sort(data_t M[size], int &errorFlag);
+
+bool is_sorted(data_t M[size]);
 # 5 "C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/bubble_sort_tb.cpp" 2
 
 typedef ap_uint<32> data_t;
@@ -55000,16 +55003,17 @@ typedef ap_uint<32> data_t;
 #ifdef __cplusplus
 extern "C"
 #endif
-void apatb_bubble_sort_sw(ap_uint<32> *);
+void apatb_bubble_sort_sw(ap_uint<32> *, int &);
 #endif
 # 9 "C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/bubble_sort_tb.cpp"
-void bubble_sort(data_t M[20]);
+void bubble_sort(data_t M[20], int &errorFlag);
 
 
 #ifndef HLS_FASTSIM
 # 11 "C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/bubble_sort_tb.cpp"
 int main() {
     ap_uint<32> test_data[20];
+    int errorFlag = 0;
 
 
     std::cout << "Unsorted Data: ";
@@ -55024,10 +55028,10 @@ int main() {
 #ifndef HLS_FASTSIM
 #define bubble_sort apatb_bubble_sort_sw
 #endif
-# 23 "C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/bubble_sort_tb.cpp"
-bubble_sort(test_data);
+# 24 "C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/bubble_sort_tb.cpp"
+bubble_sort(test_data, errorFlag);
 #undef bubble_sort
-# 23 "C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/bubble_sort_tb.cpp"
+# 24 "C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/bubble_sort_tb.cpp"
 
 
 
@@ -55037,16 +55041,7 @@ bubble_sort(test_data);
     }
     std::cout << std::endl;
 
-
-    bool is_sorted = true;
-    for (int i = 0; i < 20 - 1; i++) {
-        if (test_data[i] > test_data[i + 1]) {
-            is_sorted = false;
-            break;
-        }
-    }
-
-    if (is_sorted) {
+    if (!errorFlag) {
         std::cout << "Test Passed: Array is sorted correctly." << std::endl;
     } else {
         std::cout << "Test Failed: Array is not sorted correctly." << std::endl;
@@ -55055,5 +55050,5 @@ bubble_sort(test_data);
     return 0;
 }
 #endif
-# 48 "C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/bubble_sort_tb.cpp"
+# 40 "C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/bubble_sort_tb.cpp"
 

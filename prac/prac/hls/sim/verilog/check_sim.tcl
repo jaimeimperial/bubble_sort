@@ -104,6 +104,7 @@ proc check_tvout_file {} {
 	}
     set rtlfilelist {
          "rtl.bubble_sort.autotvout_M.dat"
+         "rtl.bubble_sort.autotvout_errorFlag.dat"
     }
     foreach rtlfile $rtlfilelist {
         if {[file isfile $rtlfile]} {

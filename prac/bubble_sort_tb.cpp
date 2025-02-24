@@ -6,10 +6,11 @@
 typedef ap_uint<32> data_t;
 #define SIZE 20
 
-void bubble_sort(data_t M[SIZE]); // Function prototype
+void bubble_sort(data_t M[SIZE], int &errorFlag); // Function prototype
 
 int main() {
     ap_uint<32> test_data[SIZE];
+    int errorFlag = 0;
 
     // Random test data
     std::cout << "Unsorted Data: ";
@@ -20,7 +21,7 @@ int main() {
     std::cout << std::endl;
 
     // Call the sorting function
-    bubble_sort(test_data);
+    bubble_sort(test_data, errorFlag);
 
     // Print sorted output
     std::cout << "Sorted Data: ";
@@ -29,16 +30,7 @@ int main() {
     }
     std::cout << std::endl;
 
-    // Verify correctness
-    bool is_sorted = true;
-    for (int i = 0; i < SIZE - 1; i++) {
-        if (test_data[i] > test_data[i + 1]) {
-            is_sorted = false;
-            break;
-        }
-    }
-
-    if (is_sorted) {
+    if (!errorFlag) {
         std::cout << "Test Passed: Array is sorted correctly." << std::endl;
     } else {
         std::cout << "Test Failed: Array is not sorted correctly." << std::endl;

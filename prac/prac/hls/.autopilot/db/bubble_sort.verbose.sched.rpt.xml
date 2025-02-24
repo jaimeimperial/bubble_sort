@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'bubble_sort'" level="0">
-<item name = "Date">Thu Feb 20 13:04:45 2025
+<item name = "Date">Mon Feb 24 14:10:48 2025
 </item>
 <item name = "Version">2024.1 (Build 5069499 on May 21 2024)</item>
 <item name = "Project">prac</item>
@@ -35,7 +35,7 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- VITIS_LOOP_4_1">152, 836, 8 ~ 44, -, -, 19, no</column>
+<column name="- VITIS_LOOP_10_1">152, 836, 8 ~ 44, -, -, 19, no</column>
 </table>
 </item>
 </section>

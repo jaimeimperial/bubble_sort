@@ -2,11 +2,14 @@
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="directive:1:9" msg_body="HLS pragma dump">
         <args ARG_PragmaContext="directive" ARG_PragmaFunction="bubble_sort" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=bubble_sort" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-437" msg_severity="INFO" msg_loc="bubble_sort.cpp:4:21" msg_body="Automatically disabling loop flattening for loop 'VITIS_LOOP_4_1'.">
-        <args LoopName="VITIS_LOOP_4_1"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="bubble_sort.cpp:4:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="bubble_sort" ARG_PragmaIsValid="1" ARG_PragmaOptions="ap_none port=errorFlag" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="bubble_sort.cpp:4:21" msg_body="loop_flatten 0 1 bubble_sort bubble_sort.cpp:4:21VITIS_LOOP_4_1 bubble_sort.cpp:4:21">
-        <args LoopLoc="bubble_sort.cpp:4:21" LoopLoc-DebugLoc="File bubble_sort.cpp Line 4 Column 21" LoopName="VITIS_LOOP_4_1" PragmaFunction="bubble_sort" PragmaIsAuto="1" PragmaOptions="0" PragmaSrcLoc="bubble_sort.cpp:4:21" PragmaSrcLoc-DebugLoc="File bubble_sort.cpp Line 4 Column 21" PragmaType="loop_flatten"/>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-437" msg_severity="INFO" msg_loc="bubble_sort.cpp:10:22" msg_body="Automatically disabling loop flattening for loop 'VITIS_LOOP_10_1'.">
+        <args LoopName="VITIS_LOOP_10_1"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="bubble_sort.cpp:10:22" msg_body="loop_flatten 0 1 bubble_sort bubble_sort.cpp:10:22VITIS_LOOP_10_1 bubble_sort.cpp:10:22">
+        <args LoopLoc="bubble_sort.cpp:10:22" LoopLoc-DebugLoc="File bubble_sort.cpp Line 10 Column 22" LoopName="VITIS_LOOP_10_1" PragmaFunction="bubble_sort" PragmaIsAuto="1" PragmaOptions="0" PragmaSrcLoc="bubble_sort.cpp:10:22" PragmaSrcLoc-DebugLoc="File bubble_sort.cpp Line 10 Column 22" PragmaType="loop_flatten"/>
     </msg>
 </xilinx:hls_fe_msgs>
 

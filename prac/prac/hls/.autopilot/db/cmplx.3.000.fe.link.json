@@ -1,10 +1,10 @@
 {
   "0": {
-    "basicblocks": 65,
-    "calls": "",
+    "basicblocks": 78,
+    "calls": "1",
     "file": "bubble_sort.cpp",
     "fileloc": 3,
-    "instructions": 181,
+    "instructions": 205,
     "loads": {
       "L": 2
     },
@@ -12,6 +12,21 @@
     "stores": {
       "T": 15
     },
-    "total_instructions": 341
+    "total_instructions": 415
+  },
+  "1": {
+    "basicblocks": 21,
+    "calls": "",
+    "file": "bubble_sort.cpp",
+    "fileloc": 54,
+    "instructions": 42,
+    "loads": {
+      "L": 1
+    },
+    "name": "is_sorted",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 50
   }
 }

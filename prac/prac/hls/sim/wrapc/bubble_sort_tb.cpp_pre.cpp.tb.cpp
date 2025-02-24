@@ -54989,10 +54989,12 @@ inline bool operator!=(
 typedef ap_uint<32> data_t;
 const int size = 20;
 const int errorFlag = 0;
+const int x = 0;
+const int y = 20;
 
 void bubble_sort(data_t M[size], int &errorFlag);
 
-bool is_sorted(data_t M[size]);
+bool is_sorted(data_t M[size], int x, int y, int size, int &errorFlag);
 # 5 "C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/bubble_sort_tb.cpp" 2
 
 typedef ap_uint<32> data_t;
@@ -55041,10 +55043,10 @@ bubble_sort(test_data, errorFlag);
     }
     std::cout << std::endl;
 
-    if (!errorFlag) {
-        std::cout << "Test Passed: Array is sorted correctly." << std::endl;
+    if (errorFlag == 0) {
+        std::cout << "Test Passed: Array is sorted correctly and assertions passed" << std::endl;
     } else {
-        std::cout << "Test Failed: Array is not sorted correctly." << std::endl;
+        std::cout << "Test Failed: Array is not sorted correctly or assertions failed. Error Code: "<< errorFlag << std::endl;
     }
 
     return 0;

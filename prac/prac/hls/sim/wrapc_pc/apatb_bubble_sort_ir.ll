@@ -91,19 +91,19 @@ ret:                                              ; preds = %copy, %entry
 ; Function Attrs: argmemonly noinline norecurse willreturn
 define internal fastcc void @copy_out([20 x %"struct.ap_uint<32>"]* noalias "unpacked"="0", [20 x i32]* noalias nocapture readonly align 512 "unpacked"="1.0", i32* noalias "unpacked"="2", i32* noalias readonly align 512 "unpacked"="3") unnamed_addr #4 {
 entry:
-  call fastcc void @"onebyonecpy_hls.p0a20struct.ap_uint<32>.5"([20 x %"struct.ap_uint<32>"]* %0, [20 x i32]* align 512 %1)
+  call fastcc void @"onebyonecpy_hls.p0a20struct.ap_uint<32>.6"([20 x %"struct.ap_uint<32>"]* %0, [20 x i32]* align 512 %1)
   call fastcc void @onebyonecpy_hls.p0i32(i32* %2, i32* align 512 %3)
   ret void
 }
 
 ; Function Attrs: argmemonly noinline norecurse willreturn
-define internal fastcc void @"onebyonecpy_hls.p0a20struct.ap_uint<32>.5"([20 x %"struct.ap_uint<32>"]* noalias "unpacked"="0" %dst, [20 x i32]* noalias nocapture readonly align 512 "unpacked"="1.0" %src) unnamed_addr #2 {
+define internal fastcc void @"onebyonecpy_hls.p0a20struct.ap_uint<32>.6"([20 x %"struct.ap_uint<32>"]* noalias "unpacked"="0" %dst, [20 x i32]* noalias nocapture readonly align 512 "unpacked"="1.0" %src) unnamed_addr #2 {
 entry:
   %0 = icmp eq [20 x %"struct.ap_uint<32>"]* %dst, null
   br i1 %0, label %ret, label %copy
 
 copy:                                             ; preds = %entry
-  call void @"arraycpy_hls.p0a20struct.ap_uint<32>.8"([20 x %"struct.ap_uint<32>"]* nonnull %dst, [20 x i32]* %src, i64 20)
+  call void @"arraycpy_hls.p0a20struct.ap_uint<32>.9"([20 x %"struct.ap_uint<32>"]* nonnull %dst, [20 x i32]* %src, i64 20)
   br label %ret
 
 ret:                                              ; preds = %copy, %entry
@@ -111,7 +111,7 @@ ret:                                              ; preds = %copy, %entry
 }
 
 ; Function Attrs: argmemonly noinline norecurse willreturn
-define void @"arraycpy_hls.p0a20struct.ap_uint<32>.8"([20 x %"struct.ap_uint<32>"]* "unpacked"="0" %dst, [20 x i32]* nocapture readonly "unpacked"="1.0" %src, i64 "unpacked"="2" %num) local_unnamed_addr #3 {
+define void @"arraycpy_hls.p0a20struct.ap_uint<32>.9"([20 x %"struct.ap_uint<32>"]* "unpacked"="0" %dst, [20 x i32]* nocapture readonly "unpacked"="1.0" %src, i64 "unpacked"="2" %num) local_unnamed_addr #3 {
 entry:
   %0 = icmp eq [20 x %"struct.ap_uint<32>"]* %dst, null
   br i1 %0, label %ret, label %copy
@@ -145,7 +145,7 @@ declare void @apatb_bubble_sort_hw([20 x i32]*, i32*)
 ; Function Attrs: argmemonly noinline norecurse willreturn
 define internal fastcc void @copy_back([20 x %"struct.ap_uint<32>"]* noalias "unpacked"="0", [20 x i32]* noalias nocapture readonly align 512 "unpacked"="1.0", i32* noalias "unpacked"="2", i32* noalias readonly align 512 "unpacked"="3") unnamed_addr #4 {
 entry:
-  call fastcc void @"onebyonecpy_hls.p0a20struct.ap_uint<32>.5"([20 x %"struct.ap_uint<32>"]* %0, [20 x i32]* align 512 %1)
+  call fastcc void @"onebyonecpy_hls.p0a20struct.ap_uint<32>.6"([20 x %"struct.ap_uint<32>"]* %0, [20 x i32]* align 512 %1)
   call fastcc void @onebyonecpy_hls.p0i32(i32* %2, i32* align 512 %3)
   ret void
 }

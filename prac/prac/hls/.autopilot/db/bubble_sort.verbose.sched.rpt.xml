@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'bubble_sort'" level="0">
-<item name = "Date">Mon Feb 24 14:10:48 2025
+<item name = "Date">Mon Feb 24 14:44:00 2025
 </item>
 <item name = "Version">2024.1 (Build 5069499 on May 21 2024)</item>
 <item name = "Project">prac</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00 ns, 7.196 ns, 1.00 ns</column>
+<column name="ap_clk">10.00 ns, 8.050 ns, 1.00 ns</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">153, 837, 1.530 us, 8.370 us, 154, 838, no</column>
+<column name="">1, 2196266, 10.000 ns, 21.963 ms, 2, 2196267, no</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,7 +35,10 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- VITIS_LOOP_10_1">152, 836, 8 ~ 44, -, -, 19, no</column>
+<column name="- VITIS_LOOP_9_1">0, 2196222, 3 ~ 115590, -, -, 0 ~ 19, no</column>
+<column name=" + VITIS_LOOP_14_2">0, 115587, 7 ~ 6083, -, -, 0 ~ 19, no</column>
+<column name="  ++ VITIS_LOOP_18_3">0, 3038, 8 ~ 82, -, -, 0 ~ 37, no</column>
+<column name="  ++ VITIS_LOOP_36_5">0, 3038, 8 ~ 82, -, -, 0 ~ 37, no</column>
 </table>
 </item>
 </section>

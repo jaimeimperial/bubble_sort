@@ -1,19 +1,56 @@
 {
     "1": {
-        "name": "bubble_sort_Pipeline_VITIS_LOOP_15_2",
+        "name": "bubble_sort_Pipeline_VITIS_LOOP_21_4",
         "file": "bubble_sort.cpp",
-        "fileloc": "14",
-        "instructions": "32",
-        "total_instructions": "32",
+        "fileloc": "21",
+        "instructions": "23",
+        "total_instructions": "23",
         "calls": "",
-        "basicblocks": "6",
+        "basicblocks": "5",
         "loads": {
-            "L": "2",
+            "L": "1",
             "T": "1"
         },
         "stores": {
-            "L": "4",
+            "L": "2"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "2": {
+        "name": "bubble_sort_Pipeline_VITIS_LOOP_39_6",
+        "file": "bubble_sort.cpp",
+        "fileloc": "39",
+        "instructions": "23",
+        "total_instructions": "23",
+        "calls": "",
+        "basicblocks": "5",
+        "loads": {
+            "L": "1",
+            "T": "1"
+        },
+        "stores": {
+            "L": "2"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "3": {
+        "name": "bubble_sort_Pipeline_VITIS_LOOP_61_1",
+        "file": "bubble_sort.cpp",
+        "fileloc": "49",
+        "instructions": "23",
+        "total_instructions": "23",
+        "calls": "",
+        "basicblocks": "5",
+        "loads": {
+            "L": "1",
             "T": "2"
+        },
+        "stores": {
+            "L": "2"
         },
         "loops": {
             "L": "1"
@@ -23,19 +60,21 @@
         "name": "bubble_sort",
         "file": "bubble_sort.cpp",
         "fileloc": "3",
-        "instructions": "27",
-        "total_instructions": "59",
-        "calls": "1",
-        "basicblocks": "4",
+        "instructions": "107",
+        "total_instructions": "176",
+        "calls": "1 2 3",
+        "basicblocks": "34",
         "loads": {
             "L": "2",
-            "T": "1"
+            "T": "6"
         },
         "stores": {
-            "L": "4"
+            "L": "4",
+            "T": "2"
         },
         "loops": {
-            "L": "1"
+            "L": "1",
+            "N": "3"
         }
     }
 }

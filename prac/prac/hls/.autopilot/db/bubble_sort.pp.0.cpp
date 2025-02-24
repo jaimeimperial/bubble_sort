@@ -5722,10 +5722,12 @@ inline __attribute__((nodebug)) bool operator!=(
 typedef ap_uint<32> data_t;
 const int size = 20;
 const int errorFlag = 0;
+const int x = 0;
+const int y = 20;
 
 __attribute__((sdx_kernel("bubble_sort", 0))) void bubble_sort(data_t M[size], int &errorFlag);
 
-bool is_sorted(data_t M[size]);
+bool is_sorted(data_t M[size], int x, int y, int size, int &errorFlag);
 # 2 "bubble_sort.cpp" 2
 
 __attribute__((sdx_kernel("bubble_sort", 0))) void bubble_sort(data_t M[size], int &errorFlag) {
@@ -5736,23 +5738,22 @@ __attribute__((sdx_kernel("bubble_sort", 0))) void bubble_sort(data_t M[size], i
 #pragma HLS INTERFACE ap_none port=errorFlag
 
 
- if (size < 1) { errorFlag = 1; }
+ if (size < 1) { errorFlag = 101; return; }
 
+    VITIS_LOOP_9_1: for (int i = 0; i < size - 1; i++) {
 
-    VITIS_LOOP_10_1: for (int i = 0; i < size - 1; i++) {
-
-        if ( i < 0 || i > size ) { errorFlag = 1; }
+        if ( i < 0 || i >= size - 1 ) { errorFlag = 102; return; }
 
         int A = M[i];
-        VITIS_LOOP_15_2: for (int j = i + 1; j < size; j++) {
+        VITIS_LOOP_14_2: for (int j = i + 1; j < size; j++) {
 
-            if (size > j) { errorFlag = 1; }
-            if (A != M[i]) { errorFlag = 1; }
-            VITIS_LOOP_19_3: for (int k = i; k < j; k++) {
-                if (M[i] > M[k]) { errorFlag = 1; }
-                if (A != M[i]) { errorFlag = 1; }
-                VITIS_LOOP_22_4: for (int k = i; k < j; k++){
-                    if (M[i] > M[k]) { errorFlag = 1; }
+            if (size < j) { errorFlag = 103; return; }
+            if (A != M[i]) { errorFlag = 104; return; }
+            VITIS_LOOP_18_3: for (int k = i; k < j; k++) {
+                if (M[i] > M[k]) { errorFlag = 105; return; }
+                if (A != M[i]) { errorFlag = 106; return; }
+                VITIS_LOOP_21_4: for (int k = i; k < j; k++){
+                    if (M[i] > M[k]) { errorFlag = 107; return; }
                 };
             };
 
@@ -5764,37 +5765,34 @@ __attribute__((sdx_kernel("bubble_sort", 0))) void bubble_sort(data_t M[size], i
             };
 
 
-            if (size > j) { errorFlag = 1; }
-            if (A != M[i]) { errorFlag = 1; }
-            VITIS_LOOP_37_5: for (int k = i; k < j; k++) {
-                if (M[i] > M[k]) { errorFlag = 1; }
-                if (A != M[i]) { errorFlag = 1; }
-                VITIS_LOOP_40_6: for (int k = i; k < j; k++){
-                    if (M[i] > M[k]) { errorFlag = 1; }
+            if (size < j) { errorFlag = 108; return; }
+            if (A != M[i]) { errorFlag = 109; return; }
+            VITIS_LOOP_36_5: for (int k = i; k < j; k++) {
+                if (M[i] > M[k]) { errorFlag = 110; return; }
+                if (A != M[i]) { errorFlag = 111; return; }
+                VITIS_LOOP_39_6: for (int k = i; k < j; k++){
+                    if (M[i] > M[k]) { errorFlag = 112; return; }
                 };
             };
         };
 
 
-        if ( i < 0 || i > size ) { errorFlag = 1; }
+        if ( i < 0 || i > size ) { errorFlag = 113; return; }
     };
 
-    if (&is_sorted) {
-        errorFlag = 0;
-    }
-    else {
-        errorFlag = 1;
+    if (is_sorted(M, 0, size, size, errorFlag) == false) {
+        errorFlag = 114;
     }
 };
 
-bool is_sorted(data_t M[size], int x, int y, int &errorFlag) {
+bool is_sorted(data_t *M, int x, int y, int size, int &errorFlag) {
 
-    if (x < 0 || y < x || size < y) { errorFlag = 1; }
-    if (errorFlag) { return false; }
+    if (x < 0 || y < x || size < y) { errorFlag = 201; }
+    if (errorFlag != 0) { return false; }
 
     if (y <= 1) { return true; }
     else {
-        VITIS_LOOP_65_1: for (int i = x; i < y - 1; i++) {
+        VITIS_LOOP_61_1: for (int i = x; i < y - 1; i++) {
             if (M[i] > M[i + 1]) {
                 return false;
             }

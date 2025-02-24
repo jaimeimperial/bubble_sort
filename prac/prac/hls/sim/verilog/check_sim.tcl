@@ -84,6 +84,7 @@ proc check_tvin_file {} {
 	}
     set rtlfilelist {
          "c.bubble_sort.autotvin_M.dat"
+         "c.bubble_sort.autotvin_errorFlag.dat"
     }
     foreach rtlfile $rtlfilelist {
         if {[file isfile $rtlfile]} {

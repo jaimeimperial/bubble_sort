@@ -1,4 +1,4 @@
-INFO-FLOW: Workspace C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls opened at Mon Feb 24 14:10:31 -0500 2025
+INFO-FLOW: Workspace C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls opened at Mon Feb 24 14:43:41 -0500 2025
 Execute     send_msg_by_id INFO @200-1505@%s%s default  vivado 
 INFO: [HLS 200-1505] Using default flow_target 'vivado'
 Execute   apply_ini C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/hls_config.cfg 
@@ -29,7 +29,7 @@ DBG:HLSDevice: Trying to load device library: C:/Xilinx\Vitis_HLS\2024.1\lib\win
 DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: C:/Xilinx/Vivado/2024.1/data/parts/arch.xml
 DBG:HLSDevice: init success
 INFO: [HLS 200-1611] Setting target device to 'xc7z010-clg225-1'
-Command       create_platform done; 2.185 sec.
+Command       create_platform done; 2.162 sec.
 Execute       source C:/Xilinx/Vitis_HLS/2024.1/common/technology/xilinx/common/xilinx.gen 
 Execute         source C:/Xilinx/Vitis_HLS/2024.1/common/technology/xilinx/interface/plb46.gen 
 Execute         source C:/Xilinx/Vitis_HLS/2024.1/common/technology/xilinx/interface/axi4.gen 
@@ -44,7 +44,7 @@ Execute         source C:/Xilinx/Vitis_HLS/2024.1/common/technology/xilinx/ip/xf
 Execute         source C:/Xilinx/Vitis_HLS/2024.1/common/technology/xilinx/DSP48/dsp48.gen 
 Execute       ap_part_info -name xc7z010-clg225-1 -data info 
 Execute       config_compile -quiet -complex-mul-dsp=0 
-Command     set_part done; 2.341 sec.
+Command     set_part done; 2.32 sec.
 Execute     send_msg_by_id INFO @200-1465@%s 'clock=100MHz' from C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/hls_config.cfg(7) 
 INFO: [HLS 200-1465] Applying ini 'clock=100MHz' from C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/hls_config.cfg(7)
 Execute     create_clock -period 100MHz 
@@ -58,7 +58,7 @@ INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1ns.
 Execute     send_msg_by_id INFO @200-1465@%s 'package.output.format=rtl' from C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/hls_config.cfg(5) 
 INFO: [HLS 200-1465] Applying ini 'package.output.format=rtl' from C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/hls_config.cfg(5)
 Execute     config_export -format=rtl 
-Command   apply_ini done; 2.384 sec.
+Command   apply_ini done; 2.364 sec.
 Execute   apply_ini C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/config.cmdline 
 Execute   csynth_design 
 Execute     AP::app_get_file_relativeroot [AP::app_get_root] {}
@@ -66,7 +66,7 @@ Execute     AP::app_get_file_relativeroot [AP::app_get_root] {}
 Execute     AP::app_get_file_relativeroot [AP::app_get_root] {}
 INFO-FLOW: Running SLX 'csynth' proc: ::SLX::run_csynth
 Execute     elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 -from_csynth_design=1 
-INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 3 seconds. CPU system time: 1 seconds. Elapsed time: 3.823 seconds; current allocated memory: 230.320 MB.
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 2 seconds. CPU system time: 2 seconds. Elapsed time: 3.849 seconds; current allocated memory: 230.434 MB.
 Execute       set_directive_top bubble_sort -name=bubble_sort 
 Execute       source C:/Xilinx/Vitis_HLS/2024.1/tps/tcl/tcllib1.11.1/yaml/huddle.tcl 
 Execute       source C:/Xilinx/Vitis_HLS/2024.1/tps/tcl/tcllib1.11.1/yaml/json2huddle.tcl 
@@ -77,28 +77,28 @@ Execute       ap_part_info -name xc7z010-clg225-1 -data info
 INFO-FLOW: Running: GCC PP 39
 INFO-FLOW: Source preprocessing
 INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2024.1/win64/tools/clang-3.9-csynth/bin/clang bubble_sort.cpp -foptimization-record-file=C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort.cpp.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info --sysroot C:/Xilinx/Vitis_HLS/2024.1/tps/mingw/8.3.0/win64.o/nt -fhls -fno-exceptions -insert-hls-directive=C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/all.directive.json -E -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -Wno-error=dump-hls-pragmas -hls-clock-period=10 -fno-threadsafe-statics -fno-use-cxa-atexit -std=gnu++14 -target fpga64-xilinx-mingw32 -fno-threadsafe-statics -fno-use-cxa-atexit -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I C:/Xilinx/Vitis_HLS/2024.1/common/technology/autopilot -I C:/Xilinx/Vitis_HLS/2024.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -I /usr/include/x86_64-linux-gnu -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort.pp.0.cpp {-hls-platform-db-name=C:/Xilinx\Vitis_HLS\2024.1\common/technology\xilinx/common/platform.db} -hls-platform-name=zynq_slow -device-resource-info=BRAM_120.000000_DSP_80.000000_FF_35200.000000_LUT_17600.000000_SLICE_4400.000000_URAM_0.000000 -device-name-info=xc7z010clg225-1 > C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort.cpp.clang.out.log 2> C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort.cpp.clang.err.log
-INFO-FLOW: Done: GCC PP 39 time: 0.5 seconds per iteration
+INFO-FLOW: Done: GCC PP 39 time: 0.4 seconds per iteration
 INFO-FLOW: Source syntax check for synthesis
 INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2024.1/win64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fsyntax-only -fhls -target fpga64-xilinx-linux-gnu C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort.pp.0.cpp {-hls-platform-db-name=C:/Xilinx\Vitis_HLS\2024.1\common/technology\xilinx/common/platform.db} -hls-platform-name=zynq_slow -device-resource-info=BRAM_120.000000_DSP_80.000000_FF_35200.000000_LUT_17600.000000_SLICE_4400.000000_URAM_0.000000 -device-name-info=xc7z010clg225-1 > C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/clang.out.log 2> C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/clang.err.log
 Execute       clang_tidy xilinx-systemc-detector -desc systemc-detector C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort.pp.0.cpp std=gnu++14 -target fpga  -directive=C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/.systemc_flag 
 INFO-FLOW: exec C:/Xilinx/Vitis_HLS/2024.1/win64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/.systemc_flag -fix-errors C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
-Command       clang_tidy done; 0.556 sec.
+Command       clang_tidy done; 0.445 sec.
 INFO-FLOW: Running: clang-tidy CDT preprocess 39
 Execute       clang_tidy xilinx-directive2pragma -desc directive2pragma C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort.pp.0.cpp std=gnu++14 -target fpga  -directive=C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/all.directive.json 
 INFO-FLOW: exec C:/Xilinx/Vitis_HLS/2024.1/win64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/all.directive.json -fix-errors C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
-Command       clang_tidy done; 0.74 sec.
+Command       clang_tidy done; 0.716 sec.
 INFO-FLOW: Done: clang-tidy CDT preprocess 39 time: 0.7 seconds per iteration
 INFO-FLOW: Calling xilinx-label-all-loops ... 
 INFO-FLOW: Calling xilinx-aggregate-on-hls-vector ... 
 Execute       clang_tidy -errorcheck -desc loop-label xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort.pp.0.cpp std=gnu++14 -target fpga  
 INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2024.1/win64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort.pp.0.cpp.clang-tidy.loop-label.diag.yml -header-filter=.* --checks=-*,xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute -fix-errors C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort.pp.0.cpp.clang-tidy.loop-label.out.log 2> C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort.pp.0.cpp.clang-tidy.loop-label.err.log
 Execute         source C:/Xilinx/Vitis_HLS/2024.1/tps/tcl/tcllib1.11.1/yaml/yaml.tcl 
-Command       clang_tidy done; 0.916 sec.
+Command       clang_tidy done; 0.91 sec.
 INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2024.1/win64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort.pp.0.cpp.xilinx-dataflow-lawyer.diag.yml C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 -fstrict-dataflow > C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort.pp.0.cpp.xilinx-dataflow-lawyer.out.log 2> C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort.pp.0.cpp.xilinx-dataflow-lawyer.err.log
 Execute       ap_part_info -name xc7z010-clg225-1 -data info 
 INFO-FLOW: compiling source code to llvm bc
 INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2024.1/win64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort.pp.0.cpp.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -fhls -flto -fno-exceptions -Wno-error=c++11-narrowing -hls-emit-hint-scope C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort.pp.0.cpp -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -Wno-error=dump-hls-pragmas -hls-clock-period=10 -fno-threadsafe-statics -fno-use-cxa-atexit -std=gnu++14 -target fpga64-xilinx-linux-gnu -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I C:/Xilinx/Vitis_HLS/2024.1/common/technology/autopilot -I C:/Xilinx/Vitis_HLS/2024.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort.bc {-hls-platform-db-name=C:/Xilinx\Vitis_HLS\2024.1\common/technology\xilinx/common/platform.db} -hls-platform-name=zynq_slow -device-resource-info=BRAM_120.000000_DSP_80.000000_FF_35200.000000_LUT_17600.000000_SLICE_4400.000000_URAM_0.000000 -device-name-info=xc7z010clg225-1 > C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort.pp.0.cpp.clang.out.log 2> C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort.pp.0.cpp.clang.err.log
-INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 5.071 seconds; current allocated memory: 233.418 MB.
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 4.678 seconds; current allocated memory: 233.234 MB.
 INFO-FLOW: Linking Debug ...
 INFO-FLOW: Linking dut bc code.
 Execute       run_link_or_opt -out C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/a.g.ld.0.bc -args  "C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort.g.bc"  
@@ -109,18 +109,17 @@ INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2024.1/win64/tools/clang-3.9-csyn
 INFO-FLOW: 
 INFO-FLOW: Running: gen_design_size_report post-opt
 INFO-FLOW: Done: gen_design_size_report post-opt time: 0 seconds per iteration
-Command       run_link_or_opt done; 0.139 sec.
 INFO-FLOW: Linking math bc lib
 Execute       run_link_or_opt -out C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/a.g.ld.2.m1.bc -args C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/a.g.ld.1.lower.bc -only-needed C:/Xilinx/Vitis_HLS/2024.1/win64/lib/libhlsm_39.bc C:/Xilinx/Vitis_HLS/2024.1/win64/lib/libhlsmc++_39.bc 
 INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2024.1/win64/tools/clang-3.9-csynth/bin/llvm-link C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/a.g.ld.1.lower.bc -only-needed C:/Xilinx/Vitis_HLS/2024.1/win64/lib/libhlsm_39.bc C:/Xilinx/Vitis_HLS/2024.1/win64/lib/libhlsmc++_39.bc -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/a.g.ld.2.m1.bc > C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/a.g.ld.2.m1.bc.llvm-link.out.log 2> C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/a.g.ld.2.m1.bc.llvm-link.err.log
 INFO-FLOW: 
-Command       run_link_or_opt done; 1.908 sec.
+Command       run_link_or_opt done; 1.687 sec.
 Execute       run_link_or_opt -opt -out C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/a.g.ld.3.fpc.bc -args C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=bubble_sort -reflow-float-conversion 
 INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2024.1/win64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/a.g.ld.3.fpc.bc.opt.diag.yml C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=bubble_sort -reflow-float-conversion -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/a.g.ld.3.fpc.bc > C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/a.g.ld.3.fpc.bc.opt.out.log 2> C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/a.g.ld.3.fpc.bc.opt.err.log
 INFO-FLOW: 
 INFO-FLOW: Running: gen_design_size_report post-opt
 INFO-FLOW: Done: gen_design_size_report post-opt time: 0 seconds per iteration
-Command       run_link_or_opt done; 0.775 sec.
+Command       run_link_or_opt done; 0.783 sec.
 Execute       run_link_or_opt -out C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/a.g.ld.4.m2.bc -args C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/a.g.ld.3.fpc.bc -only-needed C:/Xilinx/Vitis_HLS/2024.1/win64/lib/libfloatconversion_39.bc 
 INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2024.1/win64/tools/clang-3.9-csynth/bin/llvm-link C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/a.g.ld.3.fpc.bc -only-needed C:/Xilinx/Vitis_HLS/2024.1/win64/lib/libfloatconversion_39.bc -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/a.g.ld.4.m2.bc > C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/a.g.ld.4.m2.bc.llvm-link.out.log 2> C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/a.g.ld.4.m2.bc.llvm-link.err.log
 INFO-FLOW: 
@@ -134,73 +133,76 @@ INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
 Execute       is_m_axi_addr64 
 INFO-FLOW: Doing LTO.
 INFO-FLOW: run_clang (background poll_ms 5000) exec: C:/Xilinx/Vitis_HLS/2024.1/win64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/a.g.ld.0.bc.clang.reflow.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fhls -mllvm -hls-top-function-name=bubble_sort -mllvm -hls-db-dir -mllvm C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db -emit-llvm -c -target fpga64-xilinx-none -mllvm -xcl-xmlinfo=C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/kernel.internal.xml -mllvm -top-io-mapping-info=C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/top-io-fe.xml -mllvm -hls-bitcode-version=3.1 -mllvm -reflow-enable-slave-interface-default-setting=true -mllvm -gen-kernel-xml=false -mllvm -default-maxi-offset=slave -mllvm -maxi-latency=0 -mllvm -hls-maxi-data-size-in-bits=8 -mllvm -hls-maxi-max-data-size-in-bits=1024 -mllvm -hls-max-widen-size-in-bits=0 -mllvm -xcl-kernel-max-mem-ports=0 -mllvm -maxi-read-trans=16 -mllvm -maxi-write-trans=16 -mllvm -maxi-read-burst-len=16 -mllvm -maxi-write-burst-len=16 -mllvm -reflow-enable-saxi-64bits=0 -mllvm -reflow-basic-block-instr-threshold=200000 -mllvm -reflow-auto-pipeline-threshold=64 -mllvm -reflow-enable-maxi-auto-id-channel=0 -mllvm -enable-fp-thr=0 -mllvm -reflow-bdd-simplify-threshold=1048576 -mllvm -reflow-fanout-threshold=16 -mllvm -reflow-complete-threshold=4 -mllvm -reflow-array-promotion-threshold=64 -mllvm -assume-maxi-align=1 -mllvm -reflow-enable-dataflow-strict-mode-checking=1 -ftime-report -mllvm -time-passes -mllvm -reflow-auto-array-partition-mode=default -mllvm -reflow-enable-auto-small-array-partition=true -mllvm -reflow-enable-auto-array-partition-for-flatten=true -mllvm -reflow-enable-auto-parallel-performance-driven=true -mllvm -reflow-enable-partition-for-automation=true -mllvm -reflow-aggregate-bitwidth-threshold=4096 -mllvm -reflow-reserved-saxilite-registers=0 -mllvm -enable-reflow-auto-loop-pipeline -mllvm -reflow-max-unroll-threshold=409600 -mllvm -auto-unroll-tripcount-threshold=0 -mllvm -reflow-assume-no-address-wrap=true -mllvm -reflow-enable-occurrence-inference=true -mllvm -reflow-emit-hint-scope=true -mllvm -reflow-enable-codegen-with-if=true -mllvm -hls -mllvm -disable-inlined-alloca-merging=true -mllvm -default-clock-period=10 -mllvm -use_read_first_ram_in_loop=1 -mllvm -default-clock-uncertainty=1 -x ir C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/a.g.ld.5.gdce.bc -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/a.g.lto.bc {-hls-platform-db-name=C:/Xilinx\Vitis_HLS\2024.1\common/technology\xilinx/common/platform.db} -hls-platform-name=zynq_slow -device-resource-info=BRAM_120.000000_DSP_80.000000_FF_35200.000000_LUT_17600.000000_SLICE_4400.000000_URAM_0.000000 -device-name-info=xc7z010clg225-1 2> C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/a.g.ld.0.bc.clang.reflow.err.log bg_poll_cmd: ::AP::poll_clang_39_closed_source
-Execute       send_msg_by_id INFO @200-1995@%s%s%s 341 Compile/Link C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt 
-INFO: [HLS 200-1995] There were 341 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt
-Execute       send_msg_by_id INFO @200-1995@%s%s%s 168 Unroll/Inline (step 1) C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt 
-INFO: [HLS 200-1995] There were 168 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt
-Execute       send_msg_by_id INFO @200-1995@%s%s%s 106 Unroll/Inline (step 2) C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt 
-INFO: [HLS 200-1995] There were 106 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt
-Execute       send_msg_by_id INFO @200-1995@%s%s%s 85 Unroll/Inline (step 3) C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt 
-INFO: [HLS 200-1995] There were 85 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt
-Execute       send_msg_by_id INFO @200-1995@%s%s%s 73 Unroll/Inline (step 4) C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt 
-INFO: [HLS 200-1995] There were 73 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt
-Execute       send_msg_by_id INFO @200-1995@%s%s%s 26 Array/Struct (step 1) C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt 
-INFO: [HLS 200-1995] There were 26 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt
-Execute       send_msg_by_id INFO @200-1995@%s%s%s 26 Array/Struct (step 2) C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt 
-INFO: [HLS 200-1995] There were 26 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt
-Execute       send_msg_by_id INFO @200-1995@%s%s%s 26 Array/Struct (step 3) C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt 
-INFO: [HLS 200-1995] There were 26 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt
-Execute       send_msg_by_id INFO @200-1995@%s%s%s 26 Array/Struct (step 4) C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt 
-INFO: [HLS 200-1995] There were 26 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt
-Execute       send_msg_by_id INFO @200-1995@%s%s%s 26 Array/Struct (step 5) C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt 
-INFO: [HLS 200-1995] There were 26 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt
-Execute       send_msg_by_id INFO @200-1995@%s%s%s 26 Performance (step 1) C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt 
-INFO: [HLS 200-1995] There were 26 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details: C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt
-Execute       send_msg_by_id INFO @200-1995@%s%s%s 26 Performance (step 2) C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt 
-INFO: [HLS 200-1995] There were 26 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt
-Execute       send_msg_by_id INFO @200-1995@%s%s%s 26 Performance (step 3) C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt 
-INFO: [HLS 200-1995] There were 26 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt
-Execute       send_msg_by_id INFO @200-1995@%s%s%s 26 Performance (step 4) C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt 
-INFO: [HLS 200-1995] There were 26 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt
-Execute       send_msg_by_id INFO @200-1995@%s%s%s 29 HW Transforms (step 1) C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt 
-INFO: [HLS 200-1995] There were 29 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt
-Execute       send_msg_by_id INFO @200-1995@%s%s%s 38 HW Transforms (step 2) C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt 
-INFO: [HLS 200-1995] There were 38 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt
-Command       send_msg_by_id done; 0.438 sec.
-INFO: [HLS 214-376] automatically set the pipeline for Loop< VITIS_LOOP_15_2> at bubble_sort.cpp:15:26 
-INFO: [HLS 214-437] Automatically disabling loop flattening for loop 'VITIS_LOOP_10_1'. (bubble_sort.cpp:10:22)
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 415 Compile/Link C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 415 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 251 Unroll/Inline (step 1) C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 251 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 167 Unroll/Inline (step 2) C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 167 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 155 Unroll/Inline (step 3) C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 155 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 155 Unroll/Inline (step 4) C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 155 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 116 Array/Struct (step 1) C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 116 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 116 Array/Struct (step 2) C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 116 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 116 Array/Struct (step 3) C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 116 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 116 Array/Struct (step 4) C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 116 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 120 Array/Struct (step 5) C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 120 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 120 Performance (step 1) C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 120 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details: C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 120 Performance (step 2) C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 120 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 116 Performance (step 3) C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 116 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 116 Performance (step 4) C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 116 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 119 HW Transforms (step 1) C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 119 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 148 HW Transforms (step 2) C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 148 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth_design_size.rpt
+Command       send_msg_by_id done; 1.127 sec.
+INFO: [HLS 214-178] Inlining function 'is_sorted(ap_uint<32>*, int, int, int, int&)' into 'bubble_sort(ap_uint<32>*, int&)' (bubble_sort.cpp:3:0)
+INFO: [HLS 214-376] automatically set the pipeline for Loop< VITIS_LOOP_39_6> at bubble_sort.cpp:39:34 
+INFO: [HLS 214-376] automatically set the pipeline for Loop< VITIS_LOOP_21_4> at bubble_sort.cpp:21:34 
+INFO: [HLS 214-376] automatically set the pipeline for Loop< VITIS_LOOP_61_1> at bubble_sort.cpp:61:26 
 INFO-FLOW: DBG:PUTS: copy_raw_kernel_xml ap_link_39: kernel.xml not generated: C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/kernel.internal.xml
-INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 8.794 seconds; current allocated memory: 234.875 MB.
-INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.007 seconds; current allocated memory: 234.875 MB.
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 9.14 seconds; current allocated memory: 234.938 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.006 seconds; current allocated memory: 234.938 MB.
 Execute       opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
 Execute         cleanup_all_models 
 INFO: [HLS 200-10] Starting code transformations ...
 INFO-FLOW: Running Standard Transforms...
 Execute         transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -mem2reg -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top bubble_sort -deadargelim -mem2reg -instcombine -dce -presyn-prepare -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -promote-dbg-pointer -norm-name C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/a.g.0.bc -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/a.g.1.bc -f -phase std-opt 
-INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.072 seconds; current allocated memory: 239.137 MB.
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.063 seconds; current allocated memory: 239.539 MB.
 INFO: [HLS 200-10] Checking synthesizability ...
 INFO-FLOW: Checking Synthesizability 1/2..
 Execute         transform -hls -syn-check -check-rec-only -scalarrepl -norm-name -dce -mem2reg -instcombine -directive-preproc -mem2reg -dse -dce -dce -pag -array-normalize -instcombine -dce -array-seg-normalize -instcombine -dce -data-pack -instcombine -dce -inst-simplify -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -resolve-double-ptr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -directive-preproc -mem2reg -dse -dce -globaldce C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/a.g.1.bc -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/a.g.2.prechk.bc -f 
 INFO-FLOW: Checking Synthesizability 2/2..
 Execute         transform -syn-check C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/a.g.2.prechk.bc -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/a.g.2.bc -f -phase syn-check 
-INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.033 seconds; current allocated memory: 240.387 MB.
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.033 seconds; current allocated memory: 241.117 MB.
 INFO-FLOW: Compiler optimizing ...
 INFO-FLOW: Share syncheck's 1.bc for syn flow: copy C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/a.g.1.bc to C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/a.o.1.bc
 INFO-FLOW: Presyn 1...
 Execute         transform -hls -tmp C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db -interface-port-rename -directive-preproc -mem2reg -dse -dce -scalarrepl -norm-name -deadargelim -mem2reg -instcombine -dce -simplifycfg -dce -resource-proc -clib-intrinsic-prepare -dce -func-buffer -dce -pag -array-normalize -func-legal -instcombine -gvn -constprop -dce -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -ptrArgReplace -mem2reg -dce -array-seg-normalize -deadargelim -instcombine -dce -directive-preproc -mem2reg -dse -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -find-region -instcombine -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -loop-simplify -loop-bound -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -array-promote -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -duplicate-dataflow-processes -globaldce -instcombine -array-partition -prepare-dynamic-array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -dce -global-constprop -deadargelim -mem2reg -simplifycfg -dce -merge-param -deadargelim -globalopt -constprop -dce -array-promote -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -mem-intrinsic-preproc -dce -global-internalize -global-privatize -mem2reg -globaldce -lcssa -loop-simplify -phi-select-elim -promote-global-argument -ptrArgReplace -mem2reg -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -dce -norm-name -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -accesses-merge -function-inline -complex-op-raise -inst-simplify -globaldce -func-legal -dce -loop-bound -arraycheck -bitwidthmin2 -bitwidthmin2 -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -loop-stream -instcombine -simplifycfg -dce -globaldce -duplicate-dataflow-processes -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -duplicate-dataflow-processes -check-dataflow-syntax -legalize-stream-variable -globaldce -legalize-global -extract-subproc -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -hls-dead-arg-elim -deadargelim -directive-preproc -canonicalize-dataflow -dce -globaldce -scalar-preprocessing -scalar-propagation2 -scalar-stream -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -clean-array-spec -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -hls-display -norm-name C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/a.o.1.bc -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/a.o.1.tmp.bc -f 
 INFO-FLOW: Presyn 2...
 Execute         transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin2 -bitwidthmin2 -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -barrier -norm-name C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/a.o.1.tmp.bc -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/a.o.2.bc -f -phase presyn 
-INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.063 seconds; current allocated memory: 261.910 MB.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.109 seconds; current allocated memory: 263.227 MB.
 Execute         transform -hls -auto-function-inline -globaldce -ptrArgReplace -mem2reg -dce -reset-lda -loop-simplify -indvars -aggr-aa -licm -loop-dep -loop-bound -licm -loop-simplify -loop-sink-hoist -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg-lite -loop-simplify -array-burst -promote-global-argument -dce -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -inst-simplify -cfgopt -simplifycfg-lite -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -deadargelim -dce -canonicalize-dataflow -dce -deadargelim -globaldce -mem2reg -bram-byte-enable -inst-simplify -inst-rectify -instcombine -adce -deadargelim -load-elim -read-loop-dep -loop-simplify -loop-extract-inner -directive-preproc -bitwidthmin2 -bitwidthmin2 -read-loop-dep -interface-preproc -directive-preproc -interface-gen -bram-byte-enable-spec-prop -mul2addshift -deadargelim -inst-simplify -dce -mem2reg -instcombine -gvn -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg-lite -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -complex-op-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -float-op-raise -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg-lite -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg-lite -loop-simplify -mergereturn -inst-simplify -inst-rectify -globaldce -dce -load-elim -bitop-lower -float-op-raise -fma-raise -loop-rewind -pointer-simplify -dce -cfgopt -dce -loop-bound -loop-dep -read-loop-dep -dce -dyn-mem-reuse -dce -recurrence-min -dce -share-scalar-alloca -deadargelim -dce -check-stream -norm-name -legalize -inst-clarity -bitwidth -dce -validate-dataflow -dump-loop-dep-to-ir -check-all-ssdm -dump-complexity-metric C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/a.o.2.bc -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
+WARNING: [HLS 200-960] Cannot flatten loop 'VITIS_LOOP_18_3' (bubble_sort.cpp:18:30) in function 'bubble_sort' the outer loop is not a perfect loop because there is nontrivial logic before entering the inner loop.
+WARNING: [HLS 200-960] Cannot flatten loop 'VITIS_LOOP_36_5' (bubble_sort.cpp:36:30) in function 'bubble_sort' the outer loop is not a perfect loop because there is nontrivial logic before entering the inner loop.
 Execute           auto_get_db
 INFO-FLOW: Building ssdm...
 Execute         transform -hls -cdfg-build C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/a.o.3.bc -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
-INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.063 seconds; current allocated memory: 264.477 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.122 seconds; current allocated memory: 284.094 MB.
 INFO-FLOW: Finish building internal data model.
-Command       opt_and_import_c done; 0.236 sec.
-Command     elaborate done; 14.139 sec.
+Command       opt_and_import_c done; 0.335 sec.
+Command     elaborate done; 14.188 sec.
 Execute     ap_eval exec zip -j C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/dut.hcp $dbDir/a.o.3.bc $dbDir/${topname}.rtl_wrap.cfg.tcl $dbDir/apatb_${topname}.cpp $dbDir/apatb_${topname}_util.cpp $dbDir/apatb_${topname}_ir.ll $dbDir/mapper_${topname}.cpp $dbDir/top-io-fe.xml $dbDir/kernel.internal.xml $workdir/../hls.app 
-Command     ap_eval done; 0.142 sec.
 Execute     autosyn -from_csynth_design=1 
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO-FLOW: Synthesizing C/C++ design ...
@@ -208,56 +210,134 @@ INFO: [HLS 200-10] Synthesizing 'bubble_sort' ...
 Execute       ap_set_top_model bubble_sort 
 Execute       get_model_list bubble_sort -filter all-wo-channel -topdown 
 Execute       preproc_iomode -model bubble_sort 
-Execute       preproc_iomode -model bubble_sort_Pipeline_VITIS_LOOP_15_2 
+Execute       preproc_iomode -model bubble_sort_Pipeline_VITIS_LOOP_61_1 
+Execute       preproc_iomode -model bubble_sort_Pipeline_VITIS_LOOP_39_6 
+Execute       preproc_iomode -model bubble_sort_Pipeline_VITIS_LOOP_21_4 
 Execute       get_model_list bubble_sort -filter all-wo-channel 
-INFO-FLOW: Model list for configure: bubble_sort_Pipeline_VITIS_LOOP_15_2 bubble_sort
-INFO-FLOW: Configuring Module : bubble_sort_Pipeline_VITIS_LOOP_15_2 ...
-Execute       set_default_model bubble_sort_Pipeline_VITIS_LOOP_15_2 
-Execute       apply_spec_resource_limit bubble_sort_Pipeline_VITIS_LOOP_15_2 
+INFO-FLOW: Model list for configure: bubble_sort_Pipeline_VITIS_LOOP_21_4 bubble_sort_Pipeline_VITIS_LOOP_39_6 bubble_sort_Pipeline_VITIS_LOOP_61_1 bubble_sort
+INFO-FLOW: Configuring Module : bubble_sort_Pipeline_VITIS_LOOP_21_4 ...
+Execute       set_default_model bubble_sort_Pipeline_VITIS_LOOP_21_4 
+Execute       apply_spec_resource_limit bubble_sort_Pipeline_VITIS_LOOP_21_4 
+INFO-FLOW: Configuring Module : bubble_sort_Pipeline_VITIS_LOOP_39_6 ...
+Execute       set_default_model bubble_sort_Pipeline_VITIS_LOOP_39_6 
+Execute       apply_spec_resource_limit bubble_sort_Pipeline_VITIS_LOOP_39_6 
+INFO-FLOW: Configuring Module : bubble_sort_Pipeline_VITIS_LOOP_61_1 ...
+Execute       set_default_model bubble_sort_Pipeline_VITIS_LOOP_61_1 
+Execute       apply_spec_resource_limit bubble_sort_Pipeline_VITIS_LOOP_61_1 
 INFO-FLOW: Configuring Module : bubble_sort ...
 Execute       set_default_model bubble_sort 
 Execute       apply_spec_resource_limit bubble_sort 
-INFO-FLOW: Model list for preprocess: bubble_sort_Pipeline_VITIS_LOOP_15_2 bubble_sort
-INFO-FLOW: Preprocessing Module: bubble_sort_Pipeline_VITIS_LOOP_15_2 ...
-Execute       set_default_model bubble_sort_Pipeline_VITIS_LOOP_15_2 
-Execute       cdfg_preprocess -model bubble_sort_Pipeline_VITIS_LOOP_15_2 
-Execute       rtl_gen_preprocess bubble_sort_Pipeline_VITIS_LOOP_15_2 
+INFO-FLOW: Model list for preprocess: bubble_sort_Pipeline_VITIS_LOOP_21_4 bubble_sort_Pipeline_VITIS_LOOP_39_6 bubble_sort_Pipeline_VITIS_LOOP_61_1 bubble_sort
+INFO-FLOW: Preprocessing Module: bubble_sort_Pipeline_VITIS_LOOP_21_4 ...
+Execute       set_default_model bubble_sort_Pipeline_VITIS_LOOP_21_4 
+Execute       cdfg_preprocess -model bubble_sort_Pipeline_VITIS_LOOP_21_4 
+Execute       rtl_gen_preprocess bubble_sort_Pipeline_VITIS_LOOP_21_4 
+INFO-FLOW: Preprocessing Module: bubble_sort_Pipeline_VITIS_LOOP_39_6 ...
+Execute       set_default_model bubble_sort_Pipeline_VITIS_LOOP_39_6 
+Execute       cdfg_preprocess -model bubble_sort_Pipeline_VITIS_LOOP_39_6 
+Execute       rtl_gen_preprocess bubble_sort_Pipeline_VITIS_LOOP_39_6 
+INFO-FLOW: Preprocessing Module: bubble_sort_Pipeline_VITIS_LOOP_61_1 ...
+Execute       set_default_model bubble_sort_Pipeline_VITIS_LOOP_61_1 
+Execute       cdfg_preprocess -model bubble_sort_Pipeline_VITIS_LOOP_61_1 
+Execute       rtl_gen_preprocess bubble_sort_Pipeline_VITIS_LOOP_61_1 
 INFO-FLOW: Preprocessing Module: bubble_sort ...
 Execute       set_default_model bubble_sort 
 Execute       cdfg_preprocess -model bubble_sort 
 Execute       rtl_gen_preprocess bubble_sort 
-INFO-FLOW: Model list for synthesis: bubble_sort_Pipeline_VITIS_LOOP_15_2 bubble_sort
+INFO-FLOW: Model list for synthesis: bubble_sort_Pipeline_VITIS_LOOP_21_4 bubble_sort_Pipeline_VITIS_LOOP_39_6 bubble_sort_Pipeline_VITIS_LOOP_61_1 bubble_sort
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'bubble_sort_Pipeline_VITIS_LOOP_15_2' 
+INFO: [HLS 200-42] -- Implementing module 'bubble_sort_Pipeline_VITIS_LOOP_21_4' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
-Execute       set_default_model bubble_sort_Pipeline_VITIS_LOOP_15_2 
-Execute       schedule -model bubble_sort_Pipeline_VITIS_LOOP_15_2 
+Execute       set_default_model bubble_sort_Pipeline_VITIS_LOOP_21_4 
+Execute       schedule -model bubble_sort_Pipeline_VITIS_LOOP_21_4 
 INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_15_2'.
-WARNING: [HLS 200-880] The II Violation in module 'bubble_sort_Pipeline_VITIS_LOOP_15_2' (loop 'VITIS_LOOP_15_2'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'store' operation 0 bit ('M_addr_write_ln29', bubble_sort.cpp:29) of variable 'B', bubble_sort.cpp:27 on array 'M' and 'load' operation 32 bit ('B', bubble_sort.cpp:27) on array 'M'.
-INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 2, Depth = 3, loop 'VITIS_LOOP_15_2'
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_21_4'.
+WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation 1 bit ('icmp_ln22', bubble_sort.cpp:22)) in the first pipeline iteration (II = 1 cycles).
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 2, Depth = 2, loop 'VITIS_LOOP_21_4'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.281 seconds; current allocated memory: 268.492 MB.
-Execute       syn_report -verbosereport -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort_Pipeline_VITIS_LOOP_15_2.verbose.sched.rpt 
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.204 seconds; current allocated memory: 288.059 MB.
+Execute       syn_report -verbosereport -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort_Pipeline_VITIS_LOOP_21_4.verbose.sched.rpt 
 Execute         list_part -family xc7z010-clg225-1 
 Execute           ap_family_info -name xc7z010-clg225-1 -data names 
 Execute           ap_part_info -quiet -name xc7z010-clg225-1 -data family 
-Execute       db_write -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort_Pipeline_VITIS_LOOP_15_2.sched.adb -f 
-INFO-FLOW: Finish scheduling bubble_sort_Pipeline_VITIS_LOOP_15_2.
-Execute       set_default_model bubble_sort_Pipeline_VITIS_LOOP_15_2 
-Execute       bind -model bubble_sort_Pipeline_VITIS_LOOP_15_2 
+Execute       db_write -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort_Pipeline_VITIS_LOOP_21_4.sched.adb -f 
+INFO-FLOW: Finish scheduling bubble_sort_Pipeline_VITIS_LOOP_21_4.
+Execute       set_default_model bubble_sort_Pipeline_VITIS_LOOP_21_4 
+Execute       bind -model bubble_sort_Pipeline_VITIS_LOOP_21_4 
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.091 seconds; current allocated memory: 269.656 MB.
-Execute       syn_report -verbosereport -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort_Pipeline_VITIS_LOOP_15_2.verbose.bind.rpt 
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.079 seconds; current allocated memory: 289.219 MB.
+Execute       syn_report -verbosereport -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort_Pipeline_VITIS_LOOP_21_4.verbose.bind.rpt 
 Execute         list_part -family xc7z010-clg225-1 
 Execute           ap_family_info -name xc7z010-clg225-1 -data names 
 Execute           ap_part_info -quiet -name xc7z010-clg225-1 -data family 
-Execute       db_write -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort_Pipeline_VITIS_LOOP_15_2.bind.adb -f 
-INFO-FLOW: Finish binding bubble_sort_Pipeline_VITIS_LOOP_15_2.
+Execute       db_write -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort_Pipeline_VITIS_LOOP_21_4.bind.adb -f 
+INFO-FLOW: Finish binding bubble_sort_Pipeline_VITIS_LOOP_21_4.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'bubble_sort_Pipeline_VITIS_LOOP_39_6' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model bubble_sort_Pipeline_VITIS_LOOP_39_6 
+Execute       schedule -model bubble_sort_Pipeline_VITIS_LOOP_39_6 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_39_6'.
+WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation 1 bit ('icmp_ln40', bubble_sort.cpp:40)) in the first pipeline iteration (II = 1 cycles).
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 2, Depth = 2, loop 'VITIS_LOOP_39_6'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.315 seconds; current allocated memory: 289.285 MB.
+Execute       syn_report -verbosereport -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort_Pipeline_VITIS_LOOP_39_6.verbose.sched.rpt 
+Execute         list_part -family xc7z010-clg225-1 
+Execute           ap_family_info -name xc7z010-clg225-1 -data names 
+Execute           ap_part_info -quiet -name xc7z010-clg225-1 -data family 
+Execute       db_write -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort_Pipeline_VITIS_LOOP_39_6.sched.adb -f 
+INFO-FLOW: Finish scheduling bubble_sort_Pipeline_VITIS_LOOP_39_6.
+Execute       set_default_model bubble_sort_Pipeline_VITIS_LOOP_39_6 
+Execute       bind -model bubble_sort_Pipeline_VITIS_LOOP_39_6 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.076 seconds; current allocated memory: 289.285 MB.
+Execute       syn_report -verbosereport -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort_Pipeline_VITIS_LOOP_39_6.verbose.bind.rpt 
+Execute         list_part -family xc7z010-clg225-1 
+Execute           ap_family_info -name xc7z010-clg225-1 -data names 
+Execute           ap_part_info -quiet -name xc7z010-clg225-1 -data family 
+Execute       db_write -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort_Pipeline_VITIS_LOOP_39_6.bind.adb -f 
+INFO-FLOW: Finish binding bubble_sort_Pipeline_VITIS_LOOP_39_6.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'bubble_sort_Pipeline_VITIS_LOOP_61_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model bubble_sort_Pipeline_VITIS_LOOP_61_1 
+Execute       schedule -model bubble_sort_Pipeline_VITIS_LOOP_61_1 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_61_1'.
+WARNING: [HLS 200-878] Unable to schedule the loop exit test ('icmp' operation 1 bit ('icmp_ln62', bubble_sort.cpp:62->bubble_sort.cpp:49)) in the first pipeline iteration (II = 1 cycles).
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 2, Depth = 2, loop 'VITIS_LOOP_61_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.108 seconds; current allocated memory: 289.309 MB.
+Execute       syn_report -verbosereport -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort_Pipeline_VITIS_LOOP_61_1.verbose.sched.rpt 
+Execute         list_part -family xc7z010-clg225-1 
+Execute           ap_family_info -name xc7z010-clg225-1 -data names 
+Execute           ap_part_info -quiet -name xc7z010-clg225-1 -data family 
+Execute       db_write -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort_Pipeline_VITIS_LOOP_61_1.sched.adb -f 
+INFO-FLOW: Finish scheduling bubble_sort_Pipeline_VITIS_LOOP_61_1.
+Execute       set_default_model bubble_sort_Pipeline_VITIS_LOOP_61_1 
+Execute       bind -model bubble_sort_Pipeline_VITIS_LOOP_61_1 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.077 seconds; current allocated memory: 289.312 MB.
+Execute       syn_report -verbosereport -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort_Pipeline_VITIS_LOOP_61_1.verbose.bind.rpt 
+Execute         list_part -family xc7z010-clg225-1 
+Execute           ap_family_info -name xc7z010-clg225-1 -data names 
+Execute           ap_part_info -quiet -name xc7z010-clg225-1 -data family 
+Execute       db_write -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort_Pipeline_VITIS_LOOP_61_1.bind.adb -f 
+INFO-FLOW: Finish binding bubble_sort_Pipeline_VITIS_LOOP_61_1.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'bubble_sort' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -265,7 +345,7 @@ Execute       set_default_model bubble_sort
 Execute       schedule -model bubble_sort 
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.083 seconds; current allocated memory: 269.738 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.103 seconds; current allocated memory: 289.488 MB.
 Execute       syn_report -verbosereport -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort.verbose.sched.rpt 
 Execute         list_part -family xc7z010-clg225-1 
 Execute           ap_family_info -name xc7z010-clg225-1 -data names 
@@ -279,7 +359,7 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.074 seconds; current allocated memory: 269.789 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.091 seconds; current allocated memory: 289.543 MB.
 Execute       syn_report -verbosereport -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort.verbose.bind.rpt 
 Execute         list_part -family xc7z010-clg225-1 
 Execute           ap_family_info -name xc7z010-clg225-1 -data names 
@@ -288,34 +368,83 @@ Execute       db_write -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/p
 INFO-FLOW: Finish binding bubble_sort.
 Execute       get_model_list bubble_sort -filter all-wo-channel 
 INFO-FLOW: Preprocessing for RTLGen ...
-Execute       rtl_gen_preprocess bubble_sort_Pipeline_VITIS_LOOP_15_2 
+Execute       rtl_gen_preprocess bubble_sort_Pipeline_VITIS_LOOP_21_4 
+Execute       rtl_gen_preprocess bubble_sort_Pipeline_VITIS_LOOP_39_6 
+Execute       rtl_gen_preprocess bubble_sort_Pipeline_VITIS_LOOP_61_1 
 Execute       rtl_gen_preprocess bubble_sort 
-INFO-FLOW: Model list for RTL generation: bubble_sort_Pipeline_VITIS_LOOP_15_2 bubble_sort
+INFO-FLOW: Model list for RTL generation: bubble_sort_Pipeline_VITIS_LOOP_21_4 bubble_sort_Pipeline_VITIS_LOOP_39_6 bubble_sort_Pipeline_VITIS_LOOP_61_1 bubble_sort
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'bubble_sort_Pipeline_VITIS_LOOP_15_2' 
+INFO: [HLS 200-10] -- Generating RTL for module 'bubble_sort_Pipeline_VITIS_LOOP_21_4' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
-Execute       create_rtl_model bubble_sort_Pipeline_VITIS_LOOP_15_2 -top_prefix bubble_sort_ -sub_prefix bubble_sort_ -mg_file C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort_Pipeline_VITIS_LOOP_15_2.compgen.tcl 
-INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'bubble_sort_Pipeline_VITIS_LOOP_15_2' pipeline 'VITIS_LOOP_15_2' pipeline type 'loop pipeline'
-INFO: [RTGEN 206-100] Finished creating RTL model for 'bubble_sort_Pipeline_VITIS_LOOP_15_2'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.162 seconds; current allocated memory: 271.352 MB.
+Execute       create_rtl_model bubble_sort_Pipeline_VITIS_LOOP_21_4 -top_prefix bubble_sort_ -sub_prefix bubble_sort_ -mg_file C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort_Pipeline_VITIS_LOOP_21_4.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'bubble_sort_Pipeline_VITIS_LOOP_21_4'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.094 seconds; current allocated memory: 291.078 MB.
 Execute       source C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort.rtl_wrap.cfg.tcl 
-Execute       gen_rtl bubble_sort_Pipeline_VITIS_LOOP_15_2 -style xilinx -f -lang vhdl -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/vhdl/bubble_sort_bubble_sort_Pipeline_VITIS_LOOP_15_2 
-Execute       gen_rtl bubble_sort_Pipeline_VITIS_LOOP_15_2 -style xilinx -f -lang vlog -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/verilog/bubble_sort_bubble_sort_Pipeline_VITIS_LOOP_15_2 
-Execute       syn_report -csynth -model bubble_sort_Pipeline_VITIS_LOOP_15_2 -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/bubble_sort_Pipeline_VITIS_LOOP_15_2_csynth.rpt 
+Execute       gen_rtl bubble_sort_Pipeline_VITIS_LOOP_21_4 -style xilinx -f -lang vhdl -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/vhdl/bubble_sort_bubble_sort_Pipeline_VITIS_LOOP_21_4 
+Execute       gen_rtl bubble_sort_Pipeline_VITIS_LOOP_21_4 -style xilinx -f -lang vlog -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/verilog/bubble_sort_bubble_sort_Pipeline_VITIS_LOOP_21_4 
+Execute       syn_report -csynth -model bubble_sort_Pipeline_VITIS_LOOP_21_4 -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/bubble_sort_Pipeline_VITIS_LOOP_21_4_csynth.rpt 
 Execute         list_part -family xc7z010-clg225-1 
 Execute           ap_family_info -name xc7z010-clg225-1 -data names 
 Execute           ap_part_info -quiet -name xc7z010-clg225-1 -data family 
-Execute       syn_report -rtlxml -model bubble_sort_Pipeline_VITIS_LOOP_15_2 -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/bubble_sort_Pipeline_VITIS_LOOP_15_2_csynth.xml 
+Execute       syn_report -rtlxml -model bubble_sort_Pipeline_VITIS_LOOP_21_4 -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/bubble_sort_Pipeline_VITIS_LOOP_21_4_csynth.xml 
 Execute         list_part -family xc7z010-clg225-1 
 Execute           ap_family_info -name xc7z010-clg225-1 -data names 
 Execute           ap_part_info -quiet -name xc7z010-clg225-1 -data family 
-Execute       syn_report -verbosereport -model bubble_sort_Pipeline_VITIS_LOOP_15_2 -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort_Pipeline_VITIS_LOOP_15_2.verbose.rpt 
+Execute       syn_report -verbosereport -model bubble_sort_Pipeline_VITIS_LOOP_21_4 -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort_Pipeline_VITIS_LOOP_21_4.verbose.rpt 
 Execute         list_part -family xc7z010-clg225-1 
 Execute           ap_family_info -name xc7z010-clg225-1 -data names 
 Execute           ap_part_info -quiet -name xc7z010-clg225-1 -data family 
-Execute       db_write -model bubble_sort_Pipeline_VITIS_LOOP_15_2 -f -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort_Pipeline_VITIS_LOOP_15_2.adb 
-Execute       db_write -model bubble_sort_Pipeline_VITIS_LOOP_15_2 -bindview -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/design.bindinfo.xml 
-Execute       gen_tb_info bubble_sort_Pipeline_VITIS_LOOP_15_2 -p C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort_Pipeline_VITIS_LOOP_15_2 
+Execute       db_write -model bubble_sort_Pipeline_VITIS_LOOP_21_4 -f -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort_Pipeline_VITIS_LOOP_21_4.adb 
+Execute       db_write -model bubble_sort_Pipeline_VITIS_LOOP_21_4 -bindview -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info bubble_sort_Pipeline_VITIS_LOOP_21_4 -p C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort_Pipeline_VITIS_LOOP_21_4 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'bubble_sort_Pipeline_VITIS_LOOP_39_6' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model bubble_sort_Pipeline_VITIS_LOOP_39_6 -top_prefix bubble_sort_ -sub_prefix bubble_sort_ -mg_file C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort_Pipeline_VITIS_LOOP_39_6.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'bubble_sort_Pipeline_VITIS_LOOP_39_6'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.359 seconds; current allocated memory: 292.383 MB.
+Execute       source C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort.rtl_wrap.cfg.tcl 
+Execute       gen_rtl bubble_sort_Pipeline_VITIS_LOOP_39_6 -style xilinx -f -lang vhdl -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/vhdl/bubble_sort_bubble_sort_Pipeline_VITIS_LOOP_39_6 
+Execute       gen_rtl bubble_sort_Pipeline_VITIS_LOOP_39_6 -style xilinx -f -lang vlog -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/verilog/bubble_sort_bubble_sort_Pipeline_VITIS_LOOP_39_6 
+Execute       syn_report -csynth -model bubble_sort_Pipeline_VITIS_LOOP_39_6 -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/bubble_sort_Pipeline_VITIS_LOOP_39_6_csynth.rpt 
+Execute         list_part -family xc7z010-clg225-1 
+Execute           ap_family_info -name xc7z010-clg225-1 -data names 
+Execute           ap_part_info -quiet -name xc7z010-clg225-1 -data family 
+Execute       syn_report -rtlxml -model bubble_sort_Pipeline_VITIS_LOOP_39_6 -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/bubble_sort_Pipeline_VITIS_LOOP_39_6_csynth.xml 
+Execute         list_part -family xc7z010-clg225-1 
+Execute           ap_family_info -name xc7z010-clg225-1 -data names 
+Execute           ap_part_info -quiet -name xc7z010-clg225-1 -data family 
+Execute       syn_report -verbosereport -model bubble_sort_Pipeline_VITIS_LOOP_39_6 -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort_Pipeline_VITIS_LOOP_39_6.verbose.rpt 
+Execute         list_part -family xc7z010-clg225-1 
+Execute           ap_family_info -name xc7z010-clg225-1 -data names 
+Execute           ap_part_info -quiet -name xc7z010-clg225-1 -data family 
+Execute       db_write -model bubble_sort_Pipeline_VITIS_LOOP_39_6 -f -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort_Pipeline_VITIS_LOOP_39_6.adb 
+Execute       db_write -model bubble_sort_Pipeline_VITIS_LOOP_39_6 -bindview -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info bubble_sort_Pipeline_VITIS_LOOP_39_6 -p C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort_Pipeline_VITIS_LOOP_39_6 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'bubble_sort_Pipeline_VITIS_LOOP_61_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model bubble_sort_Pipeline_VITIS_LOOP_61_1 -top_prefix bubble_sort_ -sub_prefix bubble_sort_ -mg_file C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort_Pipeline_VITIS_LOOP_61_1.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'bubble_sort_Pipeline_VITIS_LOOP_61_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.167 seconds; current allocated memory: 292.793 MB.
+Execute       source C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort.rtl_wrap.cfg.tcl 
+Execute       gen_rtl bubble_sort_Pipeline_VITIS_LOOP_61_1 -style xilinx -f -lang vhdl -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/vhdl/bubble_sort_bubble_sort_Pipeline_VITIS_LOOP_61_1 
+Execute       gen_rtl bubble_sort_Pipeline_VITIS_LOOP_61_1 -style xilinx -f -lang vlog -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/verilog/bubble_sort_bubble_sort_Pipeline_VITIS_LOOP_61_1 
+Execute       syn_report -csynth -model bubble_sort_Pipeline_VITIS_LOOP_61_1 -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/bubble_sort_Pipeline_VITIS_LOOP_61_1_csynth.rpt 
+Execute         list_part -family xc7z010-clg225-1 
+Execute           ap_family_info -name xc7z010-clg225-1 -data names 
+Execute           ap_part_info -quiet -name xc7z010-clg225-1 -data family 
+Execute       syn_report -rtlxml -model bubble_sort_Pipeline_VITIS_LOOP_61_1 -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/bubble_sort_Pipeline_VITIS_LOOP_61_1_csynth.xml 
+Execute         list_part -family xc7z010-clg225-1 
+Execute           ap_family_info -name xc7z010-clg225-1 -data names 
+Execute           ap_part_info -quiet -name xc7z010-clg225-1 -data family 
+Execute       syn_report -verbosereport -model bubble_sort_Pipeline_VITIS_LOOP_61_1 -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort_Pipeline_VITIS_LOOP_61_1.verbose.rpt 
+Execute         list_part -family xc7z010-clg225-1 
+Execute           ap_family_info -name xc7z010-clg225-1 -data names 
+Execute           ap_part_info -quiet -name xc7z010-clg225-1 -data family 
+Execute       db_write -model bubble_sort_Pipeline_VITIS_LOOP_61_1 -f -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort_Pipeline_VITIS_LOOP_61_1.adb 
+Execute       db_write -model bubble_sort_Pipeline_VITIS_LOOP_61_1 -bindview -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info bubble_sort_Pipeline_VITIS_LOOP_61_1 -p C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort_Pipeline_VITIS_LOOP_61_1 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'bubble_sort' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -325,7 +454,7 @@ INFO: [RTGEN 206-500] Setting interface mode on port 'bubble_sort/errorFlag' to 
 WARNING: [RTGEN 206-101] Port 'errorFlag' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
 INFO: [RTGEN 206-500] Setting interface mode on function 'bubble_sort' to 'ap_ctrl_hs'.
 INFO: [RTGEN 206-100] Finished creating RTL model for 'bubble_sort'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.219 seconds; current allocated memory: 272.250 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.218 seconds; current allocated memory: 293.895 MB.
 Execute       source C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort.rtl_wrap.cfg.tcl 
 Execute       gen_rtl bubble_sort -istop -style xilinx -f -lang vhdl -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/vhdl/bubble_sort 
 Execute       gen_rtl bubble_sort -istop -style xilinx -f -lang vlog -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/verilog/bubble_sort 
@@ -354,20 +483,34 @@ Execute       syn_report -wcfg -model bubble_sort -o C:/Users/minec/OneDrive/Doc
 Execute       syn_report -protoinst -model bubble_sort -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort.protoinst 
 Execute       sc_get_clocks bubble_sort 
 Execute       sc_get_portdomain bubble_sort 
-INFO-FLOW: Model list for RTL component generation: bubble_sort_Pipeline_VITIS_LOOP_15_2 bubble_sort
-INFO-FLOW: Handling components in module [bubble_sort_Pipeline_VITIS_LOOP_15_2] ... 
-Execute       source C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort_Pipeline_VITIS_LOOP_15_2.compgen.tcl 
+INFO-FLOW: Model list for RTL component generation: bubble_sort_Pipeline_VITIS_LOOP_21_4 bubble_sort_Pipeline_VITIS_LOOP_39_6 bubble_sort_Pipeline_VITIS_LOOP_61_1 bubble_sort
+INFO-FLOW: Handling components in module [bubble_sort_Pipeline_VITIS_LOOP_21_4] ... 
+Execute       source C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort_Pipeline_VITIS_LOOP_21_4.compgen.tcl 
+INFO-FLOW: Found component bubble_sort_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model bubble_sort_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [bubble_sort_Pipeline_VITIS_LOOP_39_6] ... 
+Execute       source C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort_Pipeline_VITIS_LOOP_39_6.compgen.tcl 
+INFO-FLOW: Found component bubble_sort_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model bubble_sort_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [bubble_sort_Pipeline_VITIS_LOOP_61_1] ... 
+Execute       source C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort_Pipeline_VITIS_LOOP_61_1.compgen.tcl 
 INFO-FLOW: Found component bubble_sort_flow_control_loop_pipe_sequential_init.
 INFO-FLOW: Append model bubble_sort_flow_control_loop_pipe_sequential_init
 INFO-FLOW: Handling components in module [bubble_sort] ... 
 Execute       source C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort.compgen.tcl 
-INFO-FLOW: Append model bubble_sort_Pipeline_VITIS_LOOP_15_2
+INFO-FLOW: Append model bubble_sort_Pipeline_VITIS_LOOP_21_4
+INFO-FLOW: Append model bubble_sort_Pipeline_VITIS_LOOP_39_6
+INFO-FLOW: Append model bubble_sort_Pipeline_VITIS_LOOP_61_1
 INFO-FLOW: Append model bubble_sort
 INFO-FLOW: Generating RTL model list ...
-INFO-FLOW: All models in this session: bubble_sort_flow_control_loop_pipe_sequential_init bubble_sort_Pipeline_VITIS_LOOP_15_2 bubble_sort
+INFO-FLOW: All models in this session: bubble_sort_flow_control_loop_pipe_sequential_init bubble_sort_flow_control_loop_pipe_sequential_init bubble_sort_flow_control_loop_pipe_sequential_init bubble_sort_Pipeline_VITIS_LOOP_21_4 bubble_sort_Pipeline_VITIS_LOOP_39_6 bubble_sort_Pipeline_VITIS_LOOP_61_1 bubble_sort
 INFO-FLOW: Generating C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/autopilot.rtl.models.txt file...
 INFO-FLOW: To file: write model bubble_sort_flow_control_loop_pipe_sequential_init
-INFO-FLOW: To file: write model bubble_sort_Pipeline_VITIS_LOOP_15_2
+INFO-FLOW: To file: write model bubble_sort_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model bubble_sort_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model bubble_sort_Pipeline_VITIS_LOOP_21_4
+INFO-FLOW: To file: write model bubble_sort_Pipeline_VITIS_LOOP_39_6
+INFO-FLOW: To file: write model bubble_sort_Pipeline_VITIS_LOOP_61_1
 INFO-FLOW: To file: write model bubble_sort
 INFO-FLOW: Generating C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/autopilot.rtl.models.tcl file...
 INFO-FLOW: Finished generating RTL model list.
@@ -398,7 +541,11 @@ Execute         source C:/Xilinx/Vitis_HLS/2024.1/common/technology/xilinx/ip/xf
 Execute         source C:/Xilinx/Vitis_HLS/2024.1/common/technology/xilinx/DSP48/dsp48.gen 
 INFO-FLOW: DBG:PUTS:   using AESL_AUTOCG::g_clock_period=10.000 (was NA)
 INFO-FLOW: DBG:PROC: ::AESL_AUTOMG::generate_ip_cores gen_sim_model='1' gen_fp_models='0' gen_for_export='0' dstSCDir='' dstVhdlDir='C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/vhdl' dstVlogDir='C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/vlog' tclDir='C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db' modelList='bubble_sort_flow_control_loop_pipe_sequential_init
-bubble_sort_Pipeline_VITIS_LOOP_15_2
+bubble_sort_flow_control_loop_pipe_sequential_init
+bubble_sort_flow_control_loop_pipe_sequential_init
+bubble_sort_Pipeline_VITIS_LOOP_21_4
+bubble_sort_Pipeline_VITIS_LOOP_39_6
+bubble_sort_Pipeline_VITIS_LOOP_61_1
 bubble_sort
 ' expOnly='0'
 Execute       source C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/global.setting.tcl 
@@ -406,9 +553,11 @@ Execute       ap_part_info -name xc7z010-clg225-1 -data names -quiet
 Execute       ap_part_info -name xc7z010-clg225-1 -data info -quiet 
 Execute       source C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/global.setting.tcl 
 Execute       source C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/global.setting.tcl 
-Execute       source C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort_Pipeline_VITIS_LOOP_15_2.compgen.tcl 
+Execute       source C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort_Pipeline_VITIS_LOOP_21_4.compgen.tcl 
+Execute       source C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort_Pipeline_VITIS_LOOP_39_6.compgen.tcl 
+Execute       source C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort_Pipeline_VITIS_LOOP_61_1.compgen.tcl 
 Execute       source C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort.compgen.tcl 
-INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.469 seconds; current allocated memory: 275.215 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.682 seconds; current allocated memory: 298.641 MB.
 INFO-FLOW: DBG:PROC: ::HLSREPORTS::create_csynth_xml bind_info_var='bind_info' RtlSubPrefix='bubble_sort_' outfile=''
 INFO-FLOW: Running: create_csynth_xml read xml data
 INFO-FLOW: Done: create_csynth_xml read xml data time: 0 seconds per iteration
@@ -420,7 +569,11 @@ INFO-FLOW: Running: create_csynth_xml write xml
 INFO-FLOW: Done: create_csynth_xml write xml time: 0 seconds per iteration
 INFO-FLOW: DBG:PUTS:      create_csynth_xml wrote csynth_xml=C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/syn/report/csynth.xml
 INFO-FLOW: DBG:PROC: ::AP::DESIGN_DATA::generate_json generate_bd_files='0' generate_xo_files='0' modelList='bubble_sort_flow_control_loop_pipe_sequential_init
-bubble_sort_Pipeline_VITIS_LOOP_15_2
+bubble_sort_flow_control_loop_pipe_sequential_init
+bubble_sort_flow_control_loop_pipe_sequential_init
+bubble_sort_Pipeline_VITIS_LOOP_21_4
+bubble_sort_Pipeline_VITIS_LOOP_39_6
+bubble_sort_Pipeline_VITIS_LOOP_61_1
 bubble_sort
 ' rtl_lang='both' bootstrap_tcl='false' outdir='' outfilename=''
 Execute       source C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/global.setting.tcl 
@@ -429,7 +582,9 @@ Execute       source C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/p
 Execute       source C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort.tbgen.tcl 
 Execute       source C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort.rtl_wrap.cfg.tcl 
 Execute       source C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort.compgen.dataonly.tcl 
-Execute       source C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort_Pipeline_VITIS_LOOP_15_2.tbgen.tcl 
+Execute       source C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort_Pipeline_VITIS_LOOP_21_4.tbgen.tcl 
+Execute       source C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort_Pipeline_VITIS_LOOP_39_6.tbgen.tcl 
+Execute       source C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort_Pipeline_VITIS_LOOP_61_1.tbgen.tcl 
 Execute       source C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort.tbgen.tcl 
 Execute       source C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/global.setting.tcl 
 Execute       ap_part_info -name xc7z010-clg225-1 -data names -quiet 
@@ -437,25 +592,25 @@ Execute       ap_part_info -name xc7z010-clg225-1 -data info -quiet
 Execute       source C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort.constraint.tcl 
 Execute       sc_get_clocks bubble_sort 
 Execute       source C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/global.setting.tcl 
-INFO-FLOW: DBG:PROC: ::HLSREPORTS::add_csynth_report_sections bind_info_dict='adapter_nodes {} cache_nodes {} report_dict {TOPINST bubble_sort MODULE2INSTS {bubble_sort bubble_sort bubble_sort_Pipeline_VITIS_LOOP_15_2 grp_bubble_sort_Pipeline_VITIS_LOOP_15_2_fu_73} INST2MODULE {bubble_sort bubble_sort grp_bubble_sort_Pipeline_VITIS_LOOP_15_2_fu_73 bubble_sort_Pipeline_VITIS_LOOP_15_2} INSTDATA {bubble_sort {DEPTH 1 CHILDREN grp_bubble_sort_Pipeline_VITIS_LOOP_15_2_fu_73} grp_bubble_sort_Pipeline_VITIS_LOOP_15_2_fu_73 {DEPTH 2 CHILDREN {}}} MODULEDATA {bubble_sort_Pipeline_VITIS_LOOP_15_2 {BINDINFO {{BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln15_fu_119_p2 SOURCE bubble_sort.cpp:15 VARIABLE icmp_ln15 LOOP VITIS_LOOP_15_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE setgt PRAGMA {} RTLNAME icmp_ln28_fu_130_p2 SOURCE bubble_sort.cpp:28 VARIABLE icmp_ln28 LOOP VITIS_LOOP_15_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op setgt} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln15_fu_140_p2 SOURCE bubble_sort.cpp:15 VARIABLE add_ln15 LOOP VITIS_LOOP_15_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true}} AREA {DSP 0 BRAM 0 URAM 0}} bubble_sort {BINDINFO {{BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln10_fu_95_p2 SOURCE bubble_sort.cpp:10 VARIABLE icmp_ln10 LOOP VITIS_LOOP_10_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln15_fu_101_p2 SOURCE bubble_sort.cpp:15 VARIABLE add_ln15 LOOP VITIS_LOOP_10_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln10_fu_121_p2 SOURCE bubble_sort.cpp:10 VARIABLE add_ln10 LOOP VITIS_LOOP_10_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true}} AREA {DSP 0 BRAM 0 URAM 0}}}}'
+INFO-FLOW: DBG:PROC: ::HLSREPORTS::add_csynth_report_sections bind_info_dict='adapter_nodes {} cache_nodes {} report_dict {TOPINST bubble_sort MODULE2INSTS {bubble_sort bubble_sort bubble_sort_Pipeline_VITIS_LOOP_61_1 grp_bubble_sort_Pipeline_VITIS_LOOP_61_1_fu_233 bubble_sort_Pipeline_VITIS_LOOP_21_4 grp_bubble_sort_Pipeline_VITIS_LOOP_21_4_fu_239 bubble_sort_Pipeline_VITIS_LOOP_39_6 grp_bubble_sort_Pipeline_VITIS_LOOP_39_6_fu_250} INST2MODULE {bubble_sort bubble_sort grp_bubble_sort_Pipeline_VITIS_LOOP_61_1_fu_233 bubble_sort_Pipeline_VITIS_LOOP_61_1 grp_bubble_sort_Pipeline_VITIS_LOOP_21_4_fu_239 bubble_sort_Pipeline_VITIS_LOOP_21_4 grp_bubble_sort_Pipeline_VITIS_LOOP_39_6_fu_250 bubble_sort_Pipeline_VITIS_LOOP_39_6} INSTDATA {bubble_sort {DEPTH 1 CHILDREN {grp_bubble_sort_Pipeline_VITIS_LOOP_61_1_fu_233 grp_bubble_sort_Pipeline_VITIS_LOOP_21_4_fu_239 grp_bubble_sort_Pipeline_VITIS_LOOP_39_6_fu_250}} grp_bubble_sort_Pipeline_VITIS_LOOP_61_1_fu_233 {DEPTH 2 CHILDREN {}} grp_bubble_sort_Pipeline_VITIS_LOOP_21_4_fu_239 {DEPTH 2 CHILDREN {}} grp_bubble_sort_Pipeline_VITIS_LOOP_39_6_fu_250 {DEPTH 2 CHILDREN {}}} MODULEDATA {bubble_sort_Pipeline_VITIS_LOOP_21_4 {BINDINFO {{BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE setlt PRAGMA {} RTLNAME icmp_ln21_fu_99_p2 SOURCE bubble_sort.cpp:21 VARIABLE icmp_ln21 LOOP VITIS_LOOP_21_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op setlt} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE setgt PRAGMA {} RTLNAME icmp_ln22_fu_110_p2 SOURCE bubble_sort.cpp:22 VARIABLE icmp_ln22 LOOP VITIS_LOOP_21_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op setgt} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln21_fu_115_p2 SOURCE bubble_sort.cpp:21 VARIABLE add_ln21 LOOP VITIS_LOOP_21_4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true}} AREA {DSP 0 BRAM 0 URAM 0}} bubble_sort_Pipeline_VITIS_LOOP_39_6 {BINDINFO {{BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE setlt PRAGMA {} RTLNAME icmp_ln39_fu_99_p2 SOURCE bubble_sort.cpp:39 VARIABLE icmp_ln39 LOOP VITIS_LOOP_39_6 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op setlt} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE setgt PRAGMA {} RTLNAME icmp_ln40_fu_110_p2 SOURCE bubble_sort.cpp:40 VARIABLE icmp_ln40 LOOP VITIS_LOOP_39_6 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op setgt} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln39_fu_115_p2 SOURCE bubble_sort.cpp:39 VARIABLE add_ln39 LOOP VITIS_LOOP_39_6 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true}} AREA {DSP 0 BRAM 0 URAM 0}} bubble_sort_Pipeline_VITIS_LOOP_61_1 {BINDINFO {{BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln61_fu_87_p2 SOURCE bubble_sort.cpp:61 VARIABLE icmp_ln61 LOOP VITIS_LOOP_61_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln62_fu_93_p2 SOURCE bubble_sort.cpp:62 VARIABLE add_ln62 LOOP VITIS_LOOP_61_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE setgt PRAGMA {} RTLNAME icmp_ln62_fu_109_p2 SOURCE bubble_sort.cpp:62 VARIABLE icmp_ln62 LOOP VITIS_LOOP_61_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op setgt} VISIBLE false}} AREA {DSP 0 BRAM 0 URAM 0}} bubble_sort {BINDINFO {{BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE setlt PRAGMA {} RTLNAME icmp_ln9_fu_277_p2 SOURCE bubble_sort.cpp:9 VARIABLE icmp_ln9 LOOP VITIS_LOOP_9_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op setlt} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln14_fu_283_p2 SOURCE bubble_sort.cpp:14 VARIABLE add_ln14 LOOP VITIS_LOOP_9_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE setlt PRAGMA {} RTLNAME icmp_ln14_fu_300_p2 SOURCE bubble_sort.cpp:14 VARIABLE icmp_ln14 LOOP VITIS_LOOP_14_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op setlt} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln17_fu_324_p2 SOURCE bubble_sort.cpp:17 VARIABLE icmp_ln17 LOOP VITIS_LOOP_14_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE setlt PRAGMA {} RTLNAME icmp_ln18_fu_330_p2 SOURCE bubble_sort.cpp:18 VARIABLE icmp_ln18 LOOP VITIS_LOOP_14_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op setlt} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE setlt PRAGMA {} RTLNAME icmp_ln18_1_fu_335_p2 SOURCE bubble_sort.cpp:18 VARIABLE icmp_ln18_1 LOOP VITIS_LOOP_18_3 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op setlt} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE setgt PRAGMA {} RTLNAME icmp_ln19_fu_346_p2 SOURCE bubble_sort.cpp:19 VARIABLE icmp_ln19 LOOP VITIS_LOOP_18_3 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op setgt} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln18_fu_352_p2 SOURCE bubble_sort.cpp:18 VARIABLE add_ln18 LOOP VITIS_LOOP_18_3 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE setgt PRAGMA {} RTLNAME icmp_ln27_fu_367_p2 SOURCE bubble_sort.cpp:27 VARIABLE icmp_ln27 LOOP VITIS_LOOP_14_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op setgt} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln35_fu_379_p2 SOURCE bubble_sort.cpp:35 VARIABLE icmp_ln35 LOOP VITIS_LOOP_14_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln14_1_fu_373_p2 SOURCE bubble_sort.cpp:14 VARIABLE add_ln14_1 LOOP VITIS_LOOP_14_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE setlt PRAGMA {} RTLNAME icmp_ln36_fu_385_p2 SOURCE bubble_sort.cpp:36 VARIABLE icmp_ln36 LOOP VITIS_LOOP_36_5 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op setlt} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE setgt PRAGMA {} RTLNAME icmp_ln37_fu_396_p2 SOURCE bubble_sort.cpp:37 VARIABLE icmp_ln37 LOOP VITIS_LOOP_36_5 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op setgt} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln36_fu_402_p2 SOURCE bubble_sort.cpp:36 VARIABLE add_ln36 LOOP VITIS_LOOP_36_5 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln9_fu_306_p2 SOURCE bubble_sort.cpp:9 VARIABLE add_ln9 LOOP VITIS_LOOP_9_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln57_fu_294_p2 SOURCE bubble_sort.cpp:57 VARIABLE icmp_ln57 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false}} AREA {DSP 0 BRAM 0 URAM 0}}}}'
 INFO-FLOW: DBG:PUTS:      update_csynth_reports json2rpt_hw_sw_interfaces
 INFO-FLOW: Running: gen_csynth_sec_pragma
 INFO-FLOW: Done: gen_csynth_sec_pragma time: 0 seconds per iteration
 INFO-FLOW: DBG:PUTS:      update_csynth_reports wrote xml
 INFO-FLOW: DBG:PUTS:      update_csynth_reports appended to csynth rpt file
-INFO: [HLS 200-111] Finished Updating report files: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.876 seconds; current allocated memory: 276.840 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 0.976 seconds; current allocated memory: 300.750 MB.
 INFO: [VHDL 208-304] Generating VHDL RTL for bubble_sort.
 INFO: [VLOG 209-307] Generating Verilog RTL for bubble_sort.
 Execute       syn_report -model bubble_sort -printsummary 
 INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
-INFO: [HLS 200-789] **** Estimated Fmax: 138.97 MHz
-Command     autosyn done; 3.226 sec.
-Command   csynth_design done; 17.644 sec.
+INFO: [HLS 200-789] **** Estimated Fmax: 124.22 MHz
+Command     autosyn done; 5.665 sec.
+Command   csynth_design done; 20.064 sec.
 Execute   close_project 
 Execute     close_solution 
 Execute       cleanup_all 
 Execute       cleanup_all 
-INFO-FLOW: Workspace C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls opened at Mon Feb 24 14:11:12 -0500 2025
+INFO-FLOW: Workspace C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls opened at Mon Feb 24 14:44:14 -0500 2025
 Execute     source C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/global.setting.tcl 
 Execute     set_part xc7z010-clg225-1 
 Execute       create_platform xc7z010-clg225-1 -board  
@@ -463,7 +618,7 @@ DBG:HLSDevice: Trying to load device library: C:/Xilinx\Vitis_HLS\2024.1\lib\win
 DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: C:/Xilinx/Vivado/2024.1/data/parts/arch.xml
 DBG:HLSDevice: init success
 INFO: [HLS 200-1611] Setting target device to 'xc7z010-clg225-1'
-Command       create_platform done; 2.169 sec.
+Command       create_platform done; 2.308 sec.
 Execute       source C:/Xilinx/Vitis_HLS/2024.1/common/technology/xilinx/common/xilinx.gen 
 Execute         source C:/Xilinx/Vitis_HLS/2024.1/common/technology/xilinx/interface/plb46.gen 
 Execute         source C:/Xilinx/Vitis_HLS/2024.1/common/technology/xilinx/interface/axi4.gen 
@@ -478,10 +633,10 @@ Execute         source C:/Xilinx/Vitis_HLS/2024.1/common/technology/xilinx/ip/xf
 Execute         source C:/Xilinx/Vitis_HLS/2024.1/common/technology/xilinx/DSP48/dsp48.gen 
 Execute       ap_part_info -name xc7z010-clg225-1 -data info 
 Execute       config_compile -quiet -complex-mul-dsp=0 
-Command     set_part done; 2.329 sec.
+Command     set_part done; 2.483 sec.
 Execute     send_msg_by_id INFO @200-1505@%s%s default  vivado 
 INFO: [HLS 200-1505] Using default flow_target 'vivado'
-Command   open_solution done; 2.364 sec.
+Command   open_solution done; 2.501 sec.
 Execute   apply_ini C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/hls_config.cfg 
 Execute     send_msg_by_id INFO @200-1465@%s 'syn.file=bubble_sort.cpp' from C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/hls_config.cfg(10) 
 INFO: [HLS 200-1465] Applying ini 'syn.file=bubble_sort.cpp' from C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/hls_config.cfg(10)
@@ -506,7 +661,7 @@ Execute     send_msg_by_id INFO @200-1465@%s 'part=xc7z010clg225-1' from C:/User
 INFO: [HLS 200-1465] Applying ini 'part=xc7z010clg225-1' from C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/hls_config.cfg(1)
 Execute     set_part xc7z010clg225-1 
 Execute       create_platform xc7z010clg225-1 -board  
-Command       create_platform done; 0.186 sec.
+Command       create_platform done; 0.203 sec.
 Execute       source C:/Xilinx/Vitis_HLS/2024.1/common/technology/xilinx/common/xilinx.gen 
 Execute         source C:/Xilinx/Vitis_HLS/2024.1/common/technology/xilinx/interface/plb46.gen 
 Execute         source C:/Xilinx/Vitis_HLS/2024.1/common/technology/xilinx/interface/axi4.gen 
@@ -521,7 +676,7 @@ Execute         source C:/Xilinx/Vitis_HLS/2024.1/common/technology/xilinx/ip/xf
 Execute         source C:/Xilinx/Vitis_HLS/2024.1/common/technology/xilinx/DSP48/dsp48.gen 
 Execute       ap_part_info -name xc7z010-clg225-1 -data info 
 Execute       config_compile -quiet -complex-mul-dsp=0 
-Command     set_part done; 0.345 sec.
+Command     set_part done; 0.375 sec.
 Execute     send_msg_by_id INFO @200-1465@%s 'clock=100MHz' from C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/hls_config.cfg(7) 
 INFO: [HLS 200-1465] Applying ini 'clock=100MHz' from C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/hls_config.cfg(7)
 Execute     create_clock -period 100MHz 
@@ -535,7 +690,7 @@ INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1ns.
 Execute     send_msg_by_id INFO @200-1465@%s 'package.output.format=rtl' from C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/hls_config.cfg(5) 
 INFO: [HLS 200-1465] Applying ini 'package.output.format=rtl' from C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/hls_config.cfg(5)
 Execute     config_export -format=rtl 
-Command   apply_ini done; 0.387 sec.
+Command   apply_ini done; 0.428 sec.
 Execute   apply_ini C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/config.cmdline 
 Execute   cosim_design 
 Execute     AP::app_get_file_relativeroot [AP::app_get_root] {}
@@ -579,170 +734,13 @@ INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2024.1/vcxx/libexec/clang -fno-bu
 INFO-FLOW: TB processing: C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/bubble_sort_tb.cpp C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/./sim/autowrap/testbench/bubble_sort_tb.cpp_pre.cpp
 Execute     clang_tidy xilinx-tb-process -desc tb-process C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/./sim/autowrap/testbench/bubble_sort_tb.cpp_pre.cpp.tb.cpp std=gnu++14 
 INFO-FLOW: exec C:/Xilinx/Vitis_HLS/2024.1/win64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-tb-process -fix-errors C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/./sim/autowrap/testbench/bubble_sort_tb.cpp_pre.cpp.tb.cpp -- -std=gnu++14 -fhls -ferror-limit=0
-Command     clang_tidy done; 1.324 sec.
+Command     clang_tidy done; 1.328 sec.
 Execute     ap_part_info -name xc7z010-clg225-1 -data info 
 INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2024.1/vcxx/libexec/clang -fno-builtin-isinf -fno-builtin-isnan -E -DGCC_COMPATIBLE_APINT -DAESL_TB -D__HLS_COSIM__ -D__VITIS_HLS__ -D__USE_XOPEN2K8 -I C:/Xilinx/Vitis_HLS/2024.1/include -I include C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/bubble_sort.cpp -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/./sim/autowrap/testbench/bubble_sort.cpp_pre.cpp -std=gnu++14 -D__DSP48E1__ --sysroot=C:/Xilinx/Vitis_HLS/2024.1/tps/mingw/10.0.0/win64.o/nt > C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort.cpp.clang.autosim-tb.out.log 2> C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort.cpp.clang.autosim-tb.err.log
 INFO-FLOW: TB processing: C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/bubble_sort.cpp C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/./sim/autowrap/testbench/bubble_sort.cpp_pre.cpp
 Execute     clang_tidy xilinx-tb-process -desc tb-process C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/./sim/autowrap/testbench/bubble_sort.cpp_pre.cpp.tb.cpp std=gnu++14 
 INFO-FLOW: exec C:/Xilinx/Vitis_HLS/2024.1/win64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-tb-process -fix-errors C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/./sim/autowrap/testbench/bubble_sort.cpp_pre.cpp.tb.cpp -- -std=gnu++14 -fhls -ferror-limit=0
-Command     clang_tidy done; 1.198 sec.
-Execute     source C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/global.setting.tcl 
-Execute     source C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort.rtl_wrap.cfg.tcl 
-Execute     source C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort.rtl_wrap.cfg.tcl 
-Execute     source C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort.rtl_wrap.cfg.tcl 
-Execute     source C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort.tbgen.tcl 
-Execute     source C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort.tbgen.tcl 
-Execute     source C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort.tbgen.tcl 
-Execute     ap_part_info -name xc7z010-clg225-1 -data info 
-ERROR: [COSIM 212-317] C++ compile error.
-ERROR: [COSIM 212-321] EXE file generate failed.
-ERROR: [COSIM 212-321] EXE file generate failed.
-ERROR: [COSIM 212-331] Aborting co-simulation: C simulation failed, compilation errors.
-INFO-FLOW: AESL_AUTOSIM::auto_sim errorInfo:
-
-    while executing
-"::AESL_AUTOSIM::auto_sim "$argn" "
-ERROR: [COSIM 212-5] *** C/RTL co-simulation file generation failed. ***
-ERROR: [COSIM 212-4] *** C/RTL co-simulation finished: FAIL ***
-INFO-FLOW: Caught error in cosim_design: 
-    while executing
-"ap_internal_cosim_design "
-Command   cosim_design done; error code: 2; 11.829 sec.
-Execute   close_project 
-Execute     close_solution 
-Execute       cleanup_all 
-Execute       cleanup_all 
-INFO-FLOW: Workspace C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls opened at Mon Feb 24 14:12:59 -0500 2025
-Execute     source C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/global.setting.tcl 
-Execute     set_part xc7z010-clg225-1 
-Execute       create_platform xc7z010-clg225-1 -board  
-DBG:HLSDevice: Trying to load device library: C:/Xilinx\Vitis_HLS\2024.1\lib\win64.o\xv_hlsvwrap.dll
-DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: C:/Xilinx/Vivado/2024.1/data/parts/arch.xml
-DBG:HLSDevice: init success
-INFO: [HLS 200-1611] Setting target device to 'xc7z010-clg225-1'
-Command       create_platform done; 2.141 sec.
-Execute       source C:/Xilinx/Vitis_HLS/2024.1/common/technology/xilinx/common/xilinx.gen 
-Execute         source C:/Xilinx/Vitis_HLS/2024.1/common/technology/xilinx/interface/plb46.gen 
-Execute         source C:/Xilinx/Vitis_HLS/2024.1/common/technology/xilinx/interface/axi4.gen 
-Execute         source C:/Xilinx/Vitis_HLS/2024.1/common/technology/xilinx/interface/nativeAXI4.gen 
-Execute           source C:/Xilinx/Vitis_HLS/2024.1/common/technology/xilinx/interface/saxilite.gen 
-Execute         source C:/Xilinx/Vitis_HLS/2024.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
-Execute         source C:/Xilinx/Vitis_HLS/2024.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
-Execute         source C:/Xilinx/Vitis_HLS/2024.1/common/technology/xilinx/ip/dds_compiler.gen 
-Execute         source C:/Xilinx/Vitis_HLS/2024.1/common/technology/xilinx/ip/util.gen 
-Execute         source C:/Xilinx/Vitis_HLS/2024.1/common/technology/xilinx/ip/xfft.gen 
-Execute         source C:/Xilinx/Vitis_HLS/2024.1/common/technology/xilinx/ip/xfir.gen 
-Execute         source C:/Xilinx/Vitis_HLS/2024.1/common/technology/xilinx/DSP48/dsp48.gen 
-Execute       ap_part_info -name xc7z010-clg225-1 -data info 
-Execute       config_compile -quiet -complex-mul-dsp=0 
-Command     set_part done; 2.299 sec.
-Execute     send_msg_by_id INFO @200-1505@%s%s default  vivado 
-INFO: [HLS 200-1505] Using default flow_target 'vivado'
-Command   open_solution done; 2.318 sec.
-Execute   apply_ini C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/hls_config.cfg 
-Execute     send_msg_by_id INFO @200-1465@%s 'syn.file=bubble_sort.cpp' from C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/hls_config.cfg(10) 
-INFO: [HLS 200-1465] Applying ini 'syn.file=bubble_sort.cpp' from C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/hls_config.cfg(10)
-Execute     add_files C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/bubble_sort.cpp 
-INFO: [HLS 200-10] Adding design file 'C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/bubble_sort.cpp' to the project
-Execute     send_msg_by_id INFO @200-1465@%s 'syn.file=bubble_sort_header.hpp' from C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/hls_config.cfg(11) 
-INFO: [HLS 200-1465] Applying ini 'syn.file=bubble_sort_header.hpp' from C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/hls_config.cfg(11)
-Execute     add_files C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/bubble_sort_header.hpp 
-INFO: [HLS 200-10] Adding design file 'C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/bubble_sort_header.hpp' to the project
-Execute     send_msg_by_id INFO @200-1465@%s 'tb.file=bubble_sort_tb.cpp' from C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/hls_config.cfg(9) 
-INFO: [HLS 200-1465] Applying ini 'tb.file=bubble_sort_tb.cpp' from C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/hls_config.cfg(9)
-Execute     add_files -tb C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/bubble_sort_tb.cpp 
-INFO: [HLS 200-10] Adding test bench file 'C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/bubble_sort_tb.cpp' to the project
-Execute     send_msg_by_id INFO @200-1465@%s 'syn.top=bubble_sort' from C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/hls_config.cfg(12) 
-INFO: [HLS 200-1465] Applying ini 'syn.top=bubble_sort' from C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/hls_config.cfg(12)
-Execute     set_top bubble_sort 
-Execute     send_msg_by_id INFO @200-1465@%s 'flow_target=vivado' from C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/hls_config.cfg(4) 
-INFO: [HLS 200-1465] Applying ini 'flow_target=vivado' from C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/hls_config.cfg(4)
-Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
-INFO: [HLS 200-1505] Using flow_target 'vivado'
-Execute     send_msg_by_id INFO @200-1465@%s 'part=xc7z010clg225-1' from C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/hls_config.cfg(1) 
-INFO: [HLS 200-1465] Applying ini 'part=xc7z010clg225-1' from C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/hls_config.cfg(1)
-Execute     set_part xc7z010clg225-1 
-Execute       create_platform xc7z010clg225-1 -board  
-Command       create_platform done; 0.194 sec.
-Execute       source C:/Xilinx/Vitis_HLS/2024.1/common/technology/xilinx/common/xilinx.gen 
-Execute         source C:/Xilinx/Vitis_HLS/2024.1/common/technology/xilinx/interface/plb46.gen 
-Execute         source C:/Xilinx/Vitis_HLS/2024.1/common/technology/xilinx/interface/axi4.gen 
-Execute         source C:/Xilinx/Vitis_HLS/2024.1/common/technology/xilinx/interface/nativeAXI4.gen 
-Execute           source C:/Xilinx/Vitis_HLS/2024.1/common/technology/xilinx/interface/saxilite.gen 
-Execute         source C:/Xilinx/Vitis_HLS/2024.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
-Execute         source C:/Xilinx/Vitis_HLS/2024.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
-Execute         source C:/Xilinx/Vitis_HLS/2024.1/common/technology/xilinx/ip/dds_compiler.gen 
-Execute         source C:/Xilinx/Vitis_HLS/2024.1/common/technology/xilinx/ip/util.gen 
-Execute         source C:/Xilinx/Vitis_HLS/2024.1/common/technology/xilinx/ip/xfft.gen 
-Execute         source C:/Xilinx/Vitis_HLS/2024.1/common/technology/xilinx/ip/xfir.gen 
-Execute         source C:/Xilinx/Vitis_HLS/2024.1/common/technology/xilinx/DSP48/dsp48.gen 
-Execute       ap_part_info -name xc7z010-clg225-1 -data info 
-Execute       config_compile -quiet -complex-mul-dsp=0 
-Command     set_part done; 0.34 sec.
-Execute     send_msg_by_id INFO @200-1465@%s 'clock=100MHz' from C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/hls_config.cfg(7) 
-INFO: [HLS 200-1465] Applying ini 'clock=100MHz' from C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/hls_config.cfg(7)
-Execute     create_clock -period 100MHz 
-Execute       ap_set_clock -name default -period 10 -unit ns -default=false 
-INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
-Execute     send_msg_by_id INFO @200-1465@%s 'clock_uncertainty=1' from C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/hls_config.cfg(8) 
-INFO: [HLS 200-1465] Applying ini 'clock_uncertainty=1' from C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/hls_config.cfg(8)
-Execute     set_clock_uncertainty 1 
-Execute       ap_set_clock -name default -uncertainty 1 -unit ns 
-INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1ns.
-Execute     send_msg_by_id INFO @200-1465@%s 'package.output.format=rtl' from C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/hls_config.cfg(5) 
-INFO: [HLS 200-1465] Applying ini 'package.output.format=rtl' from C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/hls_config.cfg(5)
-Execute     config_export -format=rtl 
-Command   apply_ini done; 0.384 sec.
-Execute   apply_ini C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/config.cmdline 
-Execute   cosim_design 
-Execute     AP::app_get_file_relativeroot [AP::app_get_root] {}
-Execute     AP::app_get_file_relativeroot [AP::app_get_root] {}
-Execute     AP::app_get_file_relativeroot [AP::app_get_root] {}
-Execute     source C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/global.setting.tcl 
-Execute     source C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/global.setting.tcl 
-Execute     source C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/global.setting.tcl 
-INFO-FLOW: DBG:PUTS: read_platform_lib C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/global.setting.tcl
-Execute     source C:/Xilinx/Vitis_HLS/2024.1/common/technology/generic/autopilot/common.gen 
-Execute       source C:/Xilinx/Vitis_HLS/2024.1/common/technology/generic/autopilot/APCoreGen.gen 
-Execute     source C:/Xilinx/Vitis_HLS/2024.1/common/technology/generic/autopilot/op.gen 
-Execute     source C:/Xilinx/Vitis_HLS/2024.1/common/technology/generic/autopilot/op_simcore.gen 
-Execute     source C:/Xilinx/Vitis_HLS/2024.1/common/technology/generic/autopilot/interface.gen 
-Execute     source C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/global.setting.tcl 
-Execute     source C:/Xilinx/Vitis_HLS/2024.1/common/technology/xilinx/common/xilinx.gen 
-Execute       source C:/Xilinx/Vitis_HLS/2024.1/common/technology/xilinx/interface/plb46.gen 
-Execute       source C:/Xilinx/Vitis_HLS/2024.1/common/technology/xilinx/interface/axi4.gen 
-Execute       source C:/Xilinx/Vitis_HLS/2024.1/common/technology/xilinx/interface/nativeAXI4.gen 
-Execute         source C:/Xilinx/Vitis_HLS/2024.1/common/technology/xilinx/interface/saxilite.gen 
-Execute       source C:/Xilinx/Vitis_HLS/2024.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
-Execute       source C:/Xilinx/Vitis_HLS/2024.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
-Execute       source C:/Xilinx/Vitis_HLS/2024.1/common/technology/xilinx/ip/dds_compiler.gen 
-Execute       source C:/Xilinx/Vitis_HLS/2024.1/common/technology/xilinx/ip/util.gen 
-Execute       source C:/Xilinx/Vitis_HLS/2024.1/common/technology/xilinx/ip/xfft.gen 
-Execute       source C:/Xilinx/Vitis_HLS/2024.1/common/technology/xilinx/ip/xfir.gen 
-Execute       source C:/Xilinx/Vitis_HLS/2024.1/common/technology/xilinx/DSP48/dsp48.gen 
-INFO-FLOW: DBG:PUTS:   using AESL_AUTOCG::g_clock_period=10.000 (was NA)
-Execute     ap_part_info -name xc7z010-clg225-1 -data names -quiet 
-Execute     ap_part_info -name xc7z010-clg225-1 -data info -quiet 
-Execute     source C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/global.setting.tcl 
-Execute     source C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort.rtl_wrap.cfg.tcl 
-Execute     source C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort.tbgen.tcl 
-Execute     source C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort.tbgen.tcl 
-Execute     source C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort.tbgen.tcl 
-Execute     source C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort.tbgen.tcl 
-INFO: [COSIM 212-47] Using XSIM for RTL simulation.
-INFO: [COSIM 212-14] Instrumenting C test bench ...
-Execute     ap_part_info -name xc7z010-clg225-1 -data info 
-INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2024.1/vcxx/libexec/clang -fno-builtin-isinf -fno-builtin-isnan -E -Wno-unknown-pragmas -Wno-unknown-pragmas -DGCC_COMPATIBLE_APINT -DAESL_TB -D__HLS_COSIM__ -D__VITIS_HLS__ -D__USE_XOPEN2K8 -I C:/Xilinx/Vitis_HLS/2024.1/include -I include C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/bubble_sort_tb.cpp -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/./sim/autowrap/testbench/bubble_sort_tb.cpp_pre.cpp -std=gnu++14 -D__DSP48E1__ --sysroot=C:/Xilinx/Vitis_HLS/2024.1/tps/mingw/10.0.0/win64.o/nt > C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort_tb.cpp.clang.autosim-tb.out.log 2> C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort_tb.cpp.clang.autosim-tb.err.log
-INFO-FLOW: TB processing: C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/bubble_sort_tb.cpp C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/./sim/autowrap/testbench/bubble_sort_tb.cpp_pre.cpp
-Execute     clang_tidy xilinx-tb-process -desc tb-process C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/./sim/autowrap/testbench/bubble_sort_tb.cpp_pre.cpp.tb.cpp std=gnu++14 
-INFO-FLOW: exec C:/Xilinx/Vitis_HLS/2024.1/win64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-tb-process -fix-errors C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/./sim/autowrap/testbench/bubble_sort_tb.cpp_pre.cpp.tb.cpp -- -std=gnu++14 -fhls -ferror-limit=0
-Command     clang_tidy done; 1.306 sec.
-Execute     ap_part_info -name xc7z010-clg225-1 -data info 
-INFO-FLOW: run_clang exec: C:/Xilinx/Vitis_HLS/2024.1/vcxx/libexec/clang -fno-builtin-isinf -fno-builtin-isnan -E -DGCC_COMPATIBLE_APINT -DAESL_TB -D__HLS_COSIM__ -D__VITIS_HLS__ -D__USE_XOPEN2K8 -I C:/Xilinx/Vitis_HLS/2024.1/include -I include C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/bubble_sort.cpp -o C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/./sim/autowrap/testbench/bubble_sort.cpp_pre.cpp -std=gnu++14 -D__DSP48E1__ --sysroot=C:/Xilinx/Vitis_HLS/2024.1/tps/mingw/10.0.0/win64.o/nt > C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort.cpp.clang.autosim-tb.out.log 2> C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort.cpp.clang.autosim-tb.err.log
-INFO-FLOW: TB processing: C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/bubble_sort.cpp C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/./sim/autowrap/testbench/bubble_sort.cpp_pre.cpp
-Execute     clang_tidy xilinx-tb-process -desc tb-process C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/./sim/autowrap/testbench/bubble_sort.cpp_pre.cpp.tb.cpp std=gnu++14 
-INFO-FLOW: exec C:/Xilinx/Vitis_HLS/2024.1/win64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-tb-process -fix-errors C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/./sim/autowrap/testbench/bubble_sort.cpp_pre.cpp.tb.cpp -- -std=gnu++14 -fhls -ferror-limit=0
-Command     clang_tidy done; 1.243 sec.
+Command     clang_tidy done; 1.235 sec.
 Execute     source C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/global.setting.tcl 
 Execute     source C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort.rtl_wrap.cfg.tcl 
 Execute     source C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/prac/hls/.autopilot/db/bubble_sort.rtl_wrap.cfg.tcl 
@@ -753,7 +751,7 @@ Execute     source C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/pra
 Execute     ap_part_info -name xc7z010-clg225-1 -data info 
 Execute     source .run_sim.tcl 
 INFO: [COSIM 212-302] Starting C TB testing ... 
-Command     ap_source done; 0.263 sec.
+Command     ap_source done; 0.186 sec.
 INFO: [COSIM 212-333] Generating C post check test bench ...
 INFO: [COSIM 212-12] Generating RTL test bench ...
 Execute     source ../tv/cdatafile/ref.tcl 
@@ -783,10 +781,10 @@ Execute       source .sim.status.tcl
 INFO: [COSIM 212-323] Starting verilog simulation. 
 INFO: [COSIM 212-15] Starting XSIM ...
 INFO: [COSIM 212-316] Starting C post checking ...
-Command     ap_source done; 14.569 sec.
+Command     ap_source done; 10.87 sec.
 INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
 INFO: [COSIM 212-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.
-Command   cosim_design done; 28.482 sec.
+Command   cosim_design done; 25.502 sec.
 Execute   close_project 
 Execute     close_solution 
 Execute       cleanup_all 

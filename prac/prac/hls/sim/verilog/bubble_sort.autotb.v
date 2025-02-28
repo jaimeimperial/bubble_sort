@@ -21,18 +21,14 @@
 `define AESL_MEM_INST_M mem_inst_M
 `define AESL_DEPTH_errorFlag 1
 `define AUTOTB_TVIN_M  "../tv/cdatafile/c.bubble_sort.autotvin_M.dat"
-`define AUTOTB_TVIN_errorFlag  "../tv/cdatafile/c.bubble_sort.autotvin_errorFlag.dat"
 `define AUTOTB_TVIN_M_out_wrapc  "../tv/rtldatafile/rtl.bubble_sort.autotvin_M.dat"
-`define AUTOTB_TVIN_errorFlag_out_wrapc  "../tv/rtldatafile/rtl.bubble_sort.autotvin_errorFlag.dat"
 `define AUTOTB_TVOUT_M  "../tv/cdatafile/c.bubble_sort.autotvout_M.dat"
-`define AUTOTB_TVOUT_errorFlag  "../tv/cdatafile/c.bubble_sort.autotvout_errorFlag.dat"
 `define AUTOTB_TVOUT_M_out_wrapc  "../tv/rtldatafile/rtl.bubble_sort.autotvout_M.dat"
-`define AUTOTB_TVOUT_errorFlag_out_wrapc  "../tv/rtldatafile/rtl.bubble_sort.autotvout_errorFlag.dat"
 module `AUTOTB_TOP;
 
 parameter AUTOTB_TRANSACTION_NUM = 1;
 parameter PROGRESS_TIMEOUT = 10000000;
-parameter LATENCY_ESTIMATION = 2196266;
+parameter LATENCY_ESTIMATION = 837;
 parameter LENGTH_M = 20;
 parameter LENGTH_errorFlag = 1;
 
@@ -78,9 +74,7 @@ wire [4 : 0] M_address1;
 wire  M_ce1;
 wire  M_we1;
 wire [31 : 0] M_d1;
-wire [31 : 0] M_q1;
-wire [31 : 0] errorFlag_i;
-wire [31 : 0] errorFlag_o;
+wire [31 : 0] errorFlag;
 integer done_cnt = 0;
 integer AESL_ready_cnt = 0;
 integer ready_cnt = 0;
@@ -112,9 +106,7 @@ wire ap_rst_n;
     .M_ce1(M_ce1),
     .M_we1(M_we1),
     .M_d1(M_d1),
-    .M_q1(M_q1),
-    .errorFlag_i(errorFlag_i),
-    .errorFlag_o(errorFlag_o));
+    .errorFlag(errorFlag));
 
 // Assignment for control signal
 assign ap_clk = AESL_clock;
@@ -185,7 +177,6 @@ assign arrayM_we0[3] = M_we0;
 assign arrayM_din0 = M_d0;
 assign arrayM_address1 = M_address1;
 assign arrayM_ce1 = M_ce1;
-assign M_q1 = arrayM_dout1;
 assign arrayM_we1[0] = M_we1;
 assign arrayM_we1[1] = M_we1;
 assign arrayM_we1[2] = M_we1;
@@ -195,110 +186,9 @@ assign arrayM_ready= ready;
 assign arrayM_done = interface_done;
 
 
-// The signal of port errorFlag_i
-reg [31: 0] AESL_REG_errorFlag_i = 0;
-assign errorFlag_i = AESL_REG_errorFlag_i;
-always @(posedge AESL_clock)
-begin
-        AESL_REG_errorFlag_i <= errorFlag_o;
-end
-
-initial begin : read_file_process_errorFlag
-    integer fp;
-    integer err;
-    integer ret;
-    integer proc_rand;
-    reg [127  : 0] token;
-    integer i;
-    reg transaction_finish;
-    integer transaction_idx;
-    transaction_idx = 0;
-    wait(AESL_reset === 0);
-    fp = $fopen(`AUTOTB_TVIN_errorFlag,"r");
-    if(fp == 0) begin       // Failed to open file
-        $display("Failed to open file \"%s\"!", `AUTOTB_TVIN_errorFlag);
-        $display("ERROR: Simulation using HLS TB failed.");
-        $finish;
-    end
-    read_token(fp, token);
-    if (token != "[[[runtime]]]") begin
-        $display("ERROR: Simulation using HLS TB failed.");
-        $finish;
-    end
-    read_token(fp, token);
-    while (token != "[[[/runtime]]]") begin
-        if (token != "[[transaction]]") begin
-            $display("ERROR: Simulation using HLS TB failed.");
-              $finish;
-        end
-        read_token(fp, token);  // skip transaction number
-          read_token(fp, token);
-            # 0.2;
-            while(ready_wire !== 1) begin
-                @(posedge AESL_clock);
-                # 0.2;
-            end
-        if(token != "[[/transaction]]") begin
-            ret = $sscanf(token, "0x%x", AESL_REG_errorFlag_i);
-              if (ret != 1) begin
-                  $display("Failed to parse token!");
-                $display("ERROR: Simulation using HLS TB failed.");
-                  $finish;
-              end
-            @(posedge AESL_clock);
-              read_token(fp, token);
-        end
-          read_token(fp, token);
-    end
-    $fclose(fp);
-end
-
-// The signal of port errorFlag_o
-reg [31: 0] AESL_REG_errorFlag_o = 0;
-always @(posedge AESL_clock)
-begin
-    if(AESL_reset)
-        AESL_REG_errorFlag_o = 0; 
-    else
-        AESL_REG_errorFlag_o <= errorFlag_o;
-end 
-
-initial begin : write_file_process_errorFlag
-    integer fp;
-    integer fp_size;
-    integer err;
-    integer ret;
-    integer i;
-    integer hls_stream_size;
-    integer proc_rand;
-    integer errorFlag_count;
-    reg [127:0] token;
-    integer transaction_idx;
-    reg [8 * 5:1] str;
-    wait(AESL_reset === 0);
-    fp = $fopen(`AUTOTB_TVOUT_errorFlag_out_wrapc,"w");
-    if(fp == 0) begin       // Failed to open file
-        $display("Failed to open file \"%s\"!", `AUTOTB_TVOUT_errorFlag_out_wrapc);
-        $display("ERROR: Simulation using HLS TB failed.");
-        $finish;
-    end
-    $fdisplay(fp,"[[[runtime]]]");
-    transaction_idx = 0;
-    while (transaction_idx != AUTOTB_TRANSACTION_NUM) begin
-        @(posedge AESL_clock);
-          while(AESL_done !== 1) begin
-              @(posedge AESL_clock);
-          end
-        # 0.4;
-        $fdisplay(fp,"[[transaction]] %d", transaction_idx);
-          $fdisplay(fp,"0x%x", AESL_REG_errorFlag_o);
-    transaction_idx = transaction_idx + 1;
-      $fdisplay(fp,"[[/transaction]]");
-    end
-    $fdisplay(fp,"[[[/runtime]]]");
-    $fclose(fp);
-end
-
+// The signal of port errorFlag
+reg [31: 0] AESL_REG_errorFlag = 0;
+assign errorFlag = AESL_REG_errorFlag;
 
 initial begin : generate_AESL_ready_cnt_proc
     AESL_ready_cnt = 0;
@@ -362,9 +252,6 @@ end
 reg end_M;
 reg [31:0] size_M;
 reg [31:0] size_M_backup;
-reg end_errorFlag;
-reg [31:0] size_errorFlag;
-reg [31:0] size_errorFlag_backup;
 
 initial begin : initial_process
     integer proc_rand;

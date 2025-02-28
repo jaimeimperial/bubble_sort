@@ -30,11 +30,11 @@ int main() {
     }
     std::cout << std::endl;
 
-    if (errorFlag == 0) {
+    if (!errorFlag) {
         std::cout << "Test Passed: Array is sorted correctly and assertions passed" << std::endl;
     } else {
         std::cout << "Test Failed: Array is not sorted correctly or assertions failed. Error Code: "<< errorFlag << std::endl;
-    }
+    } 
 
     return 0;
 }

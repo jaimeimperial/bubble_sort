@@ -12,35 +12,20 @@ set axilite_register_dict [dict create]
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 10 \
+    id 5 \
     name M \
     reset_level 1 \
     sync_rst true \
     dir IO \
     corename M \
     op interface \
-    ports { M_address0 { O 5 vector } M_ce0 { O 1 bit } M_we0 { O 1 bit } M_d0 { O 32 vector } M_q0 { I 32 vector } M_address1 { O 5 vector } M_ce1 { O 1 bit } M_we1 { O 1 bit } M_d1 { O 32 vector } M_q1 { I 32 vector } } \
+    ports { M_address0 { O 5 vector } M_ce0 { O 1 bit } M_we0 { O 1 bit } M_d0 { O 32 vector } M_q0 { I 32 vector } M_address1 { O 5 vector } M_ce1 { O 1 bit } M_we1 { O 1 bit } M_d1 { O 32 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'M'"
 }
 }
 
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 11 \
-    name errorFlag \
-    type other \
-    dir IO \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_errorFlag \
-    op interface \
-    ports { errorFlag_i { I 32 vector } errorFlag_o { O 32 vector } } \
-} "
-}
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {

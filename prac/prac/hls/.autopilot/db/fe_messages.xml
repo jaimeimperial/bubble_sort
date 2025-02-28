@@ -1,12 +1,15 @@
 <xilinx:hls_fe_msgs>
+    <msg msg_groups="" msg_id="207-5292" msg_severity="WARNING" msg_loc="bubble_sort.cpp:12:85" msg_body="unused parameter 'errorFlag'">
+        <args ClangWarningOption="unused-parameter"/>
+    </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="directive:1:9" msg_body="HLS pragma dump">
         <args ARG_PragmaContext="directive" ARG_PragmaFunction="bubble_sort" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=bubble_sort" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="bubble_sort.cpp:4:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="bubble_sort" ARG_PragmaIsValid="1" ARG_PragmaOptions="ap_none port=errorFlag" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-437" msg_severity="INFO" msg_loc="bubble_sort.cpp:21:22" msg_body="Automatically disabling loop flattening for loop 'VITIS_LOOP_21_1'.">
+        <args LoopName="VITIS_LOOP_21_1"/>
     </msg>
-    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="bubble_sort.cpp:3:0" msg_body="Inlining function 'is_sorted(ap_uint&lt;32&gt;*, int, int, int, int&amp;)' into 'bubble_sort(ap_uint&lt;32&gt;*, int&amp;)'">
-        <args Callee="is_sorted(ap_uint&lt;32&gt;*, int, int, int, int&amp;)" Callee-DebugLoc="File bubble_sort.cpp Line 54 Column 0" Caller="bubble_sort(ap_uint&lt;32&gt;*, int&amp;)" Caller-DebugLoc="File bubble_sort.cpp Line 3 Column 0"/>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="bubble_sort.cpp:21:22" msg_body="loop_flatten 0 1 bubble_sort bubble_sort.cpp:21:22VITIS_LOOP_21_1 bubble_sort.cpp:21:22">
+        <args LoopLoc="bubble_sort.cpp:21:22" LoopLoc-DebugLoc="File bubble_sort.cpp Line 21 Column 22" LoopName="VITIS_LOOP_21_1" PragmaFunction="bubble_sort" PragmaIsAuto="1" PragmaOptions="0" PragmaSrcLoc="bubble_sort.cpp:21:22" PragmaSrcLoc-DebugLoc="File bubble_sort.cpp Line 21 Column 22" PragmaType="loop_flatten"/>
     </msg>
 </xilinx:hls_fe_msgs>
 

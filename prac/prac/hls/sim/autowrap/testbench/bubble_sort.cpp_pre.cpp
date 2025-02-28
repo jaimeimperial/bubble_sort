@@ -9,6 +9,9 @@
 
 
 
+
+
+
 # 1 "C:/Xilinx/Vitis_HLS/2024.1/include/ap_int.h" 1
 # 10 "C:/Xilinx/Vitis_HLS/2024.1/include/ap_int.h"
 # 1 "C:/Xilinx/Vitis_HLS/2024.1/include/etc/ap_common.h" 1
@@ -54981,7 +54984,7 @@ inline bool operator!=(
 }
 # 366 "C:/Xilinx/Vitis_HLS/2024.1/include/ap_fixed.h" 2
 # 361 "C:/Xilinx/Vitis_HLS/2024.1/include/ap_int.h" 2
-# 5 "C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/bubble_sort_header.hpp" 2
+# 8 "C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/bubble_sort_header.hpp" 2
 
 typedef ap_uint<32> data_t;
 const int size = 20;
@@ -54992,72 +54995,43 @@ const int y = 20;
 void bubble_sort(data_t M[size], int &errorFlag);
 
 bool is_sorted(data_t M[size], int x, int y, int size, int &errorFlag);
+
+void check_error(bool condition, int errorCode, int &errorFlag);
 # 2 "C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/bubble_sort.cpp" 2
-
+# 12 "C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/bubble_sort.cpp"
 void bubble_sort(data_t M[size], int &errorFlag) {
-#pragma HLS INTERFACE ap_none port=errorFlag
-
-
-    if (size < 1) { errorFlag = 101; return; }
-
+# 21 "C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/bubble_sort.cpp"
     for (int i = 0; i < size - 1; i++) {
 
-        if ( i < 0 || i >= size - 1 ) { errorFlag = 102; return; }
+
+
+
+
+
 
         int A = M[i];
         for (int j = i + 1; j < size; j++) {
-
-            if (size < j) { errorFlag = 103; return; }
-            if (A != M[i]) { errorFlag = 104; return; }
-            for (int k = i; k < j; k++) {
-                if (M[i] > M[k]) { errorFlag = 105; return; }
-                if (A != M[i]) { errorFlag = 106; return; }
-                for (int k = i; k < j; k++){
-                    if (M[i] > M[k]) { errorFlag = 107; return; }
-                };
-            };
-
+# 46 "C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/bubble_sort.cpp"
             int B = M[j];
             if (A > B) {
                 M[i] = B;
                 M[j] = A;
                 A = B;
             };
-
-
-            if (size < j) { errorFlag = 108; return; }
-            if (A != M[i]) { errorFlag = 109; return; }
-            for (int k = i; k < j; k++) {
-                if (M[i] > M[k]) { errorFlag = 110; return; }
-                if (A != M[i]) { errorFlag = 111; return; }
-                for (int k = i; k < j; k++){
-                    if (M[i] > M[k]) { errorFlag = 112; return; }
-                };
-            };
+# 67 "C:/Users/minec/OneDrive/Documents/Vitis_HLS/project1/prac/bubble_sort.cpp"
         };
 
 
-        if ( i < 0 || i > size ) { errorFlag = 113; return; }
+
+
+
+
+
     };
 
-    if (is_sorted(M, 0, size, size, errorFlag) == false) {
-        errorFlag = 114;
-    }
-};
 
-bool is_sorted(data_t *M, int x, int y, int size, int &errorFlag) {
 
-    if (x < 0 || y < x || size < y) { errorFlag = 201; }
-    if (errorFlag != 0) { return false; }
 
-    if (y <= 1) { return true; }
-    else {
-        for (int i = x; i < y - 1; i++) {
-            if (M[i] > M[i + 1]) {
-                return false;
-            }
-        };
-    };
 
-    return true;
+
 };

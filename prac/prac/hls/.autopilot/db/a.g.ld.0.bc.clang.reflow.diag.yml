@@ -1,44 +1,42 @@
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        VITIS_LOOP_30_2
+  - String:          '> at '
+  - LoopLoc:         'bubble_sort.cpp:30:26'
+  - String:          ' '
+...
 --- !Passed
-Pass:            reflow-inliner
-Name:            Inline
-DebugLoc:        { File: bubble_sort.cpp, Line: 3, Column: 0 }
+Pass:            reflow-loop-flatten-cost-model
+Name:            FlattenOffInference
+DebugLoc:        { File: bubble_sort.cpp, Line: 21, Column: 22 }
 Function:        _Z11bubble_sortP7ap_uintILi32EERi
 Args:            
-  - String:          'Inlining function '''
-  - Callee:          'is_sorted(ap_uint<32>*, int, int, int, int&)'
-    DebugLoc:        { File: bubble_sort.cpp, Line: 54, Column: 0 }
-  - String:          ''' into '''
-  - Caller:          'bubble_sort(ap_uint<32>*, int&)'
-    DebugLoc:        { File: bubble_sort.cpp, Line: 3, Column: 0 }
-  - String:          ''''
+  - String:          'Automatically disabling loop flattening for loop '''
+  - LoopName:        VITIS_LOOP_21_1
+  - String:          '''.'
 ...
---- !HLSReportInfo
-Pass:            auto-loop-pipeline
-Name:            AutoLoopPipeline
+--- !Passed
+Pass:            reflow-loop-flatten-cost-model
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: bubble_sort.cpp, Line: 21, Column: 22 }
+Function:        _Z11bubble_sortP7ap_uintILi32EERi
 Args:            
-  - String:          'automatically set the pipeline for Loop< '
-  - LoopName:        VITIS_LOOP_39_6
-  - String:          '> at '
-  - LoopLoc:         'bubble_sort.cpp:39:34'
+  - PragmaType:      loop_flatten
   - String:          ' '
-...
---- !HLSReportInfo
-Pass:            auto-loop-pipeline
-Name:            AutoLoopPipeline
-Args:            
-  - String:          'automatically set the pipeline for Loop< '
-  - LoopName:        VITIS_LOOP_21_4
-  - String:          '> at '
-  - LoopLoc:         'bubble_sort.cpp:21:34'
+  - PragmaOptions:   off
   - String:          ' '
-...
---- !HLSReportInfo
-Pass:            auto-loop-pipeline
-Name:            AutoLoopPipeline
-Args:            
-  - String:          'automatically set the pipeline for Loop< '
-  - LoopName:        VITIS_LOOP_61_1
-  - String:          '> at '
-  - LoopLoc:         'bubble_sort.cpp:61:26'
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  bubble_sort
+  - String:          ' '
+  - PragmaSrcLoc:    'bubble_sort.cpp:21:22'
+    DebugLoc:        { File: bubble_sort.cpp, Line: 21, Column: 22 }
+  - LoopName:        VITIS_LOOP_21_1
+  - String:          ' '
+  - LoopLoc:         'bubble_sort.cpp:21:22'
+    DebugLoc:        { File: bubble_sort.cpp, Line: 21, Column: 22 }
   - String:          ' '
 ...

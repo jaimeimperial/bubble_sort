@@ -44,7 +44,7 @@
                 end else if (in_intf.cur_state == in_intf.iter_start_state && in_intf.one_state_block == 1'b0 && in_intf.one_state_loop == 1'b1) begin
                     this.iter_end_arr.push_back(this.total_run_time);
                 end
-                if (((this.last_state == in_intf.quit_loop_state0 && in_intf.quit_states_valid[0] == 1'b1) || (this.last_state == in_intf.quit_loop_state1 && in_intf.quit_states_valid[1] == 1'b1) || (this.last_state == in_intf.quit_loop_state2 && in_intf.quit_states_valid[2] == 1'b1)) && ((in_intf.cur_state == in_intf.post_loop_state0 && in_intf.post_states_valid[0] == 1'b1) || (in_intf.cur_state == in_intf.post_loop_state1 && in_intf.post_states_valid[1] == 1'b1)) && (this.loop_end_arr.size < this.loop_start_arr.size)) begin
+                if ((this.last_state == in_intf.quit_loop_state0 && in_intf.quit_states_valid == 1'b1) && (in_intf.cur_state == in_intf.post_loop_state0 && in_intf.post_states_valid == 1'b1) && (this.loop_end_arr.size < this.loop_start_arr.size)) begin
                     this.loop_end_arr.push_back(this.total_run_time - 1);
                     if (this.last_state != in_intf.iter_start_state) begin
                         this.iter_end_arr.push_back(this.total_run_time - 1);

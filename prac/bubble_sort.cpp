@@ -1,27 +1,47 @@
 #include "bubble_sort_header.hpp"
 
-void bubble_sort(data_t M[size], int &errorFlag) {
-    #pragma HLS INTERFACE ap_none port=errorFlag
+#ifdef ENABLE_ERROR_CHECKING
+void check_error(bool condition, int errorCode, int &errorFlag) {
+    #pragma HLS INLINE off // Ensures that it is generated as a separate hardware module in synthesis
+    if (condition) {
+        errorFlag = errorCode;
+    }
+}
+#endif
 
+void bubble_sort(data_t M[size], int &errorFlag) {
     // Preconditions
-    if (size < 1) { errorFlag = 101; return; }
+    #ifdef ENABLE_ERROR_CHECKING
+    #pragma HLS INTERFACE ap_none port=errorFlag
+    check_error(size < 1, 101, errorFlag);
+    if (errorFlag) { return; }
+    #endif
+    // -------------
 
     for (int i = 0; i < size - 1; i++) {
-        // Outer Loop: Loop invariant on entry
-        if ( i < 0 || i >= size - 1 ) { errorFlag = 102; return; }
+        // Outer Loop Invariants: Loop invariant on entry
+        #ifdef ENABLE_ERROR_CHECKING
+        check_error(i < 0 || i >= size - 1, 1020, errorFlag);
+        if (errorFlag) { return; }
+        #endif
+        // -----------------------------------
 
         int A = M[i];        
         for (int j = i + 1; j < size; j++) {
-            // Inner Loop: Loop invariant on entry
-            if (size < j) { errorFlag = 103; return; }
-            if (A != M[i]) { errorFlag = 104; return; }
+            // Inner Loop Invariants: Loop invariant on entry
+            #ifdef ENABLE_ERROR_CHECKING
+            check_error(size < j, 1030, errorFlag);
+            check_error(A != M[i], 1040, errorFlag);
             for (int k = i; k < j; k++) {
-                if (M[i] > M[k]) { errorFlag = 105; return; }
-                if (A != M[i]) { errorFlag = 106; return; }
+                check_error(M[i] > M[k], 1050, errorFlag);
+                check_error(A != M[i], 1060, errorFlag);
                 for (int k = i; k < j; k++){
-                    if (M[i] > M[k]) { errorFlag = 107; return; }
+                    check_error(M[i] > M[k], 1070, errorFlag);
                 };
-            };        
+            };
+            if (errorFlag) { return; }
+            #endif
+            // -----------------------------------       
 
             int B = M[j];
             if (A > B) {
@@ -30,31 +50,44 @@ void bubble_sort(data_t M[size], int &errorFlag) {
                 A = B;
             };
 
-            // Inner Loop: Loop invariant is maintained
-            if (size < j) { errorFlag = 108; return; }
-            if (A != M[i]) { errorFlag = 109; return; }
+            // Inner Loop Invariantss: Loop invariant is maintained
+            #ifdef ENABLE_ERROR_CHECKING
+            check_error(size < j, 1031, errorFlag);
+            check_error(A != M[i], 1041, errorFlag);
             for (int k = i; k < j; k++) {
-                if (M[i] > M[k]) { errorFlag = 110; return; }
-                if (A != M[i]) { errorFlag = 111; return; }
+                check_error(M[i] > M[k], 1051, errorFlag);
+                check_error(A != M[i], 1061, errorFlag);
                 for (int k = i; k < j; k++){
-                    if (M[i] > M[k]) { errorFlag = 112; return; }
+                    check_error(M[i] > M[k], 1071, errorFlag);
                 };
             };
+            if (errorFlag) { return; }
+            #endif
+            // -----------------------------------------
         };
 
-        // Outer loop: Ensures that the loop invariant is maintained
-        if ( i < 0 || i > size ) { errorFlag = 113; return; }      
+        // Outer loop Invariants: Ensures that the loop invariant is maintained
+        #ifdef ENABLE_ERROR_CHECKING
+        check_error(i < 0 || i >= size - 1, 1021, errorFlag);
+        if (errorFlag) { return; }
+        #endif
+        // ---------------------------------------------------------
     };
 
-    if (is_sorted(M, 0, size, size, errorFlag) == false) {
-        errorFlag = 114;
-    }    
+    // Postcondition
+    #ifdef ENABLE_ERROR_CHECKING
+    check_error(!is_sorted(M, 0, size, size, errorFlag), 114, errorFlag);
+    #endif
+    // -------------
 };
 
+#ifdef ENABLE_ERROR_CHECKING
 bool is_sorted(data_t *M, int x, int y, int size, int &errorFlag) {
+    #pragma HLS INLINE off
+
     // requires 0 <= x <= y <= this.M.Length
-    if (x < 0 || y < x || size < y) { errorFlag = 201; }
-    if (errorFlag != 0) { return false; } 
+    check_error(x < 0 || y < x || size < y, 201, errorFlag);
+    if (errorFlag) { return false; } 
 
     if (y <= 1) { return true; }
     else {
@@ -67,3 +100,4 @@ bool is_sorted(data_t *M, int x, int y, int size, int &errorFlag) {
 
     return true;
 };
+#endif

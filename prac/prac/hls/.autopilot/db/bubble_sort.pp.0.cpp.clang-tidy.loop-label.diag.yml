@@ -7,7 +7,7 @@ Diagnostics:
     FilePath:        'C:\Xilinx\Vitis_HLS\2024.1\common\technology\autopilot\etc\ap_int_base.h'
     Replacements:    
       - FilePath:        'C:\Users\minec\OneDrive\Documents\Vitis_HLS\project1\prac\prac\hls\.autopilot\db\bubble_sort.pp.0.cpp'
-        Offset:          55169
+        Offset:          55172
         Length:          0
         ReplacementText: 'VITIS_LOOP_1223_1: '
   - DiagnosticName:  xilinx-label-all-loops
@@ -16,7 +16,7 @@ Diagnostics:
     FilePath:        'C:\Xilinx\Vitis_HLS\2024.1\common\technology\autopilot\etc\ap_int_ref.h'
     Replacements:    
       - FilePath:        'C:\Users\minec\OneDrive\Documents\Vitis_HLS\project1\prac\prac\hls\.autopilot\db\bubble_sort.pp.0.cpp'
-        Offset:          282535
+        Offset:          282538
         Length:          0
         ReplacementText: 'VITIS_LOOP_676_1: '
   - DiagnosticName:  xilinx-label-all-loops
@@ -25,7 +25,7 @@ Diagnostics:
     FilePath:        'C:\Xilinx\Vitis_HLS\2024.1\common\technology\autopilot\etc\ap_int_ref.h'
     Replacements:    
       - FilePath:        'C:\Users\minec\OneDrive\Documents\Vitis_HLS\project1\prac\prac\hls\.autopilot\db\bubble_sort.pp.0.cpp'
-        Offset:          282999
+        Offset:          283002
         Length:          0
         ReplacementText: 'VITIS_LOOP_690_1: '
   - DiagnosticName:  xilinx-label-all-loops
@@ -34,7 +34,7 @@ Diagnostics:
     FilePath:        'C:\Xilinx\Vitis_HLS\2024.1\common\technology\autopilot\etc\ap_int_ref.h'
     Replacements:    
       - FilePath:        'C:\Users\minec\OneDrive\Documents\Vitis_HLS\project1\prac\prac\hls\.autopilot\db\bubble_sort.pp.0.cpp'
-        Offset:          283464
+        Offset:          283467
         Length:          0
         ReplacementText: 'VITIS_LOOP_704_1: '
   - DiagnosticName:  xilinx-label-all-loops
@@ -43,70 +43,25 @@ Diagnostics:
     FilePath:        'C:\Xilinx\Vitis_HLS\2024.1\common\technology\autopilot\etc\ap_fixed_base.h'
     Replacements:    
       - FilePath:        'C:\Users\minec\OneDrive\Documents\Vitis_HLS\project1\prac\prac\hls\.autopilot\db\bubble_sort.pp.0.cpp'
-        Offset:          566784
+        Offset:          566787
         Length:          0
         ReplacementText: 'VITIS_LOOP_1247_1: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_9_1:  '
-    FileOffset:      9
-    FilePath:        bubble_sort.cpp
-    Replacements:    
-      - FilePath:        'C:\Users\minec\OneDrive\Documents\Vitis_HLS\project1\prac\prac\hls\.autopilot\db\bubble_sort.pp.0.cpp'
-        Offset:          935027
-        Length:          0
-        ReplacementText: 'VITIS_LOOP_9_1: '
-  - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_14_2:  '
-    FileOffset:      14
-    FilePath:        bubble_sort.cpp
-    Replacements:    
-      - FilePath:        'C:\Users\minec\OneDrive\Documents\Vitis_HLS\project1\prac\prac\hls\.autopilot\db\bubble_sort.pp.0.cpp'
-        Offset:          935163
-        Length:          0
-        ReplacementText: 'VITIS_LOOP_14_2: '
-  - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_18_3:  '
-    FileOffset:      18
-    FilePath:        bubble_sort.cpp
-    Replacements:    
-      - FilePath:        'C:\Users\minec\OneDrive\Documents\Vitis_HLS\project1\prac\prac\hls\.autopilot\db\bubble_sort.pp.0.cpp'
-        Offset:          935324
-        Length:          0
-        ReplacementText: 'VITIS_LOOP_18_3: '
-  - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_21_4:  '
+    Message:         'Added loop label VITIS_LOOP_21_1:  '
     FileOffset:      21
     FilePath:        bubble_sort.cpp
     Replacements:    
       - FilePath:        'C:\Users\minec\OneDrive\Documents\Vitis_HLS\project1\prac\prac\hls\.autopilot\db\bubble_sort.pp.0.cpp'
-        Offset:          935492
+        Offset:          935050
         Length:          0
-        ReplacementText: 'VITIS_LOOP_21_4: '
+        ReplacementText: 'VITIS_LOOP_21_1: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_36_5:  '
-    FileOffset:      36
+    Message:         'Added loop label VITIS_LOOP_30_2:  '
+    FileOffset:      30
     FilePath:        bubble_sort.cpp
     Replacements:    
       - FilePath:        'C:\Users\minec\OneDrive\Documents\Vitis_HLS\project1\prac\prac\hls\.autopilot\db\bubble_sort.pp.0.cpp'
-        Offset:          935888
+        Offset:          935124
         Length:          0
-        ReplacementText: 'VITIS_LOOP_36_5: '
-  - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_39_6:  '
-    FileOffset:      39
-    FilePath:        bubble_sort.cpp
-    Replacements:    
-      - FilePath:        'C:\Users\minec\OneDrive\Documents\Vitis_HLS\project1\prac\prac\hls\.autopilot\db\bubble_sort.pp.0.cpp'
-        Offset:          936056
-        Length:          0
-        ReplacementText: 'VITIS_LOOP_39_6: '
-  - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_61_1:  '
-    FileOffset:      61
-    FilePath:        bubble_sort.cpp
-    Replacements:    
-      - FilePath:        'C:\Users\minec\OneDrive\Documents\Vitis_HLS\project1\prac\prac\hls\.autopilot\db\bubble_sort.pp.0.cpp'
-        Offset:          936583
-        Length:          0
-        ReplacementText: 'VITIS_LOOP_61_1: '
+        ReplacementText: 'VITIS_LOOP_30_2: '
 ...

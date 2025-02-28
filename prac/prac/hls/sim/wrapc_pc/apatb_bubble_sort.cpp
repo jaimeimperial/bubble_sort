@@ -27,7 +27,6 @@ using namespace std;
 
 // tvout file define:
 #define AUTOTB_TVOUT_PC_M "../tv/rtldatafile/rtl.bubble_sort.autotvout_M.dat"
-#define AUTOTB_TVOUT_PC_errorFlag "../tv/rtldatafile/rtl.bubble_sort.autotvout_errorFlag.dat"
 
 
 namespace hls::sim
@@ -1167,9 +1166,8 @@ void apatb_bubble_sort_hw(void* __xlx_apatb_param_M, void* __xlx_apatb_param_err
     .name = "errorFlag",
     .width = 32,
 #ifdef POST_CHECK
-    .reader = new hls::sim::Reader(AUTOTB_TVOUT_PC_errorFlag),
 #else
-    .owriter = new hls::sim::Writer(AUTOTB_TVOUT_errorFlag),
+    .owriter = nullptr,
     .iwriter = new hls::sim::Writer(AUTOTB_TVIN_errorFlag),
 #endif
   };
@@ -1211,7 +1209,6 @@ void apatb_bubble_sort_hw(void* __xlx_apatb_param_M, void* __xlx_apatb_param_err
   try {
 #ifdef POST_CHECK
     CodeState = ENTER_WRAPC_PC;
-    check(port0);
     check(port1);
 #else
     static hls::sim::RefTCL tcl("../tv/cdatafile/ref.tcl");
@@ -1223,7 +1220,6 @@ void apatb_bubble_sort_hw(void* __xlx_apatb_param_M, void* __xlx_apatb_param_err
     CodeState = CALL_C_DUT;
     bubble_sort_hw_stub_wrapper(__xlx_apatb_param_M, __xlx_apatb_param_errorFlag);
     CodeState = DUMP_OUTPUTS;
-    dump(port0, port0.owriter, tcl.AESL_transaction);
     dump(port1, port1.owriter, tcl.AESL_transaction);
     tcl.AESL_transaction++;
 #endif
